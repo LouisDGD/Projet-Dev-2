@@ -46,6 +46,73 @@ Actuellement, chaque objet a sa propre fiche papier a l'accueil mais ces fiches 
 
 3.1 Exigences fonctionnelles
 
+F-01 - Enregistrer les informations d'un objet a l'accueil : 
+
+Acteur : Bénévoles de l'accueil
+Description : Permettre aux bénévoles d'enregistrer les informations relatives a un objet pour en créer une fiche
+
+ Exigences :
+
+ - EF-01.1 : Le bénévole introduit le nom du visiteur, la marque, l'adresse mail ainsi que la description de l'objet 
+ - EF-01.2 : Le type d'objet est choisi dans une liste, sans saisie libre
+ - EF-01.3 : La fiche est automatiquement ajoutée a la file d'attente, par ordre d'arrivée (premier arrivé, premier servi)
+ 
+ Critères d'acceptation : 
+ 
+ - EF-01.1 : Un bénévole crée une fiche complète sans aide
+ - EF-01.2 : Tout les types cités par le / la client(e) sont proposés dans la liste
+ - EF-01.3 : La fiche apparaît en fin de file d'attente 
+ 
+------------------------------------------------------------------------------------------
+
+F-02 - Consultation des données pour les réparateur :
+
+Acteur : Réparateurs du café, coordinatrice
+Description : L'écran principal affiche la liste des objets de la session en cours et indique qui travaille sur quoi
+
+ Exigences :
+ 
+ - EF-02.1 : L'écran affiche pour chaque objet, le nom du visiteur, le type d'objet, le réparateur assigné et l'état (en attente, en cours, terminé)
+ - EF-02.2 : Un réparateur peut prendre en charge un objet en y inscrivant son nom
+ - EF-02.3 : L'application n'assigne jamais un objet automatiquement
+ 
+ Critères d'acceptation : 
+ 
+ - EF-02.1 : La coordinatrice peut consulter qui travaille sur quoi
+ - EF-02.2 : Le réparateur a son nom inscrit sur la ligne de l'objet
+ - EF-02.3 : Aucun objet n'a de réparateur automatiquement assigné
+
+------------------------------------------------------------------------------------------
+
+F-03 - Completer une fiche (diagnostic et résultat) :
+
+Acteur : Réparateurs
+Description : Le réparateur note son diagnostic et le résultat de la réparation
+
+ Exigences :
+
+ - EF-03.1 : Le réparateur saisit un diagnostic
+ - EF-03.2 : Le réparateur saisit un statut pour la réparation (en cours, réparé, a suivre (Pièce manquante))
+ 
+ Critères d'acceptation : 
+ 
+ - EF-03.1 : Le diagnostic saisi par le réparateur est affiché
+ - EF-03.2 : Le statut de la réparation saisi par le réparateur est affiché
+ - EF-03.2 : Les objets avec le statut "A suivre" sont retrouvables les sessions suivantes
+
+------------------------------------------------------------------------------------------
+F-04 - Rechercher une fiche : 
+
+F-05 - Afficher les indicateurs de la sessions : 
+
+F-06 - Generer le rapport imprimable pour la commune : 
+
+F-07 - Gerer les coordonnées des visiteurs 
+
+F-08 - Sauvegarde automatique des données
+
+F-09 - Rappel pour les objets "A suivre"
+
 3.2 Exigences non fonctionnelles
 
 4. Contraintes
