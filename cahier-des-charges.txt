@@ -1,1 +1,32 @@
 Cahier des charges : Repair café 
+
+Informations sur le document : 
+Titre : Cahier des charges - repair café
+Auteurs : Thiel Valentin, Borman Alexandre, Martin Loïc, Degand Louis
+
+Version 1.0 - Date 14/10 - Modifications : Premiere version 
+
+Conventions d'identification :
+Elément : - Format : - Exemple :
+Règle métier - RM-xx - RM-01
+Donnée - D-xx - D-03
+Fonctionnalité - F-xx - F-03
+Exigence fonctionnelle - EF-xx.y - EF-03.2
+Exigence non fonctionnelle - ENF-xx - ENF-02
+Question ouverte - Q-xx - Q-01
+
+1. Contexte
+
+1.1 Présentation du client : 
+
+Jacqueline Moreau, ancienne professeure de physique, coordinatrice bénévole du Repair Café "La clé a Molette" a Forest, crée il y a 4 ans avec des voisins.
+Les membres se retrouvent une fois par mois, le deuxième samedi du mois de 14h à 17h, à la maison de quartier de Forest. Les gens viennent avec des objets a réparer et les bénévoles les aident a réparer gratuitement. Ils ne réparent pas a leur place mais aident a réparer.
+
+1.2 Présentation du projet :
+
+Actuellement, chaque objet a sa propre fiche papier a l'accueil mais ces fiches passent de main en main et se perdent, personne ne sait qui travaille sur quoi ni quand. Après la session, le petit fils de Mme Moraud, recopie tout ces papiers dans un excel pour un rapport a la commune, mais il part en érasmus en février, ils auraient besoin d'un outil simple pour remplacer ces fiches et l’Excel, sur le vieil ordinateur portable de l’association.
+
+1.3 Objectifs du projet :
+- Retrouver facilement une fiche quand quelqu'un revient avec son objet 
+- Faire plus facilement les rapports a la commune
+
