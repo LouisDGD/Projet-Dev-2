@@ -1,72 +1,104 @@
-Bonjour le groupe 2TL1-3. Votre cliente est Mme Moraud @Mme Moraud (Repair Café) . Taggez-la systèmatiquement dans tous les messages qui lui sont adressés.
-Je n’ai pas réussi à ajouter Alexandre à ce chat, j’essaierai de résoudre cela dès que possible.
+Louis : Pourriez-vous vous présenter ?
+Mme Moraud : Je suis Jacqueline Moreau, ancienne professeure de physique, et aujourd’hui coordinatrice bénévole du Repair Café « La Clé à Molette » à Forest.
 
-Mme Moraud (Repair Café)
-10/10/2026 at 18:36
-Bonjour tout le monde ! Je suis Jacqueline Moreau, la coordinatrice du Repair Café « La Clé à Molette » à Forest. Je vous écoute : par où voulez-vous commencer ?
+Louis : Pourriez-vous nous en dire plus sur le Repair Café : ses horaires, son objectif, son public ?
+Mme Moraud : On l’a créé il y a quatre ans avec quelques voisins. On se retrouve le deuxième samedi du mois, de 14 h à 17 h, à la maison de quartier de Forest. Les gens viennent avec leur grille-pain, leur vélo ou leur machine à coudre en panne, et nos bénévoles les aident à le réparer, gratuitement. On ne répare pas à leur place, on répare avec eux, c’est important ça.
 
-DEGAND Louis
-15:16
-Bonjour, Madame Moraud, avant tout pourriez vous un petit peu vous présenter, histoire que nous apprenions a vous connaitre et diriger la suite des opérations ? @Mme Moraud (Repair Café)
+Louis : Pourriez-vous nous présenter la situation actuelle et les problèmes que vous rencontrez ?
+Mme Moraud : À l’accueil, on remplit une fiche papier pour chaque objet. Ces fiches passent de main en main et se perdent. Personne ne sait vraiment qui travaille sur quoi. Après la session, mon petit-fils Hugo recopie tout dans un fichier Excel pour le rapport à la commune, mais il part en Erasmus en février.
 
-Mme Moraud (Repair Café)
-15:16
-Bonjour, mes petits ! Je suis Jacqueline Moreau, ancienne prof de physique, et aujourd'hui coordinatrice bénévole du Repair Café « La Clé à Molette » à Forest. Je suis là pour vous parler de notre petit atelier de réparation. Je vous écoute : par où voulez-vous commencer ?
+Louis : Quels sont vos objectifs précis pour ce projet ?
+Mme Moraud : Remplacer ces fiches papier qui se perdent et le fichier Excel qu’Hugo recopie à la main. Avoir un outil facile à utiliser sur notre vieil ordinateur, pour savoir qui travaille sur quoi, faire le rapport à la commune, et retrouver facilement une fiche quand quelqu’un revient avec son objet.
 
-DEGAND Louis
-15:19
-Est ce que vous pourriez nous présenter en détail le projet ? la situation actuelle et les problèmes que vous rencontrez afin que nous puissons voir ce qu’on peut faire et créer ensemble ? @Mme Moraud (Repair Café)
+Louis : Pouvez-vous décrire comment vous souhaitez utiliser le produit ?
+Mme Moraud : Sur notre ordinateur portable posé à l’accueil. Quelque chose qui remplace nos fiches papier et qui compte tout tout seul à la fin, pour ne plus avoir à recopier dans l’Excel. Il faut qu’on s’y retrouve aussi facilement qu’avec nos stylos.
 
-Mme Moraud (Repair Café)
-15:19
-Oh, avec plaisir, mes petits ! Alors, le Repair Café « La Clé à Molette », c’est une fois par mois, le deuxième samedi, de 14h à 17h, dans la maison de quartier de Forest. Les habitants viennent avec un objet en panne, et nos bénévoles les aident à le réparer gratuitement. C’est un beau projet, on ne répare pas « pour » les gens, mais « avec » eux, c’est important ça.
+Louis : Si l’application fonctionnait parfaitement, qu’est-ce qui aurait changé pour vous dans 6 mois ?
+Mme Moraud : Je ne retrouverais plus mes fiches dans mes poches ou sous le café ! Et je pourrais dire à la commune, sans trois heures de recopie, combien d’objets on a sauvés et combien de kilos de déchets on a évités. Si je pouvais juste appuyer sur un bouton pour avoir mon rapport, je dormirais mieux. Mais je ne veux pas que ça décide à la place de mes bénévoles.
 
-Aujourd’hui, à l’accueil, on remplit une fiche papier pour chaque objet. Et ces fiches, elles passent de main en main, elles se perdent… Personne ne sait vraiment qui travaille sur quoi, à un moment donné. Et après la session, mon petit-fils Hugo, il recopie tout dans un fichier Excel pour le rapport à la commune, mais il part en Erasmus en février. Alors voilà, on aurait besoin d’un outil simple pour remplacer ces fiches et l’Excel, sur le vieil ordinateur portable de l’association.
+Louis : Quelles sont les 3 choses que l’application doit absolument faire ?
+Mme Moraud : Remplacer les fiches papier qu’on perd tout le temps. Ne plus devoir recopier dans Excel pour le rapport à la commune. Et que mes bénévoles de l’accueil, qui ne sont pas des mordus d’informatique, arrivent à s’en servir sans pleurer.
 
-DEGAND Louis
-15:20
-Attendez, j’ai été un petit peu vite au début, vous pourriez nous en dire un petit peu plus sur le repair café ? ses horaires, son objectif, sa clientèle, tout ce genre de choses ? @Mme Moraud (Repair Café)
+Louis : Que se passe-t-il si le projet n’est pas réalisé ?
+Mme Moraud : On restera avec nos fiches papier. Après le départ d’Hugo, on devra se débrouiller autrement, peut-être avec un cahier. Ce ne serait pas très pratique.
 
-Mme Moraud (Repair Café)
-15:20
-Ah, avec plaisir, mes petits ! Alors, le Repair Café « La Clé à Molette », on l'a créé il y a quatre ans avec quelques voisins. On se retrouve une fois par mois, le deuxième samedi du mois, de 14h à 17h, à la maison de quartier de Forest. Les gens viennent avec leur grille-pain, leur vélo ou leur machine à coudre en panne, et nos bénévoles les aident à le réparer, gratuitement. C'est gratuit, oui ! On ne répare pas à leur place, on répare avec eux, c'est important ça.
+Louis : Souhaitez-vous une application de bureau, un site web, une application mobile… ?
+Mme Moraud : Une application mobile, non non non ! Il faut quelque chose de simple, qui marche sur notre portable, sans complications.
 
-DEGAND Louis
-15:28
-Parfait, et quels seraient les objectifs précis vis a vis de ce projet ? vous sauriez me les lister ? qu’attendez vous précisément @Mme Moraud (Repair Café)
+Louis : Sur quel appareil et quel système d’exploitation l’utiliserez-vous ?
+Mme Moraud : Un vieux portable qu’un membre nous a donné, il date de 2015 je crois. Il tourne sous Windows. On a une seule machine, posée à l’accueil. Pas de téléphone ni de tablette.
 
-Mme Moraud (Repair Café)
-15:28
-Oh, mon petit, des objectifs précis... Je ne suis pas sûre de savoir les "lister" comme vous dites. Moi, ce que je vois, c'est qu'on perd les fiches papier, qu'Hugo s'en va en février, et que je voudrais qu'on retrouve facilement une fiche quand quelqu'un revient avec son objet. C'est déjà pas mal, non ? Mais si vous avez des questions sur des situations précises, je vous répondrai volontiers. Qu'est-ce qui vous tracasse, exactement ?
+Louis : L’application doit-elle être accessible à distance ?
+Mme Moraud : Non. L’ordinateur n’est pas toujours connecté à Internet, et le wifi de la maison de quartier, c’est une blague. L’outil doit fonctionner sur place, sans dépendre d’Internet.
 
-DEGAND Louis
-15:33
-Que ca ? ca me semble peu, vous pourriez être plus précise @Mme Moraud (Repair Café)  
+Louis : Doit-elle communiquer avec d’autres outils ou logiciels ?
+Mme Moraud : Je ne crois pas que ça doive parler avec d’autres machines. Je ne vois pas trop pour quoi faire.
 
-Mme Moraud (Repair Café)
-15:33
-Oh, pardon, je me suis peut-être mal exprimée. Je disais simplement que je suis Jacqueline Moreau, coordinatrice du Repair Café « La Clé à Molette » à Forest. Mais si vous voulez en savoir plus, c'est à vous de me poser vos questions, mes petits. Par où souhaitez-vous commencer ?
+Louis : Qui utilisera l’application ?
+Mme Moraud : Surtout les bénévoles de l’accueil, souvent deux ou trois, qui créent les fiches. Les réparateurs aussi, pour voir leur file d’attente et noter ce qu’ils ont fait. Et moi, pour tout coordonner à la fin de la journée.
 
-DEGAND Louis
-15:35
-Vous pourriez être très précise sur vos objectifs avec ce projet ? @Mme Moraud (Repair Café)
+Louis : Ces personnes ont-elles des droits différents ?
+Mme Moraud : On est une petite équipe. Moi je regarde les chiffres pour le rapport, l’accueil remplit les fiches, les réparateurs notent ce qu’ils ont fait. Personne n’a besoin de cacher quoi que ce soit à qui que ce soit.
 
-Mme Moraud (Repair Café)
-15:35
-Oh, mes petits, mes objectifs sont bien simples. Je veux juste remplacer ces fiches en papier qui se perdent et ce fichier Excel que mon petit-fils doit recopier à la main. Un outil facile à utiliser sur notre vieil ordinateur, pour savoir qui travaille sur quoi et pour faire le rapport à la commune. Mais dites-moi, qu'est-ce que vous voulez savoir exactement ?
+Louis : Quel est leur niveau en informatique ?
+Mme Moraud : Ce sont surtout des retraités. Certains savent envoyer un e-mail, d’autres ont du mal avec une souris. Il faut de grosses lettres et des boutons évidents.
 
-DEGAND Louis
-15:36
-Vous sauriez nous faire une description générale du produit ? comment vous souhaitez l’utiliser, etc ? @Mme Moraud (Repair Café)  
+Louis : À quelle fréquence l’utiliseront-ils ?
+Mme Moraud : Une fois par mois, le deuxième samedi. Pendant ces trois heures, l’ordinateur est utilisé en continu. Après, on n’en a plus besoin avant la session suivante.
 
-Mme Moraud (Repair Café)
-15:36
-Ah, le produit en question, c'est notre ordinateur portable, posé à l'accueil. On voudrait un écriteau, un truc qui remplace nos fiches en papier, et qui compte tout tout seul à la fin, pour plus avoir à recopier dans l'Excel. Mais c'est vous les techs, hein, arrangez ça pour qu'on s'y retrouve aussi facilement qu'avec nos stylos.
+Louis : Y a-t-il des choses que l’application ne doit surtout pas faire ?
+Mme Moraud : Pas de choses en ligne. Et surtout, l’outil ne doit pas décider à la place de nos bénévoles.
 
-DEGAND Louis
-15:38
-Ok, est ce que vous auriez différents utilisateurs qui utiliseraient ce produit ? un seul utilisateur ? que chacun introduise ses données ? @Mme Moraud (Repair Café)
+Louis : Y a-t-il des fonctionnalités bonus qui seraient agréables ?
+Mme Moraud : Un petit rappel pour les objets à suivre, quand la pièce est arrivée, ce serait bien.
 
-Mme Moraud (Repair Café)
-15:38
-Oh, mais bien sûr, on est plusieurs à l'utiliser ! À l'accueil, on est souvent deux ou trois bénévoles, et chacun note ce qu'il fait. Et puis les réparateurs, eux, ils ont besoin de voir leur file d'attente. Et moi, je regarde tout pour la coordination. Mais attention, mes petits, nous ne sommes pas tous à l'aise avec l'ordinateur, alors il faut que ce soit simple pour tout le monde.  
+Louis : Qui s’occupera de l’application après la livraison ?
+Mme Moraud : Hugo s’y connaît un peu, mais il part en février. Il faudrait que quelqu’un d’autre prenne le relais.
+
+Louis : Certaines situations sont-elles prioritaires ?
+Mme Moraud : En général, c’est premier arrivé, premier servi.
+
+Louis : Quelles informations voulez-vous enregistrer ?
+Mme Moraud : Le nom du visiteur, le type d’objet (petit électroménager, textile, vélo…), la marque si on la connaît, et une description de la panne. Ensuite, le réparateur écrit son nom et le résultat.
+
+Louis : Combien d’objets traitez-vous ?
+Mme Moraud : Entre 30 et 40 par session, parfois 50 juste avant Noël.
+
+Louis : Ces données existent-elles déjà quelque part ?
+Mme Moraud : Oui, Hugo recopie les fiches papier dans un fichier Excel après chaque session, mais c’est une belle pagaille.
+
+Louis : Combien de temps faut-il conserver les données ?
+Mme Moraud : Les fiches papier, on les garde quelques mois dans une boîte en carton, au cas où quelqu’un reviendrait. Mais on ne supprime rien, on garde tout pour la commune.
+
+Louis : Qui peut créer, consulter, modifier les données ?
+Mme Moraud : L’accueil crée les fiches. Les réparateurs complètent leur partie, le diagnostic et le résultat. Moi, je consulte pour le rapport. Tout le monde peut tout voir, mais c’est celui qui remplit qui écrit.
+
+Louis : Y a-t-il des données personnelles ou sensibles ?
+Mme Moraud : On ne garde que le nom. Le téléphone ou l’e-mail, c’est seulement avec l’accord de la personne, pour la prévenir quand la pièce est arrivée. On efface ces coordonnées un an après le dernier passage.
+
+Louis : Faut-il pouvoir exporter les données ?
+Mme Moraud : Il faut un document qu’on peut imprimer pour la commune. Hugo me faisait un rapport chaque année, et je le relisais pour vérifier que tout était juste avant de l’envoyer.
+
+Louis : Faut-il des sauvegardes ?
+Mme Moraud : L’ordi a déjà planté une fois et Hugo avait perdu des heures de travail. Il faudrait quelque chose de sûr. Vous me direz ce que vous proposez.
+
+Louis : Que doit-il se passer à la fin d’une réparation ?
+Mme Moraud : On note le résultat : réparé, non réparable, ou « à suivre » s’il manque une pièce. C’est ce qui compte pour le rapport.
+
+Louis : Comment saurez-vous que l’outil fonctionne ? Donnez-moi un exemple de test.
+Mme Moraud : Si madame Dubois revient avec son grille-pain, je tape « Dubois » et je vois tout de suite sa fiche avec le diagnostic.
+
+Louis : Comment imaginez-vous l’écran principal ?
+Mme Moraud : Une grande page avec la liste des objets qui attendent : le nom de la personne, le type d’objet et le réparateur qui s’en occupe, comme mon agenda papier. L’interface de ma banque en ligne me semble claire, avec de gros boutons et des couleurs.
+
+Louis : Quels indicateurs voulez-vous voir en un coup d’œil ?
+Mme Moraud : Combien d’objets sont arrivés, combien on a réparés, combien sont repartis sans solution, et combien de personnes attendent encore.
+
+Louis : Faut-il pouvoir trier, filtrer ou rechercher ?
+Mme Moraud : Aujourd’hui, on fouille dans une boîte à chaussures. Ce qu’il me faut surtout, c’est retrouver facilement une fiche d’un objet à suivre, et savoir qui travaille sur quoi pendant la session.
+
+Louis : Comment pourrons-nous vérifier ensemble que l’outil répond à vos besoins ?
+Mme Moraud : Venez un samedi de repair, regardez comment ça se passe et voyez si votre outil fait pareil. Je veux qu’on retrouve une fiche sans fouiller et que le rapport pour la commune soit juste.
+
+Louis : Quelle forme doit prendre la livraison ?
+Mme Moraud : Un programme qui tourne sur notre vieux portable, sans avoir besoin d’Internet. Pour la forme, c’est vous les experts.
