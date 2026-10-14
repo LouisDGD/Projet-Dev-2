@@ -30,3 +30,42 @@ Actuellement, chaque objet a sa propre fiche papier a l'accueil mais ces fiches 
 - Retrouver facilement une fiche quand quelqu'un revient avec son objet 
 - Faire plus facilement les rapports a la commune
 
+2. Description générale
+
+2.1 Vue d'ensemble du produit et de son environnement
+
+2.2 Profils utilisateurs (acteurs)
+
+2.3 Périmètre
+
+2.4 Règles métier
+
+2.5 Données
+
+3. Exigences
+
+3.1 Exigences fonctionnelles
+
+3.2 Exigences non fonctionnelles
+
+4. Contraintes
+
+5. Budget
+
+6. Livrables et planning
+
+6.1 Livrables
+
+6.2 Échéances
+
+6.3 Retours vers le client
+
+7. Validation du projet
+
+8. Maintenance
+
+9. Questions ouvertes
+
+10. Glossaire
+
+11. Annexes
