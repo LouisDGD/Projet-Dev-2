@@ -48,6 +48,7 @@ Actuellement, chaque objet a sa propre fiche papier a l'accueil mais ces fiches 
 
 F-01 - Enregistrer les informations d'un objet a l'accueil : 
 
+Auteur : Louis Degand
 Acteur : Bénévoles de l'accueil
 Description : Permettre aux bénévoles d'enregistrer les informations relatives a un objet pour en créer une fiche
 
@@ -67,6 +68,7 @@ Description : Permettre aux bénévoles d'enregistrer les informations relatives
 
 F-02 - Consultation des données pour les réparateur :
 
+Auteur : Louis Degand
 Acteur : Réparateurs du café, coordinatrice
 Description : L'écran principal affiche la liste des objets de la session en cours et indique qui travaille sur quoi
 
@@ -86,6 +88,7 @@ Description : L'écran principal affiche la liste des objets de la session en co
 
 F-03 - Completer une fiche (diagnostic et résultat) :
 
+Auteur : Louis Degand
 Acteur : Réparateurs
 Description : Le réparateur note son diagnostic et le résultat de la réparation
 
