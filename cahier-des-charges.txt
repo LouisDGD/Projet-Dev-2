@@ -34,14 +34,48 @@ Actuellement, chaque objet a sa propre fiche papier a l'accueil mais ces fiches 
 
 2.1 Vue d'ensemble du produit et de son environnement
 
+ - Une application/Site (en local) utilisée depuis l'unique ordinateur Windows du Repair Café
+ - Celle-ci doit avoir un historique des objets réparer, être capable d'enregistrer un nouvel objet (en attente de réparation), un des bénévoles doit pouvoir facilement prendre en charge un dossier et les autres doivent le voir (synchroniser)
+ - Il faut pouvoir faire un rapport avec les informations nécéssaire a la commune (revoir avec Mme Moreau)
+ - L'ordinateur n'ayant pas un accès a internet stable, il faut que les fonctionnalitées soient éxclusivement hors-ligne.
+
 2.2 Profils utilisateurs (acteurs)
+
+ - Il éxiste plusieurs utilisateurs ayant le même profil; des bénévoles du quartier avec des niveaux en informatique variable, qui encodent les données des différents dossiers dont ils s'occupent.
 
 2.3 Périmètre
 
+Inclus: 
+ - Un historique complet ainsi qu'un système de recherche facile a utiliser.
+ - La possibilité d'enregistrer de nouvelle données (un objet a réparer)
+ - Une fonction pour imprimer directement un dossier ou un groupe de dossiers (gràce a la recherche)
+ - Avoir un feedback en temps réel de l'état d'un dossier.
+
+Exclus: 
+ - Un accès a internet.
+
 2.4 Règles métier
 
-2.5 Données
+ - RM-01: L'application est en Python
+ - RM-02: L'application est accessible pour différent niveaux d'aisance informatique.
+ - RM-03: Un historique, de la recherche, de la création le tout synchronisé.
 
+2.5 Données
+ - D-01 Application:
+     - Contenu: Un éxécutable, les fonctionnalités de l'application.
+     - Volume: Autant que le PC de la cliente le permet.
+     - Origine: 
+     - Conservation: "Infifnie", tant que Mme Moreau utlisera l'ordinateur.
+ - D-02 Gestion des dossier:
+     - Contenu: Un historique des dossiers, la création de dossiers, la recherche de dossiers
+     - Volume: Autant que nécéssaire
+     - Origine: Client amenant leurs objets a réparer
+     - Conservation: lié a D-01
+ - D-03 Exportation des dossiers pour la commune:
+     - Contenu: Un dossier(s), les données liée a celui-ci dans un format adapté a la commune.
+     - Volume: La fréquence a laquel un rapport est du pour la commune (à détermiener avec la cliente)
+     - Origine: Les dossiers complet dans la base de données de l'application.
+     - Conservation: Lié a D-01
 3. Exigences
 
 3.1 Exigences fonctionnelles
