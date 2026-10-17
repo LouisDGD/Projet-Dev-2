@@ -1,5 +1,7 @@
 # Cahier des charges – Repair Café « La Clé à Molette »
 
+> _L'IA Claude Opus 5.5 a été utilisée pour la mise en page du document au format Markdown, la correction des erreurs d'orthographe et de typographie, ainsi que pour une proposition de rédaction des exigences non fonctionnelles (section 3.2), établie à partir de l'entretien avec la cliente. Le contenu des autres sections a été rédigé par l'équipe._
+
 ## Informations sur le document
 
 | Élément | Valeur |
