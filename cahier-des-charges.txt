@@ -227,14 +227,56 @@ F-09 - Rappel pour les objets "A suivre"
 
 6.2 Échéances
 
+------------------------------------------------------------------------------------------
+
 6.3 Retours vers le client
+
+- Différents appels téléphoniques avec Mme Moraud, des agents d'accueils et des réparateurs pour affiner les demandes et découvrir des contraintes métiers et/ou des exigences fonctionnelles supplémentaires entre le 19/10/2026 et le 14/11/2026.
+- Rendez-vous lors de la session du repair café le 07/11/2026 afin d'identifier le fonctionnement de la session et affirmer, voir découvrir des contraintes métiers non découvertes auparavant.
+- Démonstration d'une MVP du produit avec Mme Moraud le 02/11/2026
+- Démonstration d'une version intermédiaire du produit comprenant plus de fonctionnalités le 23/11/2026.
+
+------------------------------------------------------------------------------------------
 
 7. Validation du projet
 
+Qui : Mme Moraud et Loïc Martin
+Quand : le 02/11/2026 pour le MVP, le 23/11/2026 pour la démo et le 07/12/2026 pour la version finale.
+Sur quelle base : les critères d'acceptations de la section 3.1 et la vérification des exigences non fonctionnelles de la section 3.2
+Suivi des anomalies : chaque anomalie est consignée dans une issue GitHub, avec l'identifiant de l'exigence concernée et sa gravité (bloquante, majeure, mineure).
+
+------------------------------------------------------------------------------------------
+
 8. Maintenance
+
+Notre équipe corrigera les anomalies jusqu'au 07/12/2026 compris. Après la livraison et recette de Mme Moraud, il existe une possibilité de 2 heures de maintenance effectuée par notre équipe sous acceptation de Mme Moraud qui nous a confirmé que c'était envisageable. Cette maintenance comprendrait la résolution d'anomalies et le potentiel ajout de fonctionnalités. Il est néanmoins nécessaire d'avoir l'accord de Mme Moraud et toute notre équipe pour valider les modalités de la maintenance.
+
+------------------------------------------------------------------------------------------
 
 9. Questions ouvertes
 
+Les questions à poser à Mme Moraud : 
+Q-01 : Quels sont les modalités (heures, échéance, joignabilité)  de la maintenance et les différents services soutenus par notre équipe à prévoir ?
+Q-02 : 
+Q-03 : 
+Q-04 : 
+Q-05 : 
+Q-06 : 
+Q-07 : 
+Q-08 : 
+Q-09 : 
+Q-10 : 
+Q-11 : 
+
+
+------------------------------------------------------------------------------------------
+
 10. Glossaire
 
+MVP : Minimum Viable Product, première version livrée, limitée aux fonctionnalités indispensables.
+
+------------------------------------------------------------------------------------------
+
 11. Annexes
+
+Annexe A : Transcription partielle de notre premier entretien avec Mme. Moraud appelé historique client et disponible sur le github.
