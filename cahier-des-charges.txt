@@ -277,8 +277,8 @@ Notre équipe corrigera les anomalies jusqu'au 07/12/2026 compris. Après la liv
 Les questions à poser à Mme Moraud : 
 Q-01 : Quels sont les modalités (heures, échéance, joignabilité)  de la maintenance et les différents services soutenus par notre équipe à prévoir ?
 Q-02 : Quels sont les composants de l'ordinateur utilisé à l'accueil ?
-Q-03 : 
-Q-04 : 
+Q-03 : Quels fonctionnalités sont accessibles uniquement par Mme Moraud ?
+Q-04 : Quels fonctionnalités ne devraient pas être accessibles à certains acteurs (Mme Moraud, bénévoles, réparateurs) ?
 Q-05 : 
 Q-06 : 
 Q-07 : 
