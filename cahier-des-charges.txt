@@ -80,6 +80,25 @@ Exclus:
 
 3.1 Exigences fonctionnelles
 
+### Vue d'ensemble
+
+Ce tableau reprend la liste de toutes les fonctionnalités, avec les intervenants concernés par chacune d'elle
+
+| ID     | Fonctionnalité            | Acteur(s) | Priorité        |
+| ------ | ------------------------- | ---------  | --------------- |
+| *F-01* | *Réserver un rendez-vous* | *Bénévoles de l'accueil* | *Indispensable* |
+| *F-02* | *Consultation des données pour les réparateurs* | *Réparateur, coordinateur* | *Indispensable* |
+| *F-03* | *Completer une fiche (diagnostic et résultat)* | *Réparateur* | *Indispensable* |
+| *F-04* | *Rechercher une fiche* | *Réparateur, coordinateur* | *Indispensable* |
+| *F-05* | *Afficher les indicateurs de la sessions* | *coordinateur* | *souhaitable* |
+| *F-06* | *Generer le rapport imprimable pour la commune* | *Responsable* | *Indispensable* |
+| *F-07* | *Gerer les coordonnées des visiteurs* | *Responsable, coordinateur * | *Indispensable* |
+| *F-08* | *Sauvegarde automatique des données* | *...* | *...* |
+| *F-09* | *Rappel pour les objets "A suivre"* | *...* | *...* |
+
+
+Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le permet).
+
 F-01 - Enregistrer les informations d'un objet a l'accueil : 
 
 Auteur : Louis Degand
@@ -257,7 +276,7 @@ Notre équipe corrigera les anomalies jusqu'au 07/12/2026 compris. Après la liv
 
 Les questions à poser à Mme Moraud : 
 Q-01 : Quels sont les modalités (heures, échéance, joignabilité)  de la maintenance et les différents services soutenus par notre équipe à prévoir ?
-Q-02 : 
+Q-02 : Quels sont les composants de l'ordinateur utilisé à l'accueil ?
 Q-03 : 
 Q-04 : 
 Q-05 : 
