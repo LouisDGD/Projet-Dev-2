@@ -138,13 +138,78 @@ Description : Le réparateur note son diagnostic et le résultat de la réparati
  - EF-03.2 : Les objets avec le statut "A suivre" sont retrouvables les sessions suivantes
 
 ------------------------------------------------------------------------------------------
+
 F-04 - Rechercher une fiche : 
+
+Auteur : Louis Degand
+Acteur : Responsable et réparateurs
+Description : Les réparateurs ainsi que la responsable peuvent rechercher une fiche liée a un objet sans difficulté
+
+ Exigences :
+
+  - EF-04.1 : La recherche se fait par nom de visiteur
+  - EF-04.2 : Un filtre affiche uniquement les objets a suivre 
+
+ Critères d'acceptation :
+
+  - EF-04.1 : En tapant "Dubois", la fiche du grille-pain de madame Dubois s'affiche (test proposée par la cliente)
+  - EF-04.2 : Uniquement les objets avec la notion a suivre s'affichent
+
+------------------------------------------------------------------------------------------
 
 F-05 - Afficher les indicateurs de la sessions : 
 
+Auteur : Louis Degand
+Acteur : Responsable
+Description : La responsable suit la progression de la session en cours.
+
+Exigences :
+
+ - EF-05.1 : L'application affiche le nombre d'objets arrivés, réparés et repartis sans solution
+
+Critères d'acceptation : 
+
+ - EF-05.1 : Les données correspondent au contenu de la liste et se mettent a jour automatiquement
+
+------------------------------------------------------------------------------------------
+
 F-06 - Generer le rapport imprimable pour la commune : 
 
+Auteur : Louis Degand
+Acteur : Responsable
+Description : Génération automatique des rapports a fournir a la commune
+
+Exigences : 
+
+ - EF-06.1 : L'application génére un document imprimable sur une periode donnée
+ - EF-06.2 : Le rapport indique le nombre d'objets recus, réparés, ainsi qu'une estimation du nombre de kilos de déchets évités
+ - EF-06.3 : La responsable peut relire les rapports avant impression
+
+Critères d'acceptation :
+
+ - EF-06.1 : Le document est correctement mis en page et correspond bien a la periode renseignée
+ - EF-06.2 : Les nombres sont corrects et correspondent aux chiffres réels
+ - EF-06.3 : Les rapports sont affichés avant impression
+
+------------------------------------------------------------------------------------------
+
 F-07 - Gerer les coordonnées des visiteurs 
+
+Auteur : Louis Degand
+Acteur : Responsable et bénévoles 
+Description : Les coordonnées ne sont enregistrées qu'avec l'accord des visiteurs et supprimées automatiquement après un an
+
+Exigences : 
+
+ - EF-07.1 : Les champs de coordonnées sont bloqués tant que le client n'a pas donné son accord et que la case n'est pas cochée.
+ - EF-07.2 : Le système efface automatiquement les données 365 jours après leur enregistrement
+
+Critères d'acceptation :
+
+ - EF-07.1 : Le champ de coordonnées se débloque lors de la validation de l'accord du client
+ - EF-07.2 : Le système a correctement effacé les données après 365 jours (avec des dates simulées, les coordonnées disparaissent et les fiches restent)
+
+------------------------------------------------------------------------------------------
 
 F-08 - Sauvegarde automatique des données
 
