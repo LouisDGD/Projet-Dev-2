@@ -93,7 +93,7 @@ Ce tableau reprend la liste de toutes les fonctionnalités, avec les intervenant
 | *F-05* | *Afficher les indicateurs de la sessions* | *coordinateur* | *souhaitable* |
 | *F-06* | *Generer le rapport imprimable pour la commune* | *Responsable* | *Indispensable* |
 | *F-07* | *Gerer les coordonnées des visiteurs* | *Responsable, coordinateur * | *Indispensable* |
-| *F-08* | *Sauvegarde automatique des données* | *...* | *...* |
+| *F-08* | *Sauvegarde automatique des données* | *Système* | *Indispensable* |
 | *F-09* | *Rappel pour les objets "A suivre"* | *...* | *...* |
 
 
@@ -232,7 +232,34 @@ Critères d'acceptation :
 
 F-08 - Sauvegarde automatique des données
 
+Auteur : Loïc Martin
+Acteur : Système
+Description : L'application sauvegarde automatiquement les données (fiches et historiques) sur un dossier de l'ordinateur de l'accueil afin de pouvoir les récupérer en cas de suppression accidentelle ou de fichier corrompu.
+
+Exigences : 
+
+ - EF-08.1 : L'application crée automatiquement une copie de toutes les données à chaque fermeture.
+ - EF-08.2 : La copie est enregistrée dans un dossier sur le disque de l'ordinateur.
+ - EF-08.3 : L'application crée un dossier dédié sur l'ordinateur qui contiendra les sauvegardes.
+ - EF-08.4 : L'application se limite à 10 copies et supprimera la plus ancienne s'il en existe 10.
+ - EF-08.5 : L'application envoie un message d'erreur si la sauvegarde échoue au prochain démarrage.
+ - EF-08.6 : La responsable, Mme Moraud, peut restaurer une sauvegarde depuis l'application.
+ - EF-08.7 : La sauvegarde n'est pas conservée plus de 365 jours.
+
+Critères d'acceptation :
+
+ - EF-08.1 : Après la fermeture de l'application, un nouveau fichier de sauvegarde daté est crée dans le dossier prévu.
+ - EF-08.2 : Le dossier de sauvegarde contient la sauvegarde créée à la fermeture de l'application.
+ - EF-08.3 : Le dossier de sauvegarde existe dans le dispositif de stockage de l'ordinateur.
+ - EF-08.4 : Lorsqu'on sauvegarde une onzième sauvegarde, la plus ancienne est supprimée pour rester au nombre maximum de 10 sauvegardes.
+ - EF-08.5 : Un message d'erreur apparait lorsque la date de la dernière sauvegarde ne correspond pas à la dernière fermeture.
+ - EF-08.6 : Après avoir modifier une fiche, on restaure une sauvegarde et on vérifie que la fiche a retrouvé son état avant modification.
+ - EF-08.7 : Avec une date simulée, la sauvegarde qui a plus de 365 jours est supprimée.
+
+------------------------------------------------------------------------------------------
+
 F-09 - Rappel pour les objets "A suivre"
+
 
 3.2 Exigences non fonctionnelles
 
@@ -279,8 +306,8 @@ Q-01 : Quels sont les modalités (heures, échéance, joignabilité)  de la main
 Q-02 : Quels sont les composants de l'ordinateur utilisé à l'accueil ?
 Q-03 : Quels fonctionnalités sont accessibles uniquement par Mme Moraud ?
 Q-04 : Quels fonctionnalités ne devraient pas être accessibles à certains acteurs (Mme Moraud, bénévoles, réparateurs) ?
-Q-05 : 
-Q-06 : 
+Q-05 : Combien de sauvegardes faut il conserver ?
+Q-06 : Est-ce que Mme Moreau doit être la seule à pouvoir restaurer une sauvegarde de l'application ?
 Q-07 : 
 Q-08 : 
 Q-09 : 
