@@ -108,7 +108,7 @@ Au niveau des parties prenantes :
 - **RM-06** : La réparation est gratuite.
 - **RM-07** : Le rapport pour la commune est annuel et comprend une estimation du poids moyen des déchets évités selon le tableau fourni à Mme Moreau.
 - **RM-08** : Les coordonnées des visiteurs sont supprimées 365 jours compris après leur dernière visite.
-- **RM-09** : Aucun objet n'est gardé.
+- **RM-09** : Aucun objet n'est gardé à la fin de la séance.
 
 ### 2.5. Données
 
