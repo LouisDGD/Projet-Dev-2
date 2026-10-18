@@ -36,28 +36,28 @@ Les membres se retrouvent une fois par mois, le deuxième samedi du mois de 14 h
 
 Actuellement, chaque objet a sa propre fiche papier à l'accueil, mais ces fiches passent de main en main et se perdent : personne ne sait qui travaille sur quoi, ni quand. Après la session, le petit-fils de Mme Moreau recopie toutes ces fiches dans un fichier Excel pour un rapport à la commune. Il part en Erasmus en février : l'association a donc besoin d'un outil simple pour remplacer ces fiches et l'Excel, sur le vieil ordinateur portable de l'association.
 
-Au niveau des parties prenantes : 
-- Il y a Jacqueline Moreau la coordinatrice de l'association, et les bénévoles de l'accueil, qui seront les personnes qui valideront le cahier des charges et prononceront la réception en comité.
-- Les testeurs seront les bénévoles de l'accueil, les réparateurs et Mme. Moreau qui seront les utilisateurs clés et participeront aux démo.
+Au niveau des parties prenantes :
+- Il y a Jacqueline Moreau, la coordinatrice de l'association, et les bénévoles de l'accueil, qui seront les personnes qui valideront le cahier des charges et prononceront la réception en comité.
+- Les testeurs seront les bénévoles de l'accueil, les réparateurs et Mme Moreau, qui seront les utilisateurs clés et participeront aux démos.
 - Les prestataires qui vont réaliser l'application sont Alexandre Borman, Valentin Thiel, Louis Degand et Loïc Martin.
 
 ### 1.3. Objectifs du projet
 
-- Retrouver facilement une fiche quand quelqu'un revient avec son objet au lieu de chercher dans une boite à chaussure.
-- Ne plus perdre des fiches par inadvertance.
+- Retrouver facilement une fiche quand quelqu'un revient avec son objet au lieu de chercher dans une boîte à chaussures.
+- Ne plus perdre de fiches par inadvertance.
 - Faire plus facilement les rapports à la commune.
 - L'application doit être simple à utiliser, même pour les personnes peu à l'aise avec l'informatique.
 
-**Plus-value attendue :** 
-- Gain de 3h par mois pour créer le rapport destiné à la commune.
+**Plus-value attendue :**
+- Gain de 3 h par mois pour créer le rapport destiné à la commune.
 - Suivi précis des objets pendant la session : il faut savoir quel réparateur travaille sur quel objet afin d'éviter qu'un visiteur attende une heure à l'accueil.
-- Zéro perte de fiches : les fiches ne peuvent plus être perdue par inadvertance.
+- Zéro perte de fiches : les fiches ne peuvent plus être perdues par inadvertance.
 
-**Risques en cas de non-réalisation, alternatives**
-- Des fiches peuvent toujours disparaitre
-- Les visiteurs peuvent perdre leur temps à attendre à l'accueil
-- La création du rapport pour la commune prend 3h mensuelle.
-- Hugo partant en février, Mme Moreau ne sait pas qui reprendra l'excel ou s'ils changent de processus.
+**Risques en cas de non-réalisation, alternatives :**
+- Des fiches peuvent toujours disparaître.
+- Les visiteurs peuvent perdre leur temps à attendre à l'accueil.
+- La création du rapport pour la commune prend 3 h par mois.
+- Hugo partant en février, Mme Moreau ne sait pas qui reprendra l'Excel ou s'ils changent de processus.
 
 ---
 
@@ -66,9 +66,9 @@ Au niveau des parties prenantes :
 ### 2.1. Vue d'ensemble du produit et de son environnement
 
 - Une application en local utilisée depuis l'unique ordinateur Windows du Repair Café.
-- L'application remplace l'excel d'Hugo et les fiches papiers.
-- L'association ne possède aucun système informatique existant à intégrer. Mme Moreau ne trouve pas intéressant qu'on numérise les fiches papiers déjà existantes, en revanche, elle aimerait garder les données des fiches de l'excel.
-- Celle-ci doit avoir un historique de tous les objets traités (réparés, non réparable, à suivre) et être capable d'enregistrer un nouvel objet (en attente de réparation). Un réparateur doit pouvoir facilement prendre en charge un dossier, et les autres doivent le voir.
+- L'application remplace l'Excel d'Hugo et les fiches papier.
+- L'association ne possède aucun système informatique existant à intégrer. Mme Moreau ne trouve pas intéressant qu'on numérise les fiches papier déjà existantes ; en revanche, elle aimerait garder les données des fiches de l'Excel.
+- Celle-ci doit avoir un historique de tous les objets traités (réparés, non réparables, à suivre) et être capable d'enregistrer un nouvel objet (en attente de réparation). Un réparateur doit pouvoir facilement prendre en charge un dossier, et les autres doivent le voir.
 - Il faut pouvoir faire un rapport avec les informations nécessaires à la commune.
 - L'ordinateur n'ayant pas d'accès stable à Internet, les fonctionnalités doivent être exclusivement hors ligne.
 
@@ -76,9 +76,9 @@ Au niveau des parties prenantes :
 
 | Acteur | Description |
 |---|---|
-| Coordinatrice | Jacqueline Moreau s'occupe de l'organisation, planifie les sessions et fais le lien avec la commune pour le rapport annuel. Elle est peu à l'aise avec l'informatique |
-| Bénévole de l'accueil | 2 à 3 bénévoles par session, souvent des retraités. Niveaux variables avec l'informatique. Accueil des visiteurs, crée et remplit les fiches, envoie les gens vers le réparateur qui a accepté de s'occuper de l'objet |
-| Réparateur | 8 à 12 réparateurs par session. Décide de l'objet qu'il prend. Prends l'objet pour en diagnostiquer la panne et répare avec le visiteur. Il note le diagnostique et le résultat |
+| Coordinatrice | Jacqueline Moreau s'occupe de l'organisation, planifie les sessions et fait le lien avec la commune pour le rapport annuel. Elle est peu à l'aise avec l'informatique. |
+| Bénévole de l'accueil | 2 à 3 bénévoles par session, souvent des retraités. Niveaux variables avec l'informatique. Accueil des visiteurs, crée et remplit les fiches, envoie les gens vers le réparateur qui a accepté de s'occuper de l'objet. |
+| Réparateur | 8 à 12 réparateurs par session. Décide de l'objet qu'il prend. Prend l'objet pour en diagnostiquer la panne et répare avec le visiteur. Il note le diagnostic et le résultat. |
 
 ### 2.3. Périmètre
 
@@ -89,49 +89,49 @@ Au niveau des parties prenantes :
 - Gestion et suivi de la session de réparation en cours avec possibilité de prise en charge d'objet.
 - Fonctionnement hors ligne de l'application
 - Sauvegarde automatique des données.
-- Numérisation des fiches excels.
+- Numérisation des fiches Excel.
 
 **Exclus et validé par la cliente le 18/10/2026 :**
 - Un accès à Internet.
 - Application mobile.
-- Assignement automatique des objets aux réparateurs.
-- Numérisation des fiches papiers existantes
-- Gestion des dons d'objet.
+- Assignation automatique des objets aux réparateurs.
+- Numérisation des fiches papier existantes
+- Gestion des dons d'objets.
 
 ### 2.4. Règles métier
 
 - **RM-01** : Le réparateur choisit l'objet dont il s'occupe.
-- **RM-02** : Une réparation se fini par un des trois résultats : réparé, non réparable, à suivre.
+- **RM-02** : Une réparation se termine par un des trois résultats : réparé, non réparable, à suivre.
 - **RM-03** : Pour un objet à suivre, le visiteur commande la pièce lui-même et revient avec elle à une autre session.
 - **RM-04** : On rappelle au visiteur de venir avec la pièce qui sert à réparer l'objet avant la prochaine session.
 - **RM-05** : Les coordonnées d'un visiteur ne sont enregistrées qu'avec son accord.
 - **RM-06** : La réparation est gratuite.
-- **RM-07** : Le rapport pour la commune est annuel et comprend une estimation du poids moyen des déchets évités selon le tableau fourni à madame Moreau.
+- **RM-07** : Le rapport pour la commune est annuel et comprend une estimation du poids moyen des déchets évités selon le tableau fourni à Mme Moreau.
 - **RM-08** : Les coordonnées des visiteurs sont supprimées 365 jours compris après leur dernière visite.
 - **RM-09** : Aucun objet n'est gardé.
- 
+
 ### 2.5. Données
 
 #### D-01 — Visiteur
-- **Contenu** : nom du visiteur ; numéro de téléphone, e-mail ( les deux sont facultatifs voir RM-05), utilisés uniquement pour prévenir le visiteur de venir avec la pièce nécessaire à la réparation.
+- **Contenu** : nom du visiteur ; numéro de téléphone, e-mail (les deux sont facultatifs, voir RM-05), utilisés uniquement pour prévenir le visiteur de venir avec la pièce nécessaire à la réparation.
 - **Volume** : 30 à 40 en moyenne avec un pic jusqu'à 50 à Noël.
-- **Origine** : Saisie dans le système et repris du fichier excel existant.
+- **Origine** : saisie dans le système et reprise du fichier Excel existant.
 - **Conservation** : 365 jours compris (RM-08)
 
 | *Opération* | *Acteur* | *Fonctionnalité* |
 | --- | --- | --- |
-| *Créer* | *Bénévole de l'accueil, système* | *F-01* |
+| *Créer* | *Bénévole de l'accueil, Système* | *F-01* |
 | *Restaurer* | *Système* | *F-08* |
 | *Consulter* | *Bénévole de l'accueil, coordinatrice, réparateur* | *F-02, F-04* |
-| *Effacer* | *système* | *F-08* |
+| *Effacer* | *Système* | *F-08* |
 | *Modifier* | *Bénévole de l'accueil* | *F-01* |
 
 
 #### D-02 — Fiche de réparation
-- **Contenu** : visiteur concerné (D-01) ; type d'objet (D-03) ; description de la panne ; nom du réparateur ; Marque de l'objet (facultatif) ; diagnostic ; résultat (réparé, non réparable, à suivre) ; pièce attendue (facultatif, si à suivre) ; état (en attente, en cours, terminé) 
+- **Contenu** : visiteur concerné (D-01) ; type d'objet (D-03) ; description de la panne ; nom du réparateur ; marque de l'objet (facultative) ; diagnostic ; résultat (réparé, non réparable, à suivre) ; pièce attendue (facultative, si à suivre) ; état (en attente, en cours, terminé)
 - **Volume** : 30 à 40 en moyenne avec un pic jusqu'à 50 à Noël.
-- **Origine** : créée à l’accueil, puis complétée par le réparateur. Repris du fichier excel existant.
-- **Conservation** : Illimitée
+- **Origine** : créée à l’accueil, puis complétée par le réparateur. Reprise du fichier Excel existant.
+- **Conservation** : illimitée
 
 | *Opération* | *Acteur* | *Fonctionnalité* |
 | --- | --- | --- |
@@ -140,12 +140,12 @@ Au niveau des parties prenantes :
 | *Modifier* | *Bénévole de l'accueil* | *F-07* |
 | *Consulter* | *Bénévole de l'accueil, coordinatrice, réparateur* | *F-02 à F-06* |
 | *Prendre en charge* | *Réparateur* | *F-02* |
-| *Ajout du diagnostique et du résultat | *Réparateur* | *F-03* |
+| *Ajout du diagnostic et du résultat* | *Réparateur* | *F-03* |
 
 #### D-03 — Tableau de poids moyens par type d'objet
 - **Contenu** : nom du type d'objet ; catégorie de l'objet ; poids moyen en kg
 - **Volume** : liste fixe de quelques dizaines de types (à confirmer avec Q-10)
-- **Origine** : tableau de poids moyens du réseau des Repair Cafés, fourni par Mme Moraud.
+- **Origine** : tableau de poids moyens du réseau des Repair Cafés, fourni par Mme Moreau.
 - **Conservation** : tant que l’application est utilisée.
 
 | *Opération* | *Acteur* | *Fonctionnalité* |
@@ -167,14 +167,14 @@ Ce tableau reprend la liste de toutes les fonctionnalités, avec les intervenant
 | ID | Fonctionnalité | Acteur(s) | Priorité |
 |---|---|---|---|
 | F-01 | Enregistrer les informations d'un objet à l'accueil | Bénévoles de l'accueil | Indispensable |
-| F-02 | Consultation des données pour les réparateurs | Réparateurs, coordinatrice | souhaitable |
+| F-02 | Consultation des données pour les réparateurs | Réparateurs, coordinatrice | Souhaitable |
 | F-03 | Compléter une fiche (diagnostic et résultat) | Réparateurs | Indispensable |
 | F-04 | Rechercher une fiche | Réparateurs, coordinatrice | Indispensable |
 | F-05 | Afficher les indicateurs de la session | Coordinatrice | Souhaitable |
-| F-06 | Générer le rapport imprimable pour la commune | Responsable | souhaitable |
+| F-06 | Générer le rapport imprimable pour la commune | Responsable | Souhaitable |
 | F-07 | Gérer les coordonnées des visiteurs | Responsable, coordinatrice | Indispensable |
-| F-08 | Sauvegarde automatique des données | Système | souhaitable |
-| F-09 | Rappel pour les objets « à suivre » | Coordinatrice | optionnelle |
+| F-08 | Sauvegarde automatique des données | Système | Souhaitable |
+| F-09 | Rappel pour les objets « à suivre » | Coordinatrice | Optionnelle |
 
 Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le permet).
 
@@ -207,7 +207,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Louis Degand |
 | **Acteur(s)** | Réparateurs du café, coordinatrice |
-| **Priorité** | souhaitable |
+| **Priorité** | Souhaitable |
 | **Description** | L'écran principal affiche la liste des objets de la session en cours et indique qui travaille sur quoi. |
 
 **Exigences**
@@ -284,7 +284,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Louis Degand |
 | **Acteur(s)** | Responsable |
-| **Priorité** | souhaitable |
+| **Priorité** | Souhaitable |
 | **Description** | Génération automatique des rapports à fournir à la commune. |
 
 **Exigences**
@@ -313,7 +313,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 - **EF-07.2** : Le système efface automatiquement les données 365 jours après leur enregistrement.
 
 **Critères d'acceptation**
-- **EF-07.1** : Le champ de coordonnées se débloque lors de la  de l'accord du visiteur.
+- **EF-07.1** : Le champ de coordonnées se débloque lors de la validation de l'accord du visiteur.
 - **EF-07.2** : Le système a correctement effacé les données après 365 jours (avec des dates simulées, les coordonnées disparaissent et les fiches restent).
 
 ---
@@ -324,7 +324,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Loïc Martin |
 | **Acteur(s)** | Système |
-| **Priorité** | souhaitable |
+| **Priorité** | Souhaitable |
 | **Description** | L'application sauvegarde automatiquement les données (fiches et historiques) dans un dossier de l'ordinateur de l'accueil, afin de pouvoir les récupérer en cas de suppression accidentelle ou de fichier corrompu. |
 
 **Exigences**
@@ -352,8 +352,8 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 | | |
 |---|---|
 | **Auteur** | Valentin Thiel |
-| **Acteur** | Coordinatrice |
-| **Priorité** | optionnelle |
+| **Acteur(s)** | Coordinatrice |
+| **Priorité** | Optionnelle |
 | **Description** | Quelques jours avant la session suivante, la coordinatrice retrouve la liste des visiteurs à appeler pour leur rappeler d'apporter la pièce nécessaire à la réparation (voir RM-03 et RM-04). |
 
 **Exigences**
@@ -364,7 +364,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 **Critères d'acceptation**
 - **EF-09.1** : La coordinatrice voit les fiches des objets « à suivre », avec le nom du visiteur et la pièce manquante.
 - **EF-09.2** : Seuls les visiteurs ayant donné leur numéro apparaissent dans la liste, et leur numéro est affiché.
-- **EF-09.3** : Quand un objet passe de « à suivre » à « réparé » ou "non-réparable", il n'apparaît plus dans la liste.
+- **EF-09.3** : Quand un objet passe de « à suivre » à « réparé » ou « non réparable », il n'apparaît plus dans la liste.
 
 ---
 
@@ -395,7 +395,7 @@ Les valeurs marquées _(à valider)_ n'ont pas été chiffrées par la cliente e
 
 - **Budget d'exploitation** : l'association n'a aucun budget pour le projet, réalisé en partenariat avec l'école. L'application et son utilisation ne doivent entraîner aucun coût.
 
-- **Utilisateurs** : les bénévoles de l'accueil sont surtout des retraités avec des niveaux en informaitque variables. L'interface doit être très simple, avec de grosses lettres et des boutons évidents (voir ENF-03).
+- **Utilisateurs** : les bénévoles de l'accueil sont surtout des retraités avec des niveaux en informatique variables. L'interface doit être très simple, avec de grosses lettres et des boutons évidents (voir ENF-03).
 
 - **Administration** : après le départ du petit-fils de Mme Moreau, qui compile actuellement les données, personne dans l'association n'est chargé de l'informatique. L'utilisation courante, y compris les sauvegardes, ne doit demander aucune intervention technique (voir F-08 et ENF-10).
 
@@ -418,6 +418,7 @@ L'association ne dispose d'aucun budget pour ce projet. L'application doit fonct
 ### 6.1. Livrables
 
 L'association reçoit un programme qui fonctionne sur son ordinateur portable, sans connexion à Internet, accompagné d'un guide d'utilisation simple, rédigé pour des bénévoles qui ne sont pas à l'aise avec l'informatique (voir ENF-10). Le code source est également livré avec une documentation technique, destinée à toute personne qui reprendrait la maintenance de l'application (voir section 8).
+
 L'application démarre sans données. La reprise des chiffres des années passées, contenus dans le fichier Excel actuel, afin de les intégrer aux statistiques, est optionnelle et ne sera réalisée que si le temps le permet.
 
 ### 6.2. Échéances
@@ -460,9 +461,9 @@ Questions à poser à Mme Moreau :
 - **Q-04** : Quelles fonctionnalités ne devraient pas être accessibles à certains acteurs (Mme Moreau, bénévoles, réparateurs) ?
 - **Q-05** : Combien de sauvegardes faut-il conserver ?
 - **Q-06** : Mme Moreau doit-elle être la seule à pouvoir restaurer une sauvegarde de l'application ?
-- **Q-07** : Comme il n'y a qu'un seul ordinateur à l'accueil, comment les réparateurs notent le diagnostic et le résultat de la réparation ?
-- **Q-08** Faut-il supprimer les fiches des objets à un moment ?
-- **Q-09** Que contient le tableau de poids moyens par type d'objet qui lui permet de faire le rapport annuel à la commune ?
+- **Q-07** : Comme il n'y a qu'un seul ordinateur à l'accueil, comment les réparateurs notent-ils le diagnostic et le résultat de la réparation ?
+- **Q-08** : Faut-il supprimer les fiches des objets à un moment ?
+- **Q-09** : Que contient le tableau de poids moyens par type d'objet qui lui permet de faire le rapport annuel à la commune ?
 
 ---
 
