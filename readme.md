@@ -314,8 +314,6 @@ Les valeurs marquées _(à valider)_ n'ont pas été chiffrées par la cliente e
 
 ## 4. Contraintes
 
-## 4. Contraintes
-
 - **Matériel** : l'application doit fonctionner sur l'unique ordinateur portable Windows de l'association, datant d'environ 2015. Aucun achat de matériel n'est possible (voir ENF-02).
 
 - **Connexion** : le wifi de la maison de quartier n'est pas fiable et l'ordinateur n'est pas toujours connecté. L'application doit s'installer et fonctionner entièrement hors ligne (voir ENF-01 et ENF-09).
@@ -332,9 +330,11 @@ Les valeurs marquées _(à valider)_ n'ont pas été chiffrées par la cliente e
 
 - **Délais** : l'application doit être utilisable avant le départ en Erasmus du petit-fils de Mme Moreau, en février.
 
+---
+
 ## 5. Budget
 
-_À compléter._
+L'association ne dispose d'aucun budget pour ce projet. L'application doit fonctionner sur l'ordinateur portable existant de l'association, datant d'environ 2015, sans aucun achat de matériel. Son utilisation ne doit entraîner aucun coût (voir section 4).
 
 ---
 
@@ -342,8 +342,9 @@ _À compléter._
 
 ### 6.1. Livrables
 
-_À compléter._
-
+L'association reçoit un programme qui fonctionne sur son ordinateur portable, sans connexion à Internet, accompagné d'un guide d'utilisation simple, rédigé pour des bénévoles qui ne sont pas à l'aise avec l'informatique (voir ENF-10).
+L'application démarre sans données. La reprise des chiffres des années passées, contenus dans le fichier Excel actuel, afin de les intégrer aux statistiques, est optionnelle et ne sera réalisée que si le temps le permet.
+ 
 ### 6.2. Échéances
 
 _À compléter._
