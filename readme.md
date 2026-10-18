@@ -314,7 +314,23 @@ Les valeurs marquées _(à valider)_ n'ont pas été chiffrées par la cliente e
 
 ## 4. Contraintes
 
-_À compléter._
+## 4. Contraintes
+
+- **Matériel** : l'application doit fonctionner sur l'unique ordinateur portable Windows de l'association, datant d'environ 2015. Aucun achat de matériel n'est possible (voir ENF-02).
+
+- **Connexion** : le wifi de la maison de quartier n'est pas fiable et l'ordinateur n'est pas toujours connecté. L'application doit s'installer et fonctionner entièrement hors ligne (voir ENF-01 et ENF-09).
+
+- **Budget d'exploitation** : l'association n'a aucun budget pour le projet, réalisé en partenariat avec l'école. L'application et son utilisation ne doivent entraîner aucun coût.
+
+- **Utilisateurs** : les bénévoles de l'accueil sont surtout des retraités avec des niveaux en informaitque variables. L'interface doit être très simple, avec de grosses lettres et des boutons évidents (voir ENF-03).
+
+- **Administration** : après le départ du petit-fils de Mme Moreau, qui compile actuellement les données, personne dans l'association n'est chargé de l'informatique. L'utilisation courante, y compris les sauvegardes, ne doit demander aucune intervention technique (voir F-08 et ENF-10).
+
+- **Réglementation** : le traitement des coordonnées des visiteurs respecte le RGPD : accord du visiteur, utilisation uniquement pour le recontacter, effacement un an après son dernier passage (voir F-07 et ENF-08).
+
+- **Obligations externes** : la commune demande chaque année le nombre d'objets reçus et réparés, ainsi que les kilos de déchets évités, séparés par catégorie. Les kilos sont estimés à partir d’un tableau de poids moyens par type d’objet, fourni par la cliente (voir F-06).
+
+- **Délais** : l'application doit être utilisable avant le départ en Erasmus du petit-fils de Mme Moreau, en février.
 
 ## 5. Budget
 
