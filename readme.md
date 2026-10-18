@@ -364,7 +364,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 **Critères d'acceptation**
 - **EF-09.1** : La coordinatrice voit les fiches des objets « à suivre », avec le nom du visiteur et la pièce manquante.
 - **EF-09.2** : Seuls les visiteurs ayant donné leur numéro apparaissent dans la liste, et leur numéro est affiché.
-- **EF-09.3** : Quand un objet passe de « à suivre » à « réparé », il n'apparaît plus dans la liste.
+- **EF-09.3** : Quand un objet passe de « à suivre » à « réparé » ou "non-réparable", il n'apparaît plus dans la liste.
 
 ---
 
@@ -418,7 +418,7 @@ L'association ne dispose d'aucun budget pour ce projet. L'application doit fonct
 
 ### 6.1. Livrables
 
-L'association reçoit un programme qui fonctionne sur son ordinateur portable, sans connexion à Internet, accompagné d'un guide d'utilisation simple, rédigé pour des bénévoles qui ne sont pas à l'aise avec l'informatique (voir ENF-10).
+L'association reçoit un programme qui fonctionne sur son ordinateur portable, sans connexion à Internet, accompagné d'un guide d'utilisation simple, rédigé pour des bénévoles qui ne sont pas à l'aise avec l'informatique (voir ENF-10). Le code source est également livré avec une documentation technique, destinée à toute personne qui reprendrait la maintenance de l'application (voir section 8).
 L'application démarre sans données. La reprise des chiffres des années passées, contenus dans le fichier Excel actuel, afin de les intégrer aux statistiques, est optionnelle et ne sera réalisée que si le temps le permet.
 
 ### 6.2. Échéances
