@@ -1,104 +1,344 @@
 Louis : Pourriez-vous vous présenter ?
-Mme Moraud : Je suis Jacqueline Moreau, ancienne professeure de physique, et aujourd’hui coordinatrice bénévole du Repair Café « La Clé à Molette » à Forest.
-
-Louis : Pourriez-vous nous en dire plus sur le Repair Café : ses horaires, son objectif, son public ?
-Mme Moraud : On l’a créé il y a quatre ans avec quelques voisins. On se retrouve le deuxième samedi du mois, de 14 h à 17 h, à la maison de quartier de Forest. Les gens viennent avec leur grille-pain, leur vélo ou leur machine à coudre en panne, et nos bénévoles les aident à le réparer, gratuitement. On ne répare pas à leur place, on répare avec eux, c’est important ça.
+Mme Moraud : Je suis Jacqueline Moreau, ancienne professeure de physique, et aujourd'hui coordinatrice bénévole du Repair Café « La Clé à Molette » à Forest.
 
 Louis : Pourriez-vous nous présenter la situation actuelle et les problèmes que vous rencontrez ?
-Mme Moraud : À l’accueil, on remplit une fiche papier pour chaque objet. Ces fiches passent de main en main et se perdent. Personne ne sait vraiment qui travaille sur quoi. Après la session, mon petit-fils Hugo recopie tout dans un fichier Excel pour le rapport à la commune, mais il part en Erasmus en février.
+Mme Moraud : À l'accueil, on remplit une fiche papier pour chaque objet. Ces fiches passent de main en main et se perdent. Personne ne sait vraiment qui travaille sur quoi. Après la session, mon petit-fils Hugo recopie tout dans un fichier Excel pour le rapport à la commune, mais il part en Erasmus en février. On aurait besoin d'un outil simple pour remplacer ces fiches et l'Excel, sur le vieil ordinateur portable de l'association.
+
+Louis : Pourriez-vous nous en dire plus sur le Repair Café : ses horaires, son objectif, son public ?
+Mme Moraud : On l'a créé il y a quatre ans avec quelques voisins. On se retrouve le deuxième samedi du mois, de 14 h à 17 h, à la maison de quartier de Forest. Les gens viennent avec leur grille-pain, leur vélo ou leur machine à coudre en panne, et nos bénévoles les aident à le réparer, gratuitement. On ne répare pas à leur place, on répare avec eux, c'est important ça.
 
 Louis : Quels sont vos objectifs précis pour ce projet ?
-Mme Moraud : Remplacer ces fiches papier qui se perdent et le fichier Excel qu’Hugo recopie à la main. Avoir un outil facile à utiliser sur notre vieil ordinateur, pour savoir qui travaille sur quoi, faire le rapport à la commune, et retrouver facilement une fiche quand quelqu’un revient avec son objet.
+Mme Moraud : Remplacer ces fiches papier qui se perdent et le fichier Excel qu'Hugo recopie à la main. Avoir un outil facile à utiliser sur notre vieil ordinateur, pour savoir qui travaille sur quoi, faire le rapport à la commune, et retrouver facilement une fiche quand quelqu'un revient avec son objet.
 
 Louis : Pouvez-vous décrire comment vous souhaitez utiliser le produit ?
-Mme Moraud : Sur notre ordinateur portable posé à l’accueil. Quelque chose qui remplace nos fiches papier et qui compte tout tout seul à la fin, pour ne plus avoir à recopier dans l’Excel. Il faut qu’on s’y retrouve aussi facilement qu’avec nos stylos.
+Mme Moraud : Sur notre ordinateur portable posé à l'accueil. Quelque chose qui remplace nos fiches papier et qui compte tout tout seul à la fin, pour ne plus avoir à recopier dans l'Excel. Il faut qu'on s'y retrouve aussi facilement qu'avec nos stylos.
 
-Louis : Si l’application fonctionnait parfaitement, qu’est-ce qui aurait changé pour vous dans 6 mois ?
-Mme Moraud : Je ne retrouverais plus mes fiches dans mes poches ou sous le café ! Et je pourrais dire à la commune, sans trois heures de recopie, combien d’objets on a sauvés et combien de kilos de déchets on a évités. Si je pouvais juste appuyer sur un bouton pour avoir mon rapport, je dormirais mieux. Mais je ne veux pas que ça décide à la place de mes bénévoles.
+Louis : Y aura-t-il différents utilisateurs ?
+Mme Moraud : Oui, on est plusieurs. À l'accueil, on est souvent deux ou trois bénévoles, et chacun note ce qu'il fait. Les réparateurs ont besoin de voir leur file d'attente. Et moi, je regarde tout pour la coordination. Nous ne sommes pas tous à l'aise avec l'ordinateur, il faut que ce soit simple pour tout le monde.
 
-Louis : Quelles sont les 3 choses que l’application doit absolument faire ?
-Mme Moraud : Remplacer les fiches papier qu’on perd tout le temps. Ne plus devoir recopier dans Excel pour le rapport à la commune. Et que mes bénévoles de l’accueil, qui ne sont pas des mordus d’informatique, arrivent à s’en servir sans pleurer.
+Louis : Si l'application fonctionnait parfaitement, qu'est-ce qui aurait changé pour vous dans 6 mois ?
+Mme Moraud : Je ne retrouverais plus mes fiches dans mes poches ou sous le café ! Et je pourrais dire à la commune, sans trois heures de recopie, combien d'objets on a sauvés et combien de kilos de déchets on a évités. Si je pouvais juste appuyer sur un bouton pour avoir mon rapport, je dormirais mieux. Mais je ne veux pas que ça décide à la place de mes bénévoles.
 
-Louis : Que se passe-t-il si le projet n’est pas réalisé ?
-Mme Moraud : On restera avec nos fiches papier. Après le départ d’Hugo, on devra se débrouiller autrement, peut-être avec un cahier. Ce ne serait pas très pratique.
+Louis : Quelles sont les 3 choses que l'application doit absolument faire ?
+Mme Moraud : Remplacer les fiches papier qu'on perd tout le temps. Ne plus devoir recopier dans Excel pour le rapport à la commune. Et que mes bénévoles de l'accueil, qui ne sont pas des mordus d'informatique, arrivent à s'en servir sans pleurer.
+
+Louis : Que se passe-t-il si le projet n'est pas réalisé ?
+Mme Moraud : On restera avec nos fiches papier. Après le départ d'Hugo, on devra se débrouiller autrement, peut-être avec un cahier. Ce ne serait pas très pratique.
 
 Louis : Souhaitez-vous une application de bureau, un site web, une application mobile… ?
 Mme Moraud : Une application mobile, non non non ! Il faut quelque chose de simple, qui marche sur notre portable, sans complications.
 
-Louis : Sur quel appareil et quel système d’exploitation l’utiliserez-vous ?
-Mme Moraud : Un vieux portable qu’un membre nous a donné, il date de 2015 je crois. Il tourne sous Windows. On a une seule machine, posée à l’accueil. Pas de téléphone ni de tablette.
+Louis : Sur quel appareil et quel système d'exploitation l'utiliserez-vous ?
+Mme Moraud : Un vieux portable qu'un membre nous a donné, il date de 2015 je crois. Il tourne sous Windows. On a une seule machine, posée à l'accueil. Pas de téléphone ni de tablette.
 
-Louis : L’application doit-elle être accessible à distance ?
-Mme Moraud : Non. L’ordinateur n’est pas toujours connecté à Internet, et le wifi de la maison de quartier, c’est une blague. L’outil doit fonctionner sur place, sans dépendre d’Internet.
+Louis : L'application doit-elle être accessible à distance ?
+Mme Moraud : Non. L'ordinateur n'est pas toujours connecté à Internet, et le wifi de la maison de quartier, c'est une blague. L'outil doit fonctionner sur place, sans dépendre d'Internet.
 
-Louis : Doit-elle communiquer avec d’autres outils ou logiciels ?
-Mme Moraud : Je ne crois pas que ça doive parler avec d’autres machines. Je ne vois pas trop pour quoi faire.
+Louis : Doit-elle communiquer avec d'autres outils ou logiciels ?
+Mme Moraud : Je ne crois pas que ça doive parler avec d'autres machines. Je ne vois pas trop pour quoi faire.
 
-Louis : Qui utilisera l’application ?
-Mme Moraud : Surtout les bénévoles de l’accueil, souvent deux ou trois, qui créent les fiches. Les réparateurs aussi, pour voir leur file d’attente et noter ce qu’ils ont fait. Et moi, pour tout coordonner à la fin de la journée.
+Louis : Qui utilisera l'application ?
+Mme Moraud : Surtout les bénévoles de l'accueil, des retraités qui ne sont pas très à l'aise avec les ordinateurs. Les réparateurs aussi, pour noter ce qu'ils ont fait. Et moi, pour tout coordonner à la fin de la journée.
 
 Louis : Ces personnes ont-elles des droits différents ?
-Mme Moraud : On est une petite équipe. Moi je regarde les chiffres pour le rapport, l’accueil remplit les fiches, les réparateurs notent ce qu’ils ont fait. Personne n’a besoin de cacher quoi que ce soit à qui que ce soit.
+Mme Moraud : On est une petite équipe. Moi je m'occupe de la coordination et je regarde les chiffres pour le rapport, l'accueil remplit les fiches, les réparateurs notent ce qu'ils ont fait. Personne n'a besoin de cacher quoi que ce soit à qui que ce soit.
 
 Louis : Quel est leur niveau en informatique ?
-Mme Moraud : Ce sont surtout des retraités. Certains savent envoyer un e-mail, d’autres ont du mal avec une souris. Il faut de grosses lettres et des boutons évidents.
+Mme Moraud : Ce sont surtout des retraités. Certains savent envoyer un e-mail, d'autres ont du mal avec une souris. Il faut que ce soit très simple, avec de grosses lettres et des boutons évidents.
 
-Louis : À quelle fréquence l’utiliseront-ils ?
-Mme Moraud : Une fois par mois, le deuxième samedi. Pendant ces trois heures, l’ordinateur est utilisé en continu. Après, on n’en a plus besoin avant la session suivante.
+Louis : À quelle fréquence l'utiliseront-ils ?
+Mme Moraud : Une fois par mois, le deuxième samedi. Pendant ces trois heures, l'ordinateur est utilisé en continu par les bénévoles de l'accueil. Après, on n'en a plus besoin avant la session suivante.
 
-Louis : Y a-t-il des choses que l’application ne doit surtout pas faire ?
-Mme Moraud : Pas de choses en ligne. Et surtout, l’outil ne doit pas décider à la place de nos bénévoles.
+Louis : Y a-t-il des choses que l'application ne doit surtout pas faire ?
+Mme Moraud : Pas d'application mobile ni de choses en ligne. Et surtout, l'outil ne doit pas décider à la place de nos bénévoles. On répare avec les gens, pas pour eux.
 
 Louis : Y a-t-il des fonctionnalités bonus qui seraient agréables ?
-Mme Moraud : Un petit rappel pour les objets à suivre, quand la pièce est arrivée, ce serait bien.
+Mme Moraud : Un petit rappel pour les objets à suivre, quand la pièce est arrivée, ce serait bien. Mais c'est peut-être compliqué à faire.
 
-Louis : Qui s’occupera de l’application après la livraison ?
-Mme Moraud : Hugo s’y connaît un peu, mais il part en février. Il faudrait que quelqu’un d’autre prenne le relais.
+Louis : Qui s'occupera de l'application après la livraison ?
+Mme Moraud : Hugo s'y connaît un peu, mais il part en février. Il faudrait que quelqu'un d'autre prenne le relais.
+
+Louis : Y a-t-il des règles propres à votre métier que l'application doit respecter ?
+Mme Moraud : On n'est pas une administration. Je préfère que vous me posiez des questions sur des situations concrètes, par exemple ce qui se passe si quelqu'un arrive avec plusieurs objets.
 
 Louis : Certaines situations sont-elles prioritaires ?
-Mme Moraud : En général, c’est premier arrivé, premier servi.
+Mme Moraud : En général, c'est premier arrivé, premier servi. Mais on pourrait s'arranger.
+
+Louis : Y a-t-il des exceptions à ces règles ?
+Mme Moraud : Chaque session réserve son lot de surprises. Posez-moi plutôt des questions sur des situations précises.
+
+Louis : Ces règles risquent-elles de changer ? Doivent-elles être modifiables sans toucher au code ?
+Mme Moraud : On ajuste les règles au fil du temps, quand on voit que quelque chose ne marche pas bien. Est-ce que ce serait compliqué à changer si, par exemple, on décidait de passer à trois objets par personne ?
 
 Louis : Quelles informations voulez-vous enregistrer ?
-Mme Moraud : Le nom du visiteur, le type d’objet (petit électroménager, textile, vélo…), la marque si on la connaît, et une description de la panne. Ensuite, le réparateur écrit son nom et le résultat.
+Mme Moraud : Le nom du visiteur, le type d'objet (petit électroménager, textile, vélo…), la marque si on la connaît, et une description de la panne. Ensuite, le réparateur écrit son nom et le résultat.
 
-Louis : Combien d’objets traitez-vous ?
-Mme Moraud : Entre 30 et 40 par session, parfois 50 juste avant Noël.
+Louis : Combien d'objets traitez-vous, aujourd'hui et dans 2 ans ?
+Mme Moraud : Entre 30 et 40 par session, parfois 50 juste avant Noël. Pour dans deux ans, je ne sais pas du tout.
+
+Louis : D'où viennent ces données ?
+Mme Moraud : Aujourd'hui, tout est sur papier, puis Hugo recopie dans son tableau Excel. Après son départ en février, je ne sais pas qui s'y collera.
 
 Louis : Ces données existent-elles déjà quelque part ?
-Mme Moraud : Oui, Hugo recopie les fiches papier dans un fichier Excel après chaque session, mais c’est une belle pagaille.
+Mme Moraud : Oui, Hugo recopie les fiches papier dans un fichier Excel après chaque session, mais c'est une belle pagaille.
 
 Louis : Combien de temps faut-il conserver les données ?
-Mme Moraud : Les fiches papier, on les garde quelques mois dans une boîte en carton, au cas où quelqu’un reviendrait. Mais on ne supprime rien, on garde tout pour la commune.
+Mme Moraud : Les fiches papier, on les garde quelques mois dans une boîte en carton, au cas où quelqu'un reviendrait. Pour une suppression automatique, ça dépend de comment votre outil fonctionne.
 
-Louis : Qui peut créer, consulter, modifier les données ?
-Mme Moraud : L’accueil crée les fiches. Les réparateurs complètent leur partie, le diagnostic et le résultat. Moi, je consulte pour le rapport. Tout le monde peut tout voir, mais c’est celui qui remplit qui écrit.
+Louis : Qui peut créer, consulter, modifier ou supprimer les données ?
+Mme Moraud : L'accueil crée les fiches. Les réparateurs complètent leur partie, le diagnostic et le résultat. Moi, je consulte pour le rapport, mais je ne touche à rien. Tout le monde peut tout voir, mais c'est celui qui remplit qui écrit. On ne supprime rien, on garde tout pour la commune.
 
 Louis : Y a-t-il des données personnelles ou sensibles ?
-Mme Moraud : On ne garde que le nom. Le téléphone ou l’e-mail, c’est seulement avec l’accord de la personne, pour la prévenir quand la pièce est arrivée. On efface ces coordonnées un an après le dernier passage.
+Mme Moraud : On ne garde que le nom. Le téléphone ou l'e-mail, c'est seulement avec l'accord de la personne, pour la prévenir quand la pièce est arrivée. On efface ces coordonnées un an après le dernier passage.
 
 Louis : Faut-il pouvoir exporter les données ?
-Mme Moraud : Il faut un document qu’on peut imprimer pour la commune. Hugo me faisait un rapport chaque année, et je le relisais pour vérifier que tout était juste avant de l’envoyer.
+Mme Moraud : Il faut un document qu'on peut imprimer pour la commune. Hugo me faisait un rapport chaque année, et je le relisais pour vérifier que tout était juste avant de l'envoyer.
 
 Louis : Faut-il des sauvegardes ?
-Mme Moraud : L’ordi a déjà planté une fois et Hugo avait perdu des heures de travail. Il faudrait quelque chose de sûr. Vous me direz ce que vous proposez.
+Mme Moraud : L'ordi a déjà planté une fois et Hugo avait perdu des heures de travail. Il faudrait quelque chose de sûr. Vous me direz ce que vous proposez.
 
-Louis : Que doit-il se passer à la fin d’une réparation ?
-Mme Moraud : On note le résultat : réparé, non réparable, ou « à suivre » s’il manque une pièce. C’est ce qui compte pour le rapport.
+Louis : Éventuellement un système de sauvegarde automatique ?
+Mme Moraud : Ça me semble bien, oui. Mais il faudrait que ce soit simple. Vous m'expliquerez ce que ça implique.
 
-Louis : Comment saurez-vous que l’outil fonctionne ? Donnez-moi un exemple de test.
+Louis : Pouvez-vous décrire, étape par étape, ce que vous faites aujourd'hui ?
+Mme Moraud : J'allume l'ordinateur, j'ouvre le fichier Excel qu'Hugo a préparé, et je recopie les fiches papier une par une, en tapant chaque nom, chaque objet, chaque panne. C'est long, je me trompe parfois, et si je ferme la fenêtre sans enregistrer, tout est perdu.
+
+Louis : Que doit-il se passer à la fin d'une réparation ?
+Mme Moraud : On note le résultat : réparé, non réparable, ou « à suivre » s'il manque une pièce. C'est ce qui compte pour le rapport.
+
+Louis : Que doit faire l'application en cas d'erreur ou de cas inhabituel ?
+Mme Moraud : Par exemple, si on se trompe en tapant le nom d'un visiteur ou si une fiche disparaît ? Je préfère que vous me disiez ce qu'on pourrait faire dans ces cas-là.
+
+Louis : Comment saurez-vous que l'outil fonctionne ? Donnez-moi un exemple de test.
 Mme Moraud : Si madame Dubois revient avec son grille-pain, je tape « Dubois » et je vois tout de suite sa fiche avec le diagnostic.
 
-Louis : Comment imaginez-vous l’écran principal ?
-Mme Moraud : Une grande page avec la liste des objets qui attendent : le nom de la personne, le type d’objet et le réparateur qui s’en occupe, comme mon agenda papier. L’interface de ma banque en ligne me semble claire, avec de gros boutons et des couleurs.
+Louis : Comment imaginez-vous l'écran principal ?
+Mme Moraud : Une grande page avec la liste des objets qui attendent : le nom de la personne, le type d'objet et le réparateur qui s'en occupe, comme mon agenda papier. L'interface de ma banque en ligne me semble claire, avec de gros boutons et des couleurs.
 
-Louis : Quels indicateurs voulez-vous voir en un coup d’œil ?
-Mme Moraud : Combien d’objets sont arrivés, combien on a réparés, combien sont repartis sans solution, et combien de personnes attendent encore.
+Louis : Quels indicateurs voulez-vous voir en un coup d'œil ?
+Mme Moraud : Combien d'objets sont arrivés, combien on a réparés, combien sont repartis sans solution, et combien de personnes attendent encore.
 
 Louis : Faut-il pouvoir trier, filtrer ou rechercher ?
-Mme Moraud : Aujourd’hui, on fouille dans une boîte à chaussures. Ce qu’il me faut surtout, c’est retrouver facilement une fiche d’un objet à suivre, et savoir qui travaille sur quoi pendant la session.
+Mme Moraud : Aujourd'hui, on fouille dans une boîte à chaussures. Ce qu'il me faut surtout, c'est retrouver facilement une fiche d'un objet à suivre, et savoir qui travaille sur quoi pendant la session.
 
-Louis : Comment pourrons-nous vérifier ensemble que l’outil répond à vos besoins ?
-Mme Moraud : Venez un samedi de repair, regardez comment ça se passe et voyez si votre outil fait pareil. Je veux qu’on retrouve une fiche sans fouiller et que le rapport pour la commune soit juste.
+Louis : Quel temps de réponse jugez-vous acceptable ?
+Mme Moraud : Tant que l'écran ne reste pas figé des heures, je suis contente. Quand je clique, j'aime bien voir quelque chose arriver assez vite, comme quand on tourne une page.
+
+Louis : Avez-vous des exigences d'accessibilité ?
+Mme Moraud : Pour les personnes à mobilité réduite ? La maison de quartier a des escaliers, mais il y a une rampe à l'entrée.
+
+Louis : Avez-vous des exigences d'accessibilité concernant l'outil ?
+Mme Moraud : On n'a pas de site internet. Nos bénévoles de l'accueil ne sont pas tous à l'aise avec les machines, il faudrait de grosses lettres peut-être. Je pense surtout à nos doigts arthritiques et à nos lunettes !
+
+Louis : Comment pourrons-nous vérifier ensemble que l'outil répond à vos besoins ?
+Mme Moraud : Venez un samedi de repair, regardez comment ça se passe et voyez si votre outil fait pareil. Je veux qu'on retrouve une fiche sans fouiller et que le rapport pour la commune soit juste.
+
+Louis : Imposez-vous un langage, un framework ou une base de données ?
+Mme Moraud : Je ne sais pas ce que c'est. Je veux juste quelque chose de simple, que mes bénévoles comprendront du premier coup.
+
+Louis : Quel niveau de documentation attendez-vous ?
+Mme Moraud : Je ne sais même pas ce que c'est qu'un code. Nos bénévoles de l'accueil ne sont pas des informaticiens : il faut que ce soit simple à comprendre pour eux. Le guide, c'est vous qui savez comment le faire.
 
 Louis : Quelle forme doit prendre la livraison ?
-Mme Moraud : Un programme qui tourne sur notre vieux portable, sans avoir besoin d’Internet. Pour la forme, c’est vous les experts.
+Mme Moraud : Un programme qui tourne sur notre vieux portable, sans avoir besoin d'Internet. Pour la forme, c'est vous les experts.
+
+Louis : Après la livraison, qui maintient l'application ? Souhaitez-vous des évolutions ?
+Mme Moraud : L'ordinateur a été offert par un membre un peu bricoleur, mais je ne voudrais pas lui imposer ça. Dites-moi ce que vous proposez habituellement.
+
+Loïc : Nous pourrions vous proposer 2 heures de maintenance par mois. Cela vous va ?
+Mme Moraud : C'est très gentil. Mais qu'est-ce que vous y ferez, pendant ces deux heures ?
+
+Loïc : Vérifier que le logiciel reste performant, corriger les erreurs que vous découvririez pendant l'utilisation, et améliorer le logiciel si Hugo ou vous avez des idées.
+Mme Moraud : Ça me rassure de savoir qu'on ne sera pas seuls avec un outil qui tombe en panne. Si Hugo ou moi on trouve une idée pour simplifier l'accueil, ce sera bien de pouvoir en parler avec vous. Mais d'abord, vous devez bien comprendre comment on fonctionne.
+
+Loïc : Vous êtes d'accord pour deux heures de maintenance par mois ?
+Mme Moraud : Ça me semble très bien. Vous me direz ce qu'il faut faire.
+
+Loïc : Le logiciel doit donc remplacer l'Excel d'Hugo pendant son Erasmus ?
+Mme Moraud : Oui, c'est exactement ce qu'il nous faut. Je ne vais pas me remettre à recopier soixante fiches à la main. Mais il faut que ce soit facile pour les bénévoles de l'accueil.
+
+Loïc : Et si vous n'avez pas de solution au départ d'Hugo ?
+Mme Moraud : Ce serait le retour aux fiches papier qui se perdent, et je passerais mes soirées à tout recopier moi-même. Il me faut quelque chose de simple avant son départ en février.
+
+Loïc : Voulez-vous garder l'Excel d'Hugo, ou tout faire sur le logiciel ?
+Mme Moraud : Hugo passe des heures à tout recopier après chaque session, c'est du travail en double. J'aimerais qu'on puisse tout faire directement sur le logiciel, sans rien recopier après coup.
+
+Loïc : Que devez-vous remettre à la commune ?
+Mme Moraud : Chaque année, un petit rapport avec le nombre d'objets qu'on a vus et combien ont été réparés.
+
+Loïc : Le rapport ne contient-il pas aussi les kilos de déchets évités ?
+Mme Moraud : Si, la commune veut aussi les kilos de déchets évités. On ne pèse rien sur place : on utilise un tableau de poids moyens par type d'objet (un grille-pain environ 1,5 kg, un aspirateur 6 kg). Ce tableau vient du réseau des Repair Cafés. Et les chiffres doivent être séparés par catégorie.
+
+Loïc : Pourriez-vous nous transmettre ce tableau, sur une clé USB ?
+Mme Moraud : C'est un petit fichier que le réseau des Repair Cafés nous a envoyé. Je peux vous le montrer sur une feuille imprimée ou le mettre sur une clé USB. Plus tard : c'est une simple feuille, je l'ai dans mes papiers, je pourrai vous la photocopier. On n'a pas de balance, alors on estime comme ça.
+
+Loïc : Voulez-vous autre chose ?
+Mme Moraud : Il y a sûrement des détails auxquels je ne pense pas. Les gens arrivent avec leur objet, on remplit une fiche, et il faut que tout le monde sache où en est chaque réparation. Posez-moi des questions sur des situations concrètes.
+
+Loïc : Par « tout le monde », parlez-vous des visiteurs, des bénévoles de l'accueil, des réparateurs ?
+Mme Moraud : Les visiteurs restent avec leur réparateur. Ce sont surtout les bénévoles de l'accueil qui doivent savoir où en est chaque objet. Et moi, pour la coordination, j'aime bien voir d'un coup d'œil ce qui se passe.
+
+Loïc : Comment se passe une séance type ? Combien de réparateurs et de bénévoles à l'accueil ?
+Mme Moraud : Les gens arrivent avec leur objet, on remplit une fiche à l'accueil, puis ils attendent qu'un réparateur soit disponible. On a entre 8 et 12 réparateurs par session, sur une liste d'une vingtaine. À l'accueil, deux ou trois bénévoles, souvent des retraités. Chaque réparateur prend un objet à la fois et le finit avant d'en prendre un autre.
+
+Loïc : Un réparateur ne travaille que sur un objet ? Que se passe-t-il s'il manque une pièce ?
+Mme Moraud : Un réparateur peut avoir plusieurs objets en cours. S'il manque une pièce, le visiteur la commande lui-même et revient à la session suivante avec sa fiche : il faut qu'on sache ce qui était prévu. Aujourd'hui, on fouille dans une boîte à chaussures pour retrouver ces fiches.
+
+Loïc : Notez-vous la pièce et sa date d'arrivée ? Si le réparateur est occupé, le visiteur va-t-il voir un autre réparateur ?
+Mme Moraud : On note juste le nom de la pièce et qu'on attend. C'est le visiteur qui nous prévient quand il la reçoit. Si le réparateur habituel est occupé, on regarde si un autre bénévole de la même spécialité est libre. Sinon, le visiteur attend. On ne force jamais personne à prendre un objet qui n'est pas de son domaine.
+
+Loïc : Les visiteurs paient-ils ? Les réparateurs sont-ils rémunérés ?
+Mme Moraud : Tout est gratuit, et les réparateurs sont bénévoles. Il y a un petit chapeau pour les dons libres, qui sert à acheter des pièces ou du café, mais on le compte à la main.
+
+Loïc : Que se passe-t-il si un visiteur ne revient pas ?
+Mme Moraud : Si l'objet n'est pas réparable ou si la personne ne revient pas, on garde la fiche dans la boîte à chaussures. On ne court pas après les gens. Mais pour un objet à suivre, avec une pièce commandée, on essaie de recontacter la personne la fois suivante.
+
+Loïc : Si l'objet n'est pas réparable ou si le visiteur ne revient jamais, supprimez-vous la fiche à un moment ?
+Mme Moraud : Les fiches des objets non réparables, on les garde quelques mois au cas où la personne reviendrait. Si le visiteur ne revient jamais, on finit par jeter la fiche. On n'a pas de règle stricte.
+
+Loïc : Garder la fiche 6 mois pour un objet non réparable, et 1 an pour un visiteur qui ne revient jamais, cela vous va ?
+Mme Moraud : Pour les objets non réparables, une fois le résultat noté, la fiche ne sert plus à grand-chose, mais si vous trouvez qu'il faut la garder six mois, je vous fais confiance. Pour les gens qui ne reviennent jamais, une année me semble raisonnable.
+
+Loïc : Vous supprimeriez donc la fiche d'un objet non réparable à la fin de la session ?
+Mme Moraud : Non, on ne supprime rien ! Même quand c'est non réparable, on garde la fiche : pour le rapport à la commune, et parce que parfois les gens reviennent avec une pièce ou un autre objet. La fiche, c'est notre mémoire.
+
+Loïc : Serez-vous la personne qui validera l'application et nous fera un retour ?
+Mme Moraud : Oui, avec les autres bénévoles de l'accueil. Mais je ne valide rien toute seule, je préfère qu'on en discute tous ensemble.
+
+Loïc : Serez-vous la seule à valider le cahier des charges ?
+Mme Moraud : Je ne valide jamais rien toute seule. On en parlera avec les bénévoles de l'accueil, surtout ceux qui seront devant l'ordinateur le samedi.
+
+Loïc : Qui va tester la solution ?
+Mme Moraud : Surtout les bénévoles de l'accueil, et les réparateurs pour noter ce qu'ils font. Moi, je regarderai par-dessus leur épaule. Hugo ne testera pas grand-chose, mais il a promis de regarder ce que vous proposez avant de partir.
+
+Loïc : Les réparateurs testeront, mais ne valideront ni l'application ni le cahier des charges ?
+Mme Moraud : Les réparateurs ne vont rien valider, ils vont juste me dire si l'outil les aide ou pas.
+
+Loïc : Quel gain attendez-vous de l'application ?
+Mme Moraud : Surtout le rapport à la commune : trois heures chaque mois à recopier des fiches. Et savoir où en est chaque objet pendant la session : aujourd'hui, on ne sait plus qui travaille sur quoi, et les gens attendent sans savoir si leur grille-pain est entre de bonnes mains.
+
+Loïc : Que voulez-vous dire par là, puisque les visiteurs réparent avec les bénévoles ?
+Mme Moraud : Le visiteur reste avec le réparateur et participe. Mais avant, à l'accueil, on ne sait pas encore qui va prendre son objet ni quand. Il attend sur une chaise, sans savoir si ce sera dans cinq minutes ou dans une heure.
+
+Loïc : Qu'entendez-vous par « retrouver facilement une fiche quand quelqu'un revient avec son objet » ?
+Mme Moraud : Quand quelqu'un revient avec un objet qu'on n'avait pas fini de réparer, il faut retrouver sa fiche avec le diagnostic. Aujourd'hui, on fouille dans une boîte à chaussures.
+
+Loïc : Voulez-vous ajouter d'autres données dans l'application ?
+Mme Moraud : L'application doit remplacer les fiches papier et l'Excel d'Hugo. Les fiches seraient remplies directement sur l'ordinateur à l'accueil, et le rapport à la commune se ferait tout seul à la fin de la session. Les données sont celles de nos fiches : la catégorie de l'objet, le nom du visiteur, la panne décrite, le réparateur qui s'en occupe et le résultat.
+
+Loïc : Voulez-vous qu'on ajoute les fiches papier existantes à l'application ?
+Mme Moraud : Je ne sais pas si ça vaut la peine de les numériser : elles sont en papier et certaines sont illisibles. Mon souci, c'est surtout ce qui se passe à partir de maintenant.
+
+Loïc : Voulez-vous que les fiches de l'Excel d'Hugo soient ajoutées à l'application, ou on repart de zéro ?
+Mme Moraud : Il y a des années de données là-dedans, avec tous les objets et les résultats. Ce serait dommage de tout perdre. Mais je ne sais pas si c'est facile à récupérer.
+
+Loïc : Pourriez-vous décrire le rôle de chacun ?
+Mme Moraud : Moi, la coordinatrice : je m'occupe de l'organisation, je planifie les sessions et je fais le lien avec la commune pour le rapport annuel. Les bénévoles de l'accueil accueillent les visiteurs, remplissent les fiches et dirigent les gens vers les réparateurs. Les réparateurs prennent les objets, diagnostiquent la panne et réparent avec le visiteur. Les visiteurs viennent avec leur objet cassé et repartent avec, réparé ou non. Il y a aussi la maison de quartier qui nous prête la salle, mais elle n'est pas dans l'atelier.
+
+Loïc : Êtes-vous d'accord avec ces profils ? Coordinatrice : organise, planifie les sessions et fait le lien avec la commune. Bénévole de l'accueil : 2 à 3 par session, niveaux variables en informatique, accueille, crée et remplit les fiches, dirige vers le réparateur. Réparateur : diagnostique la panne et répare avec le visiteur. Visiteur : vient avec son objet, le répare avec le réparateur, commande la pièce manquante si nécessaire.
+Mme Moraud : Oui, je suis d'accord. Une précision : à l'accueil, on ne dirige pas vraiment les gens vers un réparateur. C'est le réparateur qui choisit l'objet qu'il prend. L'outil peut proposer, mais pas imposer.
+
+Loïc : Vous vous appelez Moraud ou Moreau ?
+Mme Moraud : Moreau. Jacqueline Moreau.
+
+Loïc : Voici ce que nous avons prévu : un historique complet avec une recherche facile, l'enregistrement d'un objet à réparer, l'impression d'un dossier ou d'un groupe de dossiers, et un retour en temps réel de l'état d'un dossier. Cela vous va ?
+Mme Moraud : « Retour en temps réel », c'est du jargon. Enregistrer un objet, ça, c'est sûr qu'on en a besoin. Mais j'aimerais qu'on reparle d'abord de comment ça se passe concrètement le jour du Repair Café.
+
+Loïc : Comment se passe le jour du Repair Café ?
+Mme Moraud : On ouvre les portes à 14 h, et les gens arrivent avec leurs objets en panne. À l'accueil, on remplit une fiche papier pour chaque objet, puis on attend qu'un réparateur soit disponible.
+
+Loïc : Êtes-vous d'accord pour exclure l'accès à Internet, l'application mobile et l'assignement automatique aux réparateurs ?
+Mme Moraud : Oui pour Internet, je préfère qu'on fasse sans. L'application mobile non plus, nos bénévoles ne sont pas à l'aise avec ça. L'assignement automatique, ça m'embête : nos réparateurs choisissent ce qui les intéresse. L'outil peut proposer, mais pas décider à leur place.
+
+Loïc : Quelles données des visiteurs sont obligatoires ou facultatives ? Une fiche par visiteur, ou une fiche par objet avec les données du visiteur ?
+Mme Moraud : Le nom suffit. Le téléphone ou l'e-mail, seulement si la personne est d'accord, et uniquement pour la prévenir quand elle doit revenir chercher son objet. On efface ces coordonnées un an après son dernier passage. Chaque fiche correspond à un objet, avec le nom du visiteur dessus : souvent, une même personne apporte deux objets.
+
+Loïc : Vous ne voulez pas de fiche visiteur, avec son nom et ses coordonnées s'il est d'accord ?
+Mme Moraud : Le nom du visiteur est indispensable. Le téléphone ou l'e-mail, seulement avec son accord, et uniquement pour les objets à suivre, quand il manque une pièce. On efface ces coordonnées un an après son dernier passage.
+
+Loïc : Il y a donc une fiche objet d'un côté, et une fiche visiteur de l'autre ?
+Mme Moraud : Non, tout est sur la même fiche : une seule feuille par objet, avec le nom du visiteur, la description de l'objet et de la panne.
+
+Loïc : Comment vérifiez-vous qu'un visiteur n'est pas passé depuis plus d'un an, s'il est sur plusieurs fiches ?
+Mme Moraud : On ne vérifie rien. On efface les coordonnées quand on pense à trier les vieux papiers. Ce serait bien que l'outil nous aide à repérer les gens qui reviennent.
+
+Loïc : Comme un indicateur du nombre de fiches au nom d'un visiteur ?
+Mme Moraud : On voit parfois les mêmes têtes revenir, mais je ne suis pas sûre que ça serve pour le rapport à la commune.
+
+Loïc : Comment voudriez-vous repérer les gens qui reviennent ?
+Mme Moraud : Quand quelqu'un revient avec un objet à suivre, on cherche sa fiche dans une boîte à chaussures. Ce serait bien que l'ordinateur montre d'un coup d'œil si la personne est déjà venue et ce qui s'était passé.
+
+Loïc : Si une personne revient avec un autre objet, faut-il créer une nouvelle fiche et réencoder son nom ?
+Mme Moraud : Aujourd'hui, on refait une fiche pour chaque objet. Recopier le nom à chaque fois, c'est du travail pour l'accueil. Si l'outil pouvait retrouver le nom en tapant les premières lettres, je ne dirais pas non.
+
+Loïc : Les objets sont-ils pris en charge par ordre d'arrivée ?
+Mme Moraud : En principe, premier arrivé, premier servi. Mais ce n'est pas strict : un réparateur peut prendre un objet de sa spécialité avant un autre qui attend depuis plus longtemps.
+
+Loïc : Comment cela se passe pour un objet à suivre ? Qui commande et paie la pièce, qui prévient le visiteur ?
+Mme Moraud : Quand il manque une pièce et que la réparation n'est pas finie à 17 h, le visiteur commande lui-même la pièce et revient à la session suivante avec. On note sur sa fiche ce qu'il faut faire, et on la met de côté dans une boîte à chaussures à l'accueil. On a son téléphone seulement s'il nous l'a donné, et c'est moi qui l'appelle quelques jours avant la prochaine session pour lui rappeler d'apporter la pièce. Sans son numéro, il faut qu'il pense à revenir tout seul, ce qui arrive moins souvent qu'on voudrait.
+
+Loïc : Qui garde l'objet quand la pièce est commandée ?
+Mme Moraud : L'objet reste chez la personne. On met sa fiche de côté avec le diagnostic, pour savoir quoi faire la fois suivante.
+
+Loïc : Supprimez-vous les données du visiteur et la fiche après 365 jours, même pour un objet à suivre ?
+Mme Moraud : Les coordonnées, on ne les garde qu'un an après le dernier passage, et seulement si la personne a accepté. Les fiches des objets à suivre, on en a besoin jusqu'à ce que la réparation soit terminée.
+
+Loïc : Si la fiche d'un objet à suivre est là depuis un an et que le visiteur n'est pas revenu, la supprimez-vous ?
+Mme Moraud : Ça m'étonnerait qu'on la garde encore. En général, on fait le tri après quelques mois, et on contacte la personne si on a ses coordonnées. On n'a pas de règle fixe, on fait au cas par cas.
+
+Loïc : Supprimez-vous les fiches des objets ?
+Mme Moraud : Pas tout de suite. Elles finissent dans une boîte en carton, et Hugo les recopie dans son Excel après chaque session. Après, on les garde un moment, mais on ne sait plus trop où elles atterrissent.
+
+Loïc : Seriez-vous d'accord pour les supprimer deux ans après le rapport à la commune ?
+Mme Moraud : Je ne suis pas au courant de ces histoires de durée. Il faut pouvoir retrouver une fiche si quelqu'un revient pour un objet à suivre, même des mois plus tard. La commune garde ses propres registres, je crois.
+
+Valentin : Avez-vous un budget pour le projet, ou tout doit être gratuit ?
+Mme Moraud : On n'a pas un centime pour ça. C'est un partenariat avec l'école. Le vieux portable de 2015 nous sert déjà bien, il faudra faire avec.
+
+Loïc : Les gens font-ils des dons d'objets ?
+Mme Moraud : Pas vraiment. Il arrive parfois qu'un visiteur nous offre un appareil qu'il ne veut plus réparer, mais c'est rare. On le met de côté et on demande autour de nous si quelqu'un en a l'utilité.
+
+Loïc : L'application doit-elle prendre en compte ces dons ?
+Mme Moraud : Non, on ne gère pas ça dans le logiciel. C'est une décision au cas par cas, entre bénévoles.
+
+Loïc : Vous ne gardez donc aucun objet ?
+Mme Moraud : On ne garde aucun objet. Les gens repartent toujours avec ce qu'ils ont apporté, même si c'est pour le jeter eux-mêmes.
+
+Loïc : Combien de visiteurs avez-vous par session ?
+Mme Moraud : En moyenne entre 30 et 40 objets par session, jusqu'à 50 avant Noël. Les visiteurs, c'est à peu près pareil, souvent une personne par objet.
+
+Loïc : Qui peut voir les données des visiteurs ?
+Mme Moraud : Tout le monde à l'accueil peut voir les fiches, et les réparateurs aussi, pour suivre leur objet. Mais je préfère qu'on ne voie que ce qui est nécessaire. Hugo, par exemple, n'a pas besoin de savoir qui a déposé un grille-pain.
+
+Loïc : Si quelqu'un encode mal le nom, l'e-mail ou le téléphone d'un visiteur, qui peut le corriger ?
+Mme Moraud : Sur papier, on barre et on réécrit. Pour l'outil, ce serait à l'accueil de pouvoir corriger, puisque ce sont eux qui encodent.
+
+Loïc : Une fiche mal encodée, la supprimeriez-vous, ou personne ne doit pouvoir la supprimer ?
+Mme Moraud : Une fiche mal encodée, on la corrige, mais on ne la jette pas : ça sert de trace. Il faut pouvoir corriger une erreur, mais je ne sais pas si quelqu'un devrait pouvoir effacer complètement une fiche.
+
+Valentin : Les données de l'Excel de votre petit-fils doivent-elles être récupérées et incluses dans l'application ?
+Mme Moraud : Il y a tous les chiffres des deux dernières années, avec les réparations réussies. Ce serait bien de les garder quelque part, pour qu'on ne perde pas le fil. Mais ce sont des données de l'ancien système, pas la nouveauté.
+
+Valentin : Votre petit-fils Hugo a un fichier Excel avec les fiches des deux dernières années. Voulez-vous qu'on mette ces anciennes fiches dans l'application ?
+Mme Moraud : Ces vieilles fiches sont surtout pour la paperasse. Si votre outil peut repartir de zéro à partir des prochaines sessions, ça me va très bien. Si vous voulez récupérer les chiffres des années passées pour les statistiques, ce serait pratique, mais je ne sais pas comment faire sans se compliquer la vie.
+
+Loïc : Que contient le rapport annuel à la commune ?
+Mme Moraud : Le nombre d'objets apportés et combien ont été réparés avec succès. Et le poids des déchets évités, calculé avec un tableau de poids moyens par type d'objet.
+
+Loïc : Qui vous fournit ce tableau de poids moyens ?
+Mme Moraud : Le réseau des Repair Cafés : une feuille avec des poids moyens par appareil. Je vous la passerai.
+
+Valentin : On va vous présenter l'application trois fois avant de vous la livrer : une première version, une version plus complète, puis la version finale. Avez-vous des dates à nous proposer ?
+Mme Moraud : Évitons les jours de marché à Forest. Sinon, je suis disponible les mardis et jeudis en fin de journée.
+
+Valentin : Quand un visiteur doit revenir avec une pièce, qui se charge de le recontacter ?
+Mme Moraud : Personne ne le recontacte. C'est le visiteur qui doit penser à revenir à la session suivante avec sa pièce. Et nous, on fouille dans une boîte à chaussures pour retrouver sa fiche.
+
+Loïc : Vous nous avez dit une fois que vous appeliez le visiteur pour lui rappeler la pièce, et une autre fois que non. Qu'avons-nous mal compris ?
+Mme Moraud : Je ne vous ai jamais dit qu'on appelait les gens. On note parfois un téléphone, seulement si la personne est d'accord et pour les objets à suivre. En général, le visiteur revient de lui-même. On ne fait pas de rappels.
+
+Loïc : Vous nous aviez dit : « On a son téléphone seulement s'il nous l'a donné, et c'est moi qui l'appelle quelques jours avant la prochaine session pour lui rappeler d'apporter la pièce. » Êtes-vous toujours d'accord ?
+Mme Moraud : Oui, c'est bien ça : la boîte à chaussures, les fiches qu'on ressort, et moi qui téléphone quand j'ai le numéro. On fait avec les moyens du bord, mais ce n'est pas toujours très fiable.
+
+Valentin : Si l'application vous montrait la liste des visiteurs à appeler avant la prochaine session, avec leur numéro et la pièce à apporter, ce serait indispensable pour vous, ou juste un plus ?
+Mme Moraud : Pour les objets à suivre, on doit retrouver la fiche dans ma boîte à chaussures. Mais on n'appelle que si la personne nous a donné son numéro, et seulement pour les objets à suivre. Ce serait un plus bien pratique, mais pas indispensable. L'essentiel, c'est qu'on retrouve les fiches et les diagnostics facilement le jour même.

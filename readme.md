@@ -43,10 +43,10 @@ Au niveau des parties prenantes :
 
 ### 1.3. Objectifs du projet
 
-- Retrouver facilement une fiche quand quelqu'un revient avec son objet au lieu de chercher dans une boîte à chaussures.
+- Retrouver la fiche d'un objet en tapant le nom du visiteur, au lieu de chercher dans une boîte à chaussures (voir F-04).
 - Ne plus perdre de fiches par inadvertance.
 - Faire plus facilement les rapports à la commune.
-- L'application doit être simple à utiliser, même pour les personnes peu à l'aise avec l'informatique.
+- Permettre aux bénévoles de l'accueil, même peu à l'aise avec l'informatique, d'utiliser l'outil sans aide (voir ENF-03).
 
 **Plus-value attendue :**
 - Gain de 3 h par mois pour créer le rapport destiné à la commune.
