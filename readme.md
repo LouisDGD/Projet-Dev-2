@@ -167,7 +167,7 @@ Ce tableau reprend la liste de toutes les fonctionnalités, avec les intervenant
 | ID | Fonctionnalité | Acteur(s) | Priorité |
 |---|---|---|---|
 | F-01 | Enregistrer les informations d'un objet à l'accueil | Bénévoles de l'accueil | Indispensable |
-| F-02 | Consultation des données pour les réparateurs | Réparateurs, coordinatrice | Souhaitable |
+| F-02 | Consultation des données pour les réparateurs | Réparateurs, coordinatrice | Indispensable |
 | F-03 | Compléter une fiche (diagnostic et résultat) | Réparateurs | Indispensable |
 | F-04 | Rechercher une fiche | Réparateurs, coordinatrice | Indispensable |
 | F-05 | Afficher les indicateurs de la session | Coordinatrice | Souhaitable |
@@ -207,7 +207,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Louis Degand |
 | **Acteur(s)** | Réparateurs du café, coordinatrice |
-| **Priorité** | Souhaitable |
+| **Priorité** | Indispensable |
 | **Description** | L'écran principal affiche la liste des objets de la session en cours et indique qui travaille sur quoi. |
 
 **Exigences**
