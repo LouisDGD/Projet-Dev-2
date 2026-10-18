@@ -9,7 +9,7 @@
 | **Titre** | Cahier des charges – Repair Café |
 | **Auteurs** | Valentin Thiel, Alexandre Borman, Loïc Martin, Louis Degand |
 | **Version** | 1.0 du 18/10/2026 – première version |
-| **Validation client** | En attente de validation par Mme Moreau |
+| **Validation client** | En attente de validation par Mme Moreau et les bénévoles de l'accueil |
 
 ### Conventions d'identification
 
@@ -313,7 +313,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 - **EF-07.2** : Le système efface automatiquement les données 365 jours après leur enregistrement.
 
 **Critères d'acceptation**
-- **EF-07.1** : Le champ de coordonnées se débloque lors de la validation de l'accord du visiteur.
+- **EF-07.1** : Le champ de coordonnées se débloque lors de la  de l'accord du visiteur.
 - **EF-07.2** : Le système a correctement effacé les données après 365 jours (avec des dates simulées, les coordonnées disparaissent et les fiches restent).
 
 ---
@@ -368,7 +368,7 @@ Les valeurs marquées _(à valider)_ n'ont pas été chiffrées par la cliente e
 | ENF-07 | Les fiches ne sont jamais supprimées de l'historique (conservation pour les rapports à la commune). | Vérification de la présence de toutes les fiches après plusieurs sessions simulées. |
 | ENF-08 | Les coordonnées des visiteurs ne sont conservées qu'avec leur accord et sont effacées après un an (RGPD). | Test avec des dates simulées (voir EF-07.2). |
 | ENF-09 | L'application peut être installée et lancée sans connexion à Internet. | Installation sur l'ordinateur de l'accueil, réseau désactivé. |
-| ENF-10 | Un guide utilisateur simple, rédigé sans jargon technique, est fourni aux bénévoles. | Relecture et validation du guide par Mme Moreau. |
+| ENF-10 | Un guide utilisateur simple, rédigé sans jargon technique, est fourni aux bénévoles. | Relecture et  du guide par Mme Moreau. |
 | ENF-11 | Le code source est en Python (RM-01). | Analyse du dépôt GitHub. |
 
 ---
@@ -422,7 +422,7 @@ _À compléter._
 
 | | |
 |---|---|
-| **Qui** | Mme Moreau et Loïc Martin |
+| **Qui** | Mme Moreau, les bénévoles de l'accueil et Loïc Martin |
 | **Quand** | Le 02/11/2026 pour le MVP, le 23/11/2026 pour la démonstration intermédiaire et le 07/12/2026 pour la version finale. |
 | **Sur quelle base** | Les critères d'acceptation de la section 3.1 et la vérification des exigences non fonctionnelles de la section 3.2. |
 | **Suivi des anomalies** | Chaque anomalie est consignée dans une issue GitHub, avec l'identifiant de l'exigence concernée et sa gravité (bloquante, majeure, mineure). |
