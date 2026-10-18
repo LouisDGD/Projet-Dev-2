@@ -174,7 +174,7 @@ Ce tableau reprend la liste de toutes les fonctionnalités, avec les intervenant
 | F-06 | Générer le rapport imprimable pour la commune | Responsable | Indispensable |
 | F-07 | Gérer les coordonnées des visiteurs | Responsable, coordinatrice | Indispensable |
 | F-08 | Sauvegarde automatique des données | Système | Indispensable |
-| F-09 | Rappel pour les objets « à suivre » | À définir | À définir |
+| F-09 | Rappel pour les objets « à suivre » | Coordinatrice | Souhaitable |
 
 Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le permet).
 
@@ -349,7 +349,22 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 
 #### F-09 — Rappel pour les objets « à suivre »
 
-_À compléter._
+| | |
+|---|---|
+| **Auteur** | Valentin Thiel |
+| **Acteur** | Coordinatrice |
+| **Priorité** | Souhaitable |
+| **Description** | Quelques jours avant la session suivante, la coordinatrice retrouve la liste des visiteurs à appeler pour leur rappeler d'apporter la pièce nécessaire à la réparation (voir RM-03 et RM-04). |
+
+**Exigences**
+- **EF-09.1** : L’application affiche la liste des objets « à suivre », avec pour chacun le nom du visiteur, la pièce attendue et ce qu’il reste à faire.
+- **EF-09.2** : Le numéro de téléphone du visiteur est affiché s'il l'a donné (voir RM-05). Sinon, la liste indique qu'il ne peut pas être contacté.
+- **EF-09.3** : Un objet disparaît de la liste dès que son statut n'est plus « à suivre ».
+
+**Critères d'acceptation**
+- **EF-09.1** : La coordinatrice voit les fiches des objets « à suivre », avec le nom du visiteur et la pièce manquante.
+- **EF-09.2** : Seuls les visiteurs ayant donné leur numéro apparaissent dans la liste, et leur numéro est affiché.
+- **EF-09.3** : Quand un objet passe de « à suivre » à « réparé », il n'apparaît plus dans la liste.
 
 ---
 
@@ -405,10 +420,10 @@ L'association ne dispose d'aucun budget pour ce projet. L'application doit fonct
 
 L'association reçoit un programme qui fonctionne sur son ordinateur portable, sans connexion à Internet, accompagné d'un guide d'utilisation simple, rédigé pour des bénévoles qui ne sont pas à l'aise avec l'informatique (voir ENF-10).
 L'application démarre sans données. La reprise des chiffres des années passées, contenus dans le fichier Excel actuel, afin de les intégrer aux statistiques, est optionnelle et ne sera réalisée que si le temps le permet.
- 
+
 ### 6.2. Échéances
 
-_À compléter._
+Une première version, limitée aux fonctionnalités indispensables (MVP), est présentée à Mme Moreau le 02/11/2026. Une version intermédiaire, comprenant davantage de fonctionnalités, est présentée le 23/11/2026. La version finale est livrée le 07/12/2026.
 
 ### 6.3. Retours vers le client
 
