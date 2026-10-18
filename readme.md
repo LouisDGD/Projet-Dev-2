@@ -8,7 +8,7 @@
 |---|---|
 | **Titre** | Cahier des charges – Repair Café |
 | **Auteurs** | Valentin Thiel, Alexandre Borman, Loïc Martin, Louis Degand |
-| **Version** | 1.0 du 14/10/2026 – première version |
+| **Version** | 1.0 du 18/10/2026 – première version |
 | **Validation client** | En attente de validation par Mme Moreau |
 
 ### Conventions d'identification
@@ -335,7 +335,7 @@ _À compléter._
 ### 6.3. Retours vers le client
 
 - Différents appels téléphoniques avec Mme Moreau, les agents d'accueil et les réparateurs, entre le 19/10/2026 et le 14/11/2026, pour affiner les demandes et découvrir des contraintes métier et/ou des exigences fonctionnelles supplémentaires.
-- Rendez-vous lors de la session du Repair Café du 07/11/2026, afin d'observer le fonctionnement d'une session et de confirmer, voire découvrir, des contraintes métier.
+- Rendez-vous lors de la session du Repair Café du 14/11/2026, afin d'observer le fonctionnement d'une session et de confirmer, voire découvrir, des contraintes métier.
 - Démonstration d'un MVP du produit avec Mme Moreau le 02/11/2026.
 - Démonstration d'une version intermédiaire du produit, comprenant plus de fonctionnalités, le 23/11/2026.
 
