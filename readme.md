@@ -85,10 +85,9 @@ Au niveau des parties prenantes :
 **Inclus :**
 - Enregistrement d'un objet par les bénévoles de l'accueil
 - Gestion des objets et des données des visiteurs et leur sauvegarde automatique.
-- Création, lecture et modification d'un rapport pour la commune
+- Création, relecture et modification d'un rapport pour la commune
 - Gestion et suivi de la session de réparation en cours avec possibilité de prise en charge d'objet.
 - Fonctionnement hors ligne de l'application
-- Sauvegarde automatique des données.
 - Numérisation des fiches Excel.
 
 **Exclus et validé par la cliente le 18/10/2026 :**
@@ -121,7 +120,7 @@ Au niveau des parties prenantes :
 | *Opération* | *Acteur* | *Fonctionnalité* |
 | --- | --- | --- |
 | *Créer* | *Bénévole de l'accueil, Système* | *F-01* |
-| *Restaurer* | *Système* | *F-08* |
+| *Restaurer* | *Coordinatrice* | *F-08* |
 | *Consulter* | *Bénévole de l'accueil, coordinatrice, réparateur* | *F-02, F-04* |
 | *Effacer* | *Système* | *F-08* |
 | *Modifier* | *Bénévole de l'accueil* | *F-01* |
@@ -144,7 +143,7 @@ Au niveau des parties prenantes :
 
 #### D-03 — Tableau de poids moyens par type d'objet
 - **Contenu** : nom du type d'objet ; catégorie de l'objet ; poids moyen en kg
-- **Volume** : liste fixe de quelques dizaines de types (à confirmer avec Q-10)
+- **Volume** : liste fixe de quelques dizaines de types (à confirmer avec Q-09)
 - **Origine** : tableau de poids moyens du réseau des Repair Cafés, fourni par Mme Moreau.
 - **Conservation** : tant que l’application est utilisée.
 
@@ -169,10 +168,10 @@ Ce tableau reprend la liste de toutes les fonctionnalités, avec les intervenant
 | F-01 | Enregistrer les informations d'un objet à l'accueil | Bénévoles de l'accueil | Indispensable |
 | F-02 | Consultation des données pour les réparateurs | Réparateurs, coordinatrice | Indispensable |
 | F-03 | Compléter une fiche (diagnostic et résultat) | Réparateurs | Indispensable |
-| F-04 | Rechercher une fiche | Réparateurs, coordinatrice | Indispensable |
+| F-04 | Rechercher une fiche | Réparateurs, bénévoles de l'accueil, coordinatrice | Indispensable |
 | F-05 | Afficher les indicateurs de la session | Coordinatrice | Souhaitable |
-| F-06 | Générer le rapport imprimable pour la commune | Responsable | Souhaitable |
-| F-07 | Gérer les coordonnées des visiteurs | Responsable, coordinatrice | Indispensable |
+| F-06 | Générer le rapport imprimable pour la commune | Coordinatrice | Souhaitable |
+| F-07 | Gérer les coordonnées des visiteurs | Coordinatrice, bénévoles de l'accueil | Indispensable |
 | F-08 | Sauvegarde automatique des données | Système | Souhaitable |
 | F-09 | Rappel pour les objets « à suivre » | Coordinatrice | Optionnelle |
 
@@ -190,7 +189,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 | **Description** | Permettre aux bénévoles d'enregistrer les informations relatives à un objet pour en créer une fiche. |
 
 **Exigences**
-- **EF-01.1** : Le bénévole introduit le nom du visiteur, la marque, l'adresse e-mail ainsi que la description de l'objet.
+- **EF-01.1** : Le bénévole introduit le nom du visiteur, la marque (D-02), l'adresse e-mail (D-02), le numéro de téléphone (D-02) ainsi que la description de l'objet.
 - **EF-01.2** : Le type d'objet est choisi dans une liste, sans saisie libre.
 - **EF-01.3** : La fiche est automatiquement ajoutée à la file d'attente, par ordre d'arrivée (premier arrivé, premier servi).
 
@@ -233,7 +232,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 
 **Exigences**
 - **EF-03.1** : Le réparateur saisit un diagnostic.
-- **EF-03.2** : Le réparateur saisit un statut pour la réparation (en cours, réparé, à suivre – pièce manquante).
+- **EF-03.2** : Le réparateur saisit un statut pour la réparation (en cours, réparé, non-réparable, à suivre – pièce manquante).
 
 **Critères d'acceptation**
 - **EF-03.1** : Le diagnostic saisi par le réparateur est affiché.
@@ -247,9 +246,9 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 | | |
 |---|---|
 | **Auteur** | Louis Degand |
-| **Acteur(s)** | Responsable et réparateurs |
+| **Acteur(s)** | Coordinatrice, bénévoles de l'accueil et réparateurs |
 | **Priorité** | Indispensable |
-| **Description** | Les réparateurs ainsi que la responsable peuvent rechercher sans difficulté une fiche liée à un objet. |
+| **Description** | Les réparateurs, bénévoles de l'accueil ainsi que la coordinatrice peuvent rechercher sans difficulté une fiche liée à un objet. |
 
 **Exigences**
 - **EF-04.1** : La recherche se fait par nom de visiteur.
@@ -266,9 +265,9 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 | | |
 |---|---|
 | **Auteur** | Louis Degand |
-| **Acteur(s)** | Responsable |
+| **Acteur(s)** | Coordinatrice |
 | **Priorité** | Souhaitable |
-| **Description** | La responsable suit la progression de la session en cours. |
+| **Description** | La coordinatrice suit la progression de la session en cours. |
 
 **Exigences**
 - **EF-05.1** : L'application affiche le nombre d'objets arrivés, réparés et repartis sans solution.
@@ -283,14 +282,14 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 | | |
 |---|---|
 | **Auteur** | Louis Degand |
-| **Acteur(s)** | Responsable |
+| **Acteur(s)** | Coordinatrice |
 | **Priorité** | Souhaitable |
 | **Description** | Génération automatique des rapports à fournir à la commune. |
 
 **Exigences**
 - **EF-06.1** : L'application génère un document imprimable sur une période donnée.
-- **EF-06.2** : Le rapport indique le nombre d'objets reçus et réparés, ainsi qu'une estimation du nombre de kilos de déchets évités.
-- **EF-06.3** : La responsable peut relire les rapports avant impression.
+- **EF-06.2** : Le rapport indique le nombre d'objets reçus et réparés séparés par catégorie, ainsi qu'une estimation du nombre de kilos de déchets évités.
+- **EF-06.3** : La coordinatrice peut relire les rapports avant impression.
 
 **Critères d'acceptation**
 - **EF-06.1** : Le document est correctement mis en page et correspond bien à la période renseignée.
@@ -304,17 +303,17 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 | | |
 |---|---|
 | **Auteur** | Louis Degand |
-| **Acteur(s)** | Responsable et bénévoles |
+| **Acteur(s)** | Coordinatrice et bénévoles de l'accueil |
 | **Priorité** | Indispensable |
-| **Description** | Les coordonnées ne sont enregistrées qu'avec l'accord des visiteurs et sont supprimées automatiquement après un an. |
+| **Description** | Les coordonnées ne sont enregistrées qu'avec l'accord des visiteurs et sont supprimées automatiquement après un an à partir de leur dernière visite. |
 
 **Exigences**
 - **EF-07.1** : Les champs de coordonnées sont bloqués tant que le visiteur n'a pas donné son accord et que la case n'est pas cochée.
-- **EF-07.2** : Le système efface automatiquement les données 365 jours après leur enregistrement.
+- **EF-07.2** : Le système efface automatiquement les données 365 jours après leur dernière visite.
 
 **Critères d'acceptation**
 - **EF-07.1** : Le champ de coordonnées se débloque lors de la validation de l'accord du visiteur.
-- **EF-07.2** : Le système a correctement effacé les données après 365 jours (avec des dates simulées, les coordonnées disparaissent et les fiches restent).
+- **EF-07.2** : Le système a correctement effacé les données après 365 jours après la dernière visite (avec des dates simulées, les coordonnées disparaissent et les fiches restent).
 
 ---
 
@@ -333,7 +332,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 - **EF-08.3** : L'application crée un dossier dédié sur l'ordinateur, qui contiendra les sauvegardes.
 - **EF-08.4** : L'application se limite à 10 copies et supprime la plus ancienne s'il en existe déjà 10.
 - **EF-08.5** : L'application affiche un message d'erreur au démarrage suivant si la sauvegarde a échoué.
-- **EF-08.6** : La responsable, Mme Moreau, peut restaurer une sauvegarde depuis l'application.
+- **EF-08.6** : La coordinatrice, Mme Moreau, peut restaurer une sauvegarde depuis l'application.
 - **EF-08.7** : Une sauvegarde n'est pas conservée plus de 365 jours.
 
 **Critères d'acceptation**
@@ -354,16 +353,16 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 | **Auteur** | Valentin Thiel |
 | **Acteur(s)** | Coordinatrice |
 | **Priorité** | Optionnelle |
-| **Description** | Quelques jours avant la session suivante, la coordinatrice retrouve la liste des visiteurs à appeler pour leur rappeler d'apporter la pièce nécessaire à la réparation (voir RM-03 et RM-04). |
+| **Description** | Quelques jours avant la session suivante, la coordinatrice retrouve la liste des visiteurs à contacter pour leur rappeler d'apporter la pièce nécessaire à la réparation (voir RM-03 et RM-04). |
 
 **Exigences**
 - **EF-09.1** : L’application affiche la liste des objets « à suivre », avec pour chacun le nom du visiteur, la pièce attendue et ce qu’il reste à faire.
-- **EF-09.2** : Le numéro de téléphone du visiteur est affiché s'il l'a donné (voir RM-05). Sinon, la liste indique qu'il ne peut pas être contacté.
+- **EF-09.2** : Le numéro de téléphone du visiteur et/ou son email est affiché s'il l'a donné (voir RM-05). Sinon, la liste indique qu'il ne peut pas être contacté.
 - **EF-09.3** : Un objet disparaît de la liste dès que son statut n'est plus « à suivre ».
 
 **Critères d'acceptation**
 - **EF-09.1** : La coordinatrice voit les fiches des objets « à suivre », avec le nom du visiteur et la pièce manquante.
-- **EF-09.2** : Seuls les visiteurs ayant donné leur numéro apparaissent dans la liste, et leur numéro est affiché.
+- **EF-09.2** : Seuls les visiteurs ayant donné leur numéro et/ou leur email apparaissent dans la liste comme joignable, et leur numéro et/ou email est affiché est affiché.
 - **EF-09.3** : Quand un objet passe de « à suivre » à « réparé » ou « non réparable », il n'apparaît plus dans la liste.
 
 ---
@@ -438,7 +437,7 @@ Une première version, limitée aux fonctionnalités indispensables (MVP), est p
 
 | | |
 |---|---|
-| **Qui** | Mme Moreau, les bénévoles de l'accueil et Loïc Martin |
+| **Qui** | Mme Moreau, les bénévoles de l'accueil et l'équipe de développement |
 | **Quand** | Le 02/11/2026 pour le MVP, le 23/11/2026 pour la démonstration intermédiaire et le 07/12/2026 pour la version finale. |
 | **Sur quelle base** | Les critères d'acceptation de la section 3.1 et la vérification des exigences non fonctionnelles de la section 3.2. |
 | **Suivi des anomalies** | Chaque anomalie est consignée dans une issue GitHub, avec l'identifiant de l'exigence concernée et sa gravité (bloquante, majeure, mineure). |
@@ -463,7 +462,8 @@ Questions à poser à Mme Moreau :
 - **Q-06** : Mme Moreau doit-elle être la seule à pouvoir restaurer une sauvegarde de l'application ?
 - **Q-07** : Comme il n'y a qu'un seul ordinateur à l'accueil, comment les réparateurs notent-ils le diagnostic et le résultat de la réparation ?
 - **Q-08** : Faut-il supprimer les fiches des objets à un moment ?
-- **Q-09** : Que contient le tableau de poids moyens par type d'objet qui lui permet de faire le rapport annuel à la commune ?
+- **Q-09** : Que contient le tableau de poids moyens par type d'objet qui lui permet de faire le rapport annuel à la commune ? Pourriez-vous nous le transmettre ?
+- **Q-10** : Est-ce que vous, ou quelqu'un d'autre, devriez pouvoir modifier les catégories des objets ? 
 
 ---
 
