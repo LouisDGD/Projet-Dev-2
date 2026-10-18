@@ -115,7 +115,7 @@ Au niveau des parties prenantes :
 #### D-01 — Visiteur
 - **Contenu** : nom du visiteur ; numéro de téléphone, e-mail (les deux sont facultatifs, voir RM-05), utilisés uniquement pour prévenir le visiteur de venir avec la pièce nécessaire à la réparation.
 - **Volume** : 30 à 40 en moyenne avec un pic jusqu'à 50 à Noël.
-- **Origine** : saisie dans le système et reprise du fichier Excel existant.
+- **Origine** : saisie dans le système et reprise du fichier Excel existant (optionnel).
 - **Conservation** : 365 jours compris (RM-08)
 
 | *Opération* | *Acteur* | *Fonctionnalité* |
@@ -130,7 +130,7 @@ Au niveau des parties prenantes :
 #### D-02 — Fiche de réparation
 - **Contenu** : visiteur concerné (D-01) ; type d'objet (D-03) ; description de la panne ; nom du réparateur ; marque de l'objet (facultative) ; diagnostic ; résultat (réparé, non réparable, à suivre) ; pièce attendue (facultative, si à suivre) ; état (en attente, en cours, terminé)
 - **Volume** : 30 à 40 en moyenne avec un pic jusqu'à 50 à Noël.
-- **Origine** : créée à l’accueil, puis complétée par le réparateur. Reprise du fichier Excel existant.
+- **Origine** : créée à l’accueil, puis complétée par le réparateur. Reprise du fichier Excel existant (optionnel).
 - **Conservation** : illimitée
 
 | *Opération* | *Acteur* | *Fonctionnalité* |
