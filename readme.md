@@ -167,14 +167,14 @@ Ce tableau reprend la liste de toutes les fonctionnalités, avec les intervenant
 | ID | Fonctionnalité | Acteur(s) | Priorité |
 |---|---|---|---|
 | F-01 | Enregistrer les informations d'un objet à l'accueil | Bénévoles de l'accueil | Indispensable |
-| F-02 | Consultation des données pour les réparateurs | Réparateurs, coordinatrice | Indispensable |
+| F-02 | Consultation des données pour les réparateurs | Réparateurs, coordinatrice | souhaitable |
 | F-03 | Compléter une fiche (diagnostic et résultat) | Réparateurs | Indispensable |
 | F-04 | Rechercher une fiche | Réparateurs, coordinatrice | Indispensable |
 | F-05 | Afficher les indicateurs de la session | Coordinatrice | Souhaitable |
-| F-06 | Générer le rapport imprimable pour la commune | Responsable | Indispensable |
+| F-06 | Générer le rapport imprimable pour la commune | Responsable | souhaitable |
 | F-07 | Gérer les coordonnées des visiteurs | Responsable, coordinatrice | Indispensable |
-| F-08 | Sauvegarde automatique des données | Système | Indispensable |
-| F-09 | Rappel pour les objets « à suivre » | Coordinatrice | Souhaitable |
+| F-08 | Sauvegarde automatique des données | Système | souhaitable |
+| F-09 | Rappel pour les objets « à suivre » | Coordinatrice | optionnelle |
 
 Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le permet).
 
@@ -207,7 +207,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Louis Degand |
 | **Acteur(s)** | Réparateurs du café, coordinatrice |
-| **Priorité** | Indispensable |
+| **Priorité** | souhaitable |
 | **Description** | L'écran principal affiche la liste des objets de la session en cours et indique qui travaille sur quoi. |
 
 **Exigences**
@@ -284,7 +284,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Louis Degand |
 | **Acteur(s)** | Responsable |
-| **Priorité** | Indispensable |
+| **Priorité** | souhaitable |
 | **Description** | Génération automatique des rapports à fournir à la commune. |
 
 **Exigences**
@@ -324,7 +324,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Loïc Martin |
 | **Acteur(s)** | Système |
-| **Priorité** | Indispensable |
+| **Priorité** | souhaitable |
 | **Description** | L'application sauvegarde automatiquement les données (fiches et historiques) dans un dossier de l'ordinateur de l'accueil, afin de pouvoir les récupérer en cas de suppression accidentelle ou de fichier corrompu. |
 
 **Exigences**
@@ -353,7 +353,7 @@ Priorités : **indispensable**, **souhaitable**, **optionnelle** (si le temps le
 |---|---|
 | **Auteur** | Valentin Thiel |
 | **Acteur** | Coordinatrice |
-| **Priorité** | Souhaitable |
+| **Priorité** | optionnelle |
 | **Description** | Quelques jours avant la session suivante, la coordinatrice retrouve la liste des visiteurs à appeler pour leur rappeler d'apporter la pièce nécessaire à la réparation (voir RM-03 et RM-04). |
 
 **Exigences**
