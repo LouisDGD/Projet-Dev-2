@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "nom_visiteur": "Dubois",
+  "type_objet": "grille-pain",
+  "marque": "Moulinex",
+  "description": "Ne chauffe plus d'un côté",
+  "date_arrivee": "2026-11-14T14:05:00",
+  "etat": "en attente",
+  "reparateur": null,
+  "diagnostic": null,
+  "resultat": null,
+  "piece_attendue": null
+}
