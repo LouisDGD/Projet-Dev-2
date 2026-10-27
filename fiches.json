@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "nom_visiteur": "Louis",
+    "type_objet": "A déterminer",
+    "marque": "Apple",
+    "description": "AAAA",
+    "date_arrivee": "2026-10-27T18:06:29",
+    "etat": "en attente",
+    "reparateur": null,
+    "diagnostic": null,
+    "resultat": null,
+    "piece_attendue": null
+}
