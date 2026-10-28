@@ -11,5 +11,18 @@
         "diagnostic": null,
         "resultat": null,
         "piece_attendue": null
+    },
+    {
+        "id": 2,
+        "nom_visiteur": "Louis",
+        "type_objet": "Lampe",
+        "marque": "Testons ?",
+        "description": "Peut etre ?",
+        "date_arrivee": "2026-10-28T08:56:47",
+        "etat": "en attente",
+        "reparateur": null,
+        "diagnostic": null,
+        "resultat": null,
+        "piece_attendue": null
     }
 ]

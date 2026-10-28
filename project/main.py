@@ -2,13 +2,13 @@ import json
 from datetime import datetime
 
 types = ["Grilles-Pain", "Lampe", "Aspirateur", "Téléviseur", "Micro-Ondes", "Ordinateur", "Autre"]
-id = 0
+id = int(0)
 
 #F01 - Enregistrer les infos d'un objet a l'accueil
 def creer_fiche():
     #structure par défaut d'une fiche
     client = { 
-        "id": 1 , #Valeur fixe pour l'insant
+        "id": get_id(),
         "nom_visiteur": str(input("Veuillez entrer le nom du visiteur : ")),
         "type_objet": choix_type(), #fait appel a la fonction de choix de type, qui se base sur la liste types[]
         "marque": str(input("Nom de la Marque : ")),
@@ -48,4 +48,10 @@ def save(data):
     with open("history.json", "w", encoding="utf-8") as file:
             json.dump(fichier, file, indent=4, ensure_ascii=False)
 
+
+def get_id():
+    with open("history.json", "r", encoding="utf-8") as file:
+             fichier = json.load(file)
+    id = (fichier[-1]["id"]) + 1
+    return id
 creer_fiche() #histoire de lancer tout ca hein :) 
