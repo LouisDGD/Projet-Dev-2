@@ -11,31 +11,5 @@
         "diagnostic": null,
         "resultat": null,
         "piece_attendue": null
-    },
-    {
-        "id": 1,
-        "nom_visiteur": "Maxime",
-        "type_objet": "Grilles-Pain",
-        "marque": "KitchenAid",
-        "description": "Chauffe 1 seconde puis crame",
-        "date_arrivee": "2026-10-27T18:34:41",
-        "etat": "en attente",
-        "reparateur": null,
-        "diagnostic": null,
-        "resultat": null,
-        "piece_attendue": null
-    },
-    {
-        "id": 1,
-        "nom_visiteur": "Jean-Claude",
-        "type_objet": "Ordinateur",
-        "marque": "PAPPLE",
-        "description": "L'alimentation ne fonctionne plus",
-        "date_arrivee": "2026-10-27T20:14:31",
-        "etat": "en attente",
-        "reparateur": null,
-        "diagnostic": null,
-        "resultat": null,
-        "piece_attendue": null
     }
 ]
