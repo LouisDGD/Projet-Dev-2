@@ -2,6 +2,8 @@
 
 Application de suivi des réparations pour le Repair Café « La Clé à Molette » (Forest), réalisée dans le cadre du cours de développement informatique à l'EPHEC.
 
+L'ia claude opus 5.5 en effort moyen a été utilisée pour aider a la rédaction de ce readme
+
 **Équipe** : Alexandre Borman, Louis Degand, Loïc Martin, Valentin Thiel
 
 📄 Cahier des charges complet : voir le [Wiki](https://github.com/LouisDGD/Projet-Dev-2/wiki)
