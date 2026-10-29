@@ -1,57 +1,48 @@
-import json
 from datetime import datetime
 
-types = ["Grilles-Pain", "Lampe", "Aspirateur", "Téléviseur", "Micro-Ondes", "Ordinateur", "Autre"]
-id = int(0)
+from choix_types import choix_type
+from get_id import get_id
+from save import save
 
-#F01 - Enregistrer les infos d'un objet a l'accueil
-def creer_fiche():
-    #structure par défaut d'une fiche
-    client = { 
+TYPES = ["Grille-pain", "Lampe", "Aspirateur", "Téléviseur", "Micro-ondes", "Ordinateur", "Autre"]
+
+
+def demander_non_vide(question):
+    #Redemande tant que la réponse est vide.
+    reponse = input(question).strip()
+    while not reponse:
+        print("Ce champ est obligatoire.")
+        reponse = input(question).strip()
+    return reponse
+
+def nouvelle_fiche(nom_visiteur, type_objet, marque, description):
+
+    return {
         "id": get_id(),
-        "nom_visiteur": str(input("Veuillez entrer le nom du visiteur : ")),
-        "type_objet": choix_type(), #fait appel a la fonction de choix de type, qui se base sur la liste types[]
-        "marque": str(input("Nom de la Marque : ")),
-        "description": str(input("Description du problème : ")),
+        "nom_visiteur": nom_visiteur,
+        "type_objet": type_objet,
+        "marque": marque or None,  # facultative
+        "description": description,
         "date_arrivee": datetime.now().isoformat(timespec="seconds"),
         "etat": "en attente",
         "reparateur": None,
         "diagnostic": None,
         "resultat": None,
-        "piece_attendue": None
+        "piece_attendue": None,
     }
 
-    save(client)
-
-# Fonction de choix de type en fonction de la liste types []
-def choix_type():
-    numValue = int(0)
-    print('')
-    print("Veuillez choisir un type :")
-    print('')
-    for i in types: #Itère parmi les éléments de la liste types []
-        print(f"{numValue + 1} : {i}")
-        numValue = numValue + 1
-    print('')
-    choix = int(input("Veuillez entrer le numéro correspondant : "))
-    return types[choix-1]
-
-# Fonction de sauvegarde, sauvegarde sur le fichier fiches.json qui servira de db et sur le fichier history.json qui servira de db d'historique
-def save(data):
-    with open("fiches.json", "r", encoding="utf-8") as file:
-        fichier = json.load(file)
-
-    fichier.append(data)
-
-    with open("fiches.json", "w", encoding="utf-8") as file:
-        json.dump(fichier, file, indent=4, ensure_ascii=False)
-    with open("history.json", "w", encoding="utf-8") as file:
-            json.dump(fichier, file, indent=4, ensure_ascii=False)
+def creer_fiche():
+    #F-01 : saisie à l'accueil puis enregistrement.
+    fiche = nouvelle_fiche(
+        nom_visiteur=demander_non_vide("Nom du visiteur : "),
+        type_objet=choix_type(TYPES),
+        marque=input("Marque (facultatif) : ").strip(),
+        description=demander_non_vide("Description du problème : "),
+    )
+    save(fiche)
+    print(f"\nFiche n°{fiche['id']} enregistrée pour {fiche['nom_visiteur']}.")
+    return fiche
 
 
-def get_id():
-    with open("history.json", "r", encoding="utf-8") as file:
-             fichier = json.load(file)
-    id = (fichier[-1]["id"]) + 1
-    return id
-creer_fiche() #histoire de lancer tout ca hein :) 
+if __name__ == "__main__":
+    creer_fiche()
