@@ -2,10 +2,10 @@ from dataclasses import dataclass, field
 from domaine.fiche import Fiche
 from domaine.visiteur import Visiteur
 
-
 @dataclass
 class RegistreFiches:
-    file_attente: list[Fiche] = field(default_factory=list)
+
+    file_attente = []
 
     def ajout_file_attente(self, fiche: Fiche):
         self.file_attente.append(fiche)
