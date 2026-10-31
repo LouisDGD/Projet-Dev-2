@@ -1,4 +1,4 @@
-from stockage import HISTORIQUE, lire
+from project.ancien.stockage import HISTORIQUE, lire
 
 # Renvoie le prochain identifiant libre, basé sur l'historique
 def get_id():

@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from choix_types import choix_type
-from get_id import get_id
-from save import save
+from project.ancien.choix_types import choix_type
+from project.ancien.get_id import get_id
+from project.ancien.save import save
 
 TYPES = ["Grille-pain", "Lampe", "Aspirateur", "Téléviseur", "Micro-ondes", "Ordinateur", "Autre"]
 
