@@ -5,7 +5,7 @@ from pathlib import Path
 # Les fichiers de données sont rangés à côté du code, peu importe d'où on lance le programme
 DOSSIER_DATA = Path(__file__).resolve().parent / "data"
 FICHES = DOSSIER_DATA / "fiches.json"
-HISTORIQUE = DOSSIER_DATA / "history.json"
+TYPES = DOSSIER_DATA / "types.json"
 
 
 def lire(chemin):

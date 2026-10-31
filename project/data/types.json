@@ -1,0 +1,30 @@
+[
+    {
+        "categorie": "Grille-pain",
+        "poids_moyen": 1.5
+    },
+    {
+        "categorie": "Lampe",
+        "poids_moyen": 1.2
+    },
+    {
+        "categorie": "Aspirateur",
+        "poids_moyen": 5.1
+    },
+    {
+        "categorie": "Téléviseur",
+        "poids_moyen": 9.0
+    },
+    {
+        "categorie": "Micro-ondes",
+        "poids_moyen": 12.0
+    },
+    {
+        "categorie": "Ordinateur",
+        "poids_moyen": 4.0
+    },
+    {
+        "categorie": "Autre",
+        "poids_moyen": 1.0
+    }
+]
