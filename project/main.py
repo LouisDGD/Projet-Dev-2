@@ -1,48 +1,41 @@
-from datetime import datetime
+from domaine.registre import RegistreFiches
+from domaine.reparateur import Reparateur
+from domaine.fiche import Fiche
+from domaine.type_objet import TypeObjet
 
-from project.ancien.choix_types import choix_type
-from project.ancien.get_id import get_id
-from project.ancien.save import save
+def main():
+    registre = RegistreFiches()
+    reparateur1 = Reparateur('THIEL', 'Valentin', 'Grille-Pain')
+    reparateur2 = Reparateur('DEGAND', 'Louis', 'Ecran d\'ordinateur')
+    reparateur3 = Reparateur('MARTIN', 'Loic', 'Ninja Creamy')
+    liste_reparateur = [reparateur1, reparateur2, reparateur3]
 
-TYPES = ["Grille-pain", "Lampe", "Aspirateur", "Téléviseur", "Micro-ondes", "Ordinateur", "Autre"]
+    visiteur1 = Visiteur(1, 'DERICK', 'Maxime', None, None, False)
+    visiteur2 = Visiteur(2, 'DUBRUIILLE', 'Xavier', None, None, False)
+    visiteur3 = Visiteur(3, 'KABASELE', 'Greg', None, None, False)
+    liste_visiteur = [visiteur1, visiteur2, visiteur3]
+    id = 1
+    print('Bienvenue dans ASBL OS !\n Que voulez vous faire ?')
+    while True:
+        print('1) Enregistrer un objet.')
+        print('2) Consulter les donnees d\'une fiche (Reparateur).')
+        print('3) Completer une fiche (Reparateur).')
+
+        entree = input('Veuillez entrer le chiffre de la fonctionnalité.')
+        if entree == 1:
+            fiche = list()
+            print('Voici la liste des visiteurs enregistrés:\n')
+            for v in liste_visiteur:
+                print(v)
+            visiteur_input = input('Qui est le visiteur ? Entrez son id.\n')
+            for v in liste_visiteur:
+                if v.id == visiteur_input:
+                    fiche.append(v)
 
 
-def demander_non_vide(question):
-    #Redemande tant que la réponse est vide.
-    reponse = input(question).strip()
-    while not reponse:
-        print("Ce champ est obligatoire.")
-        reponse = input(question).strip()
-    return reponse
 
-def nouvelle_fiche(nom_visiteur, type_objet, marque, description):
-
-    return {
-        "id": get_id(),
-        "nom_visiteur": nom_visiteur,
-        "type_objet": type_objet,
-        "marque": marque or None,  # facultative
-        "description": description,
-        "date_arrivee": datetime.now().isoformat(timespec="seconds"),
-        "etat": "en attente",
-        "reparateur": None,
-        "diagnostic": None,
-        "resultat": None,
-        "piece_attendue": None,
-    }
-
-def creer_fiche():
-    #F-01 : saisie à l'accueil puis enregistrement.
-    fiche = nouvelle_fiche(
-        nom_visiteur=demander_non_vide("Nom du visiteur : "),
-        type_objet=choix_type(TYPES),
-        marque=input("Marque (facultatif) : ").strip(),
-        description=demander_non_vide("Description du problème : "),
-    )
-    save(fiche)
-    print(f"\nFiche n°{fiche['id']} enregistrée pour {fiche['nom_visiteur']}.")
-    return fiche
+        
 
 
 if __name__ == "__main__":
-    creer_fiche()
+    main()
