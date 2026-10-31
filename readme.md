@@ -82,7 +82,7 @@ Tout le monde utilise **exactement** ces noms de champs :
 |---|---|---|---|
 | F-01 | Enregistrer un objet à l'accueil | Indispensable |  En cours |
 | F-02 | Consultation pour les réparateurs | Indispensable |  À faire |
-| F-03 | Compléter une fiche (diagnostic et résultat) | Indispensable |  À faire |
+| F-03 | Compléter une fiche (diagnostic et résultat) | Indispensable | Fait (MVP) |
 | F-04 | Rechercher une fiche | Souhaitable |  À faire |
 | F-05 | Indicateurs de la session | Souhaitable |  À faire |
 | F-06 | Rapport imprimable pour la commune | Souhaitable |  À faire |
