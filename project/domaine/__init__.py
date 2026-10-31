@@ -1,0 +1,1 @@
+from domaine.fiche import Fiche
