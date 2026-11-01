@@ -12,11 +12,11 @@ class Fiche:
     visiteur: Visiteur
     type_objet: TypeObjet
     description_panne: str
+    marque: str | None = None
+    reparateur: str | None = None
     etat: Etat = Etat.EN_ATTENTE
     resultat: Resultat | None = None
     diagnostic: str | None = None
-    reparateur: str | None = None
-    marque: str | None = None
     date_arrivee: datetime = field(default_factory=datetime.now)
     
 
