@@ -177,10 +177,70 @@ def main():
                 print("\nCette fiche n'est pas disponible ou n'existe pas.\n")
 
 
-
+        #F-03 — Compléter une fiche (diagnostic et résultat)
         elif entree == 3:
-            #TODO permettre au reparateur de changer diagnostic et resultat de la fiche (check si elle existe d'abord !)
-            pass
+            print("Voici la liste des fiches disponibles : \n")
+            id_fiches = []
+            choix_fiche = None
+            for f in registre.fiches_par_ordre_arrivee():
+                id_fiches.append(str(f.id))
+                if f.reparateur:
+                    identite_reparateur = f"{f.reparateur.nom} {f.reparateur.prenom}"
+                else:
+                    identite_reparateur = "pas de réparateur"
+                print(f"\nFiche ID : {f.id}\n Visiteur : {f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}\n Type de l'objet : {f.type_objet.categorie}\n Marque : {f.marque}\n Réparateur : {identite_reparateur} \n Etat : {f.etat.value}\n Résultat : {f.resultat}\n Diagnostic : {f.diagnostic}\n Date d'arrivée : {f.date_arrivee} \n")
+            while True:
+                choix_fiche = input("Entrez l'ID de la fiche que vous voulez prendre en charge\n >> ")
+                if choix_fiche.strip() in id_fiches:
+                    choix_fiche = int(choix_fiche)
+                    for f in registre.fiches_par_ordre_arrivee():
+                        if f.id == choix_fiche:
+                            choix_fiche = f
+                    break
+                print("\nCette fiche n'est pas disponible ou n'existe pas.\n")
+            choix_action = input("Quelle action voulez-vous effectuer sur cette fiche ?\n1)Modifier le diagnostic\n2)Modifier le resultat\n>> ")   
+            if choix_action.strip() in ("1", "2"):
+                #modification du diagnostic
+                if choix_action == "1":
+                    diagnostic = input("Entrez le nouveau diagnostic.\n")
+                    if diagnostic.strip():
+                        choix_fiche.modifier_diagnostic(diagnostic)
+                        print(f"Le diagnostic a bien été modifié.\nLe nouveau diagnostic est: {diagnostic}\n")
+                    else:
+                        print("Veuillez entrer une description valable.\n")
+                #modification du resultat
+                elif choix_action == "2":
+                    changement_resulat = False
+                    resultat = input("Entrez le nouveau résultat de la fiche:\n1)Réparé\n2)Non réparable\n3)A suivre\n>> ")
+                    resultat_actuel = choix_fiche.resultat
+                    if resultat.strip() in ("1","2","3"):
+                        if resultat.strip() == "1" and resultat_actuel != Resultat.REPARE:
+                            nouveau_resultat = Resultat.REPARE
+                            changement_resulat = True
+                        elif resultat.strip() == "2" and resultat_actuel != Resultat.REPARE and resultat_actuel != Resultat.NON_REPARABLE:
+                            nouveau_resultat = Resultat.NON_REPARABLE
+                            changement_resulat = True
+                        elif resultat.strip() == "3" and resultat_actuel != Resultat.REPARE and resultat_actuel != Resultat.A_SUIVRE:
+                            nouveau_resultat = Resultat.A_SUIVRE
+                            changement_resulat = True
+                    if changement_resulat:
+                        choix_fiche.modifier_resultat(nouveau_resultat)
+                        print(f"Le résultat a bien été modifié. Le nouvel état est {nouveau_resultat.value}.\n")
+                        changement_resulat = False
+                    else:
+                        print(f"Le résultat ne peut pas être modifié car l'entrée saisie est incorrecte ou il était déjà défini sur {resultat_actuel.value}.\n")
+
+
+
+
+            
+                
+            
+
+
+
+
+
         
 
 

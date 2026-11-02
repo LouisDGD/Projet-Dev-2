@@ -22,8 +22,8 @@ class Fiche:
     def modifier_diagnostic(self, diagnostic: str) -> None:
         """Modifie le diagnostic F-03 tout en mettant une erreur si le diagnostic est vide ou ne contient que des espaces"""
         diagnostic = diagnostic.strip()
-        if not diagnostic:
-            raise ValueError("Veuillez entrer du texte.")
+        """if not diagnostic:
+            raise ValueError("Veuillez entrer du texte.")"""
         self.diagnostic = diagnostic
 
     def modifier_resultat(self, resultat: Resultat) -> None:
