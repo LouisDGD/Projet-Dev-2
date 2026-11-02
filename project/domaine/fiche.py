@@ -5,7 +5,6 @@ from domaine.enums import Etat, Resultat
 from domaine.reparateur import Reparateur
 from datetime import datetime
 
-
 @dataclass
 class Fiche:
     id: int
@@ -13,7 +12,7 @@ class Fiche:
     type_objet: TypeObjet
     description_panne: str
     marque: str | None = None
-    reparateur: str | None = None
+    reparateur: Reparateur | None = None
     etat: Etat = Etat.EN_ATTENTE
     resultat: Resultat | None = None
     diagnostic: str | None = None
