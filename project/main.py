@@ -166,10 +166,13 @@ def main():
                     choix_fiche = int(choix_fiche)
                     for f in registre.fiches_par_ordre_arrivee():
                         if f.id == choix_fiche:
+                            if f.reparateur:
+                                print("\nCette fiche est déjà prise en charge.\n")
+                                break
                             f.prendre_en_charge(reparateur)
                             print("Vous avez bien été assigné à cette fiche. \n")
                             identite_reparateur = f"{f.reparateur.nom} {f.reparateur.prenom}"
-                            print(f"\nFiche ID : {f.id}\n Visiteur : {f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}\n Type de l'objet : {f.type_objet.categorie}\n Marque : {f.marque}\n Réparateur : {identite_reparateur} \n Etat : {f.etat.value}\n Résultat : {f.resultat.value}\n Diagnostic : {f.diagnostic}\n Date d'arrivée : {f.date_arrivee} \n")
+                            print(f"\nFiche ID : {f.id}\n Visiteur : {f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}\n Type de l'objet : {f.type_objet.categorie}\n Marque : {f.marque}\n Réparateur : {identite_reparateur} \n Etat : {f.etat.value}\n Résultat : {f.resultat}\n Diagnostic : {f.diagnostic}\n Date d'arrivée : {f.date_arrivee} \n")
                     break
                 print("\nCette fiche n'est pas disponible ou n'existe pas.\n")
 
