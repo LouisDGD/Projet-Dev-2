@@ -4,18 +4,11 @@ from domaine.fiche import Fiche
 from domaine.type_objet import TypeObjet
 from domaine.visiteur import Visiteur
 
-def main():
-    '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''
-    registre = RegistreFiches()
+
+def initialiser(liste_reparateur: list, liste_visiteur: list, liste_type_objet: list):
     reparateurs_donnees = [['THIEL', 'Valentin', 'Grille-Pain'], ['DEGAND', 'Louis', 'Ecran d\'ordinateur'], ['MARTIN', 'Loic', 'Ninja Creamy']]
     type_objet_donnees = [['Grille-Pain', 1.5], ['Ecran d\'ordinateur', 0.5], ['Ninja Creamy', 4]]
     visiteurs_donnees = [[1, 'DERICK', 'Maxime', None, None, False], [2, 'DUBRUILLE', 'Xavier', None, None, False], [3, 'KABASELE', 'Greg', None, None, False]]
-    liste_reparateur = []
-    liste_visiteur = []
-    liste_type_objet = []
-    id_objet = 1
-    #TODO creer deux trois fiches
-
     for nom, prenom, specialite in reparateurs_donnees:
         liste_reparateur.append(Reparateur(nom, prenom, specialite))
     for id, nom, prenom, num, email, accord in visiteurs_donnees:
@@ -23,6 +16,15 @@ def main():
     for categorie, poids in type_objet_donnees:
         liste_type_objet.append(TypeObjet(categorie, poids))
 
+def main():
+    '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''
+    registre = RegistreFiches()
+    liste_reparateur = []
+    liste_visiteur = []
+    liste_type_objet = []
+    initialiser(liste_reparateur, liste_visiteur, liste_type_objet)
+    id_objet = 1
+    #TODO creer deux trois fiches
     
     print('Bienvenue dans ASBL OS !\n Que voulez vous faire?')
     '''boucle principale'''
