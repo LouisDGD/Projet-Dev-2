@@ -9,10 +9,18 @@ class RegistreFiches:
     file_attente: list[Fiche] = field(default_factory=list)
 
     def ajout_file_attente(self, fiche: Fiche):
+        """Ajoute l'élement a la file d'attente
+                PRE : aucune.
+                POST : L'élément est ajouté a la file d'attente file_attente[].
+        """
         self.file_attente.append(fiche)
         return None
 
     def prochain_id(self):
+        """Retourne l'id le plus élevé de la file d'attente +1
+                PRE : aucune.
+                POST : L'id est renvoyé
+        """ 
         if not self.file_attente:
             return 1
         return max(fiche.id for fiche in self.file_attente) + 1
