@@ -26,6 +26,10 @@ class RegistreFiches:
         return max(fiche.id for fiche in self.file_attente) + 1
 
     def trouver_visiteur(self, nom, prenom):
+        """Retourne la fiche du visiteur dont le nom et le prénom sont données en paramètres
+                PRE : aucune.
+                POST : La fiche contenant le prénom et le nom donnés en paramètres est renvoyé
+        """ 
         nom = nom.lower()
         prenom = prenom.lower()
         for fiche in self.file_attente:
