@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from domaine.fiche import Fiche
 from domaine.visiteur import Visiteur
+from domaine.enums import Resultat
 
 @dataclass
 class RegistreFiches:
@@ -28,3 +29,12 @@ class RegistreFiches:
     def fiches_par_ordre_arrivee(self) -> list[Fiche]:
         """F-02 : renvoie toutes les fiches, de la plus ancienne à la plus récente."""
         return sorted(self.file_attente, key=lambda fiche: fiche.date_arrivee)
+
+    def rappel_a_suivre(self) -> list[Fiche]:
+        """
+        """
+        liste_a_suivre = []
+        for fiche in self.file_attente:
+            if fiche.resultat == Resultat.A_SUIVRE:
+                liste_a_suivre.append(fiche)
+        return sorted(liste_a_suivre, key=lambda fiche: fiche.date_arrivee)
