@@ -20,16 +20,39 @@ class Fiche:
     
 
     def modifier_diagnostic(self, diagnostic: str) -> None:
-        """Modifie le diagnostic F-03 tout en mettant une erreur si le diagnostic est vide ou ne contient que des espaces"""
+        """Modifie l'attribut diagnostic de la fiche
+        PRE : aucune.
+        POST : le registre contient un diagnostic qui est un str de taille variable.
+        Les autres attributs sont inchangés.
+        Ne renvoie rien.
+        Exceptions :
+             ValueError si le diagnostic est vide
+             TypeError si le diagnostic n'est pas un str
+        Dans ces cas, diagnostic n'est pas changé
+        """
+        if not isinstance(diagnostic, str):
+            raise TypeError("Veuillez entrer du texte.")
         diagnostic = diagnostic.strip()
-        """if not diagnostic:
-            raise ValueError("Veuillez entrer du texte.")"""
+        if not diagnostic:
+            raise ValueError("Le texte est vide")
         self.diagnostic = diagnostic
 
     def modifier_resultat(self, resultat: Resultat) -> None:
-        """Modifie le resultat F-03 et passe l'état de l'intervention de cette session à terminé"""
+        """Modifie le resultat F-03 et passe l'état de l'intervention de cette session à terminé
+        PRE : aucune.
+        POST : le registre contient un resultat qui correspond à l'un des membres.
+        L'attribut état devient Etat.TERMINE
+        Les autres attributs sont inchangés.
+        Ne renvoie rien.
+        Exceptions :
+             TypeError si le resultat n'est pas un membre de Resultat
+             ValueError si le resultat est deja Resultat.REPARE
+        Dans ces cas, resultat et état ne sont pas changés
+        """
         if not isinstance(resultat, Resultat):
             raise TypeError("Pas le type Resultat")
+        if self.resultat == Resultat.REPARE:
+            raise ValueError("L'objet a déjà été réparé")
         self.resultat = resultat
         self.etat = Etat.TERMINE
 

@@ -31,7 +31,11 @@ class RegistreFiches:
         return sorted(self.file_attente, key=lambda fiche: fiche.date_arrivee)
 
     def rappel_a_suivre(self) -> list[Fiche]:
-        """
+        """Renvoie la liste des fiches qui ont le résultat Resultat.A_SUIVRE
+        PRE : aucune.
+        POST : renvoie une liste de fiches trié par odre chronologique qui ont l'attribut résultat Resultat.A_SUIVRE
+        Renvoie une liste vide si aucune fiche ne correspond.
+        Ne modifie rien
         """
         liste_a_suivre = []
         for fiche in self.file_attente:
