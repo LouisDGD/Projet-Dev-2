@@ -57,7 +57,7 @@ class Fiche:
         self.etat = Etat.TERMINE
 
     def prendre_en_charge(self, reparateur: Reparateur) -> None:
-        """F-02 : inscrit le réparateur qui prend en charge l'objet.
+        """Inscrit le réparateur qui prend en charge l'objet.
         PRE : aucune.
         POST : la fiche contient le réparateur reçu et son état est Etat.EN_COURS.
         Exceptions :
