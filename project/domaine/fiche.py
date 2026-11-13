@@ -57,7 +57,15 @@ class Fiche:
         self.etat = Etat.TERMINE
 
     def prendre_en_charge(self, reparateur: Reparateur) -> None:
-        """F-02 Incrit le réparateur qui prend en charge l'objet."""
+        """F-02 : inscrit le réparateur qui prend en charge l'objet.
+        PRE : aucune.
+        POST : la fiche contient le réparateur reçu et son état est Etat.EN_COURS.
+        Exceptions :
+            TypeError si reparateur n'est pas un Reparateur
+            ValueError si le nom du réparateur est vide
+            ValueError si la fiche n'est pas Etat.EN_ATTENTE
+            Dans ce cas, la fiche n'est pas modifiée.
+        """
         if not isinstance(reparateur, Reparateur):
             raise TypeError("Pas le type Reparateur")
         if not reparateur.nom.strip():

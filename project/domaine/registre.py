@@ -39,7 +39,13 @@ class RegistreFiches:
         return None
     
     def fiches_par_ordre_arrivee(self) -> list[Fiche]:
-        """F-02 : renvoie toutes les fiches, de la plus ancienne à la plus récente."""
+        """Renvoie toutes les fiches, de la plus ancienne à la plus récente.
+        PRE : chaque fiche de file_attente a une date_arrivee de type datetime.
+        POST : renvoie une nouvelle liste contenant toutes les fiches de file_attente,
+        triées par date_arrivee croissante.
+        Renvoie une liste vide si file_attente est vide.
+        Ne modifie rien
+        """
         return sorted(self.file_attente, key=lambda fiche: fiche.date_arrivee)
 
     def rappel_a_suivre(self) -> list[Fiche]:
@@ -54,3 +60,20 @@ class RegistreFiches:
             if fiche.resultat == Resultat.A_SUIVRE:
                 liste_a_suivre.append(fiche)
         return sorted(liste_a_suivre, key=lambda fiche: fiche.date_arrivee)
+
+    def trouver_fiche(self, nom_visiteur: str, prenom_visiteur: str) -> list[Fiche]:
+        """Renvoie toutes les fiches du visiteur dont le nom et le prénom sont donnés
+        PRE : aucune.
+        POST : renvoie une liste de fiches triée par ordre chronologique, dont le visiteur
+        a le nom et le prénom donnés, sans tenir compte des majuscules ni des espaces autour.
+        Renvoie une liste vide si aucune fiche ne correspond.
+        Ne modifie rien
+        """
+        nom = nom_visiteur.strip().lower()
+        prenom = prenom_visiteur.strip().lower()
+        fiches_trouvees = []
+        for fiche in self.file_attente:
+            if fiche.visiteur.nom_visiteur.lower() == nom:
+                if fiche.visiteur.prenom_visiteur.lower() == prenom:
+                    fiches_trouvees.append(fiche)
+        return sorted(fiches_trouvees, key=lambda fiche: fiche.date_arrivee)
