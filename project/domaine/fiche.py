@@ -1,23 +1,54 @@
-from dataclasses import dataclass, field
 from domaine.visiteur import Visiteur
 from domaine.type_objet import TypeObjet
 from domaine.enums import Etat, Resultat
 from domaine.reparateur import Reparateur
 from datetime import datetime
 
-@dataclass
 class Fiche:
-    __id: int
-    __visiteur: Visiteur
-    __type_objet: TypeObjet
-    __description_panne: str
-    __marque: str | None = None
-    __reparateur: Reparateur | None = None
-    __etat: Etat = Etat.EN_ATTENTE
-    __resultat: Resultat | None = None
-    __diagnostic: str | None = None
-    __date_arrivee: datetime = field(default_factory=datetime.now)
-
+    def __init__(self, id: int, visiteur: Visiteur, type_objet: TypeObjet, description_panne: str, marque: str | None = None, date_arrivee: datetime | None = None, reparateur: Reparateur | None = None, etat: Etat = Etat.EN_ATTENTE, resultat: Resultat | None = None, diagnostic: str | None = None) -> None:
+        if not isinstance(id, int) or isinstance(id, bool):
+            raise TypeError("id doit être un entier")
+        if not isinstance(visiteur, Visiteur):
+            raise TypeError("Pas le type Visiteur")
+        if not isinstance(type_objet, TypeObjet):
+            raise TypeError("Pas le type TypeObjet")
+        if not isinstance(description_panne, str):
+            raise TypeError("La description doit être un texte")
+        description_panne = description_panne.strip()
+        if not description_panne:
+            raise ValueError("La description de la panne est obligatoire.")
+        if marque is not None:
+            if not isinstance(marque, str):
+                raise TypeError("La marque doit être un texte")
+            marque = marque.strip()
+            if not marque:
+                raise ValueError("La marque de la panne est obligatoire.")
+        if date_arrivee is not None and not isinstance(date_arrivee, datetime):
+            raise TypeError("La date d'arrivée n'est pas une date")
+        if reparateur is not None and not isinstance(reparateur, Reparateur):
+            raise TypeError("Le réparateur doit être de type Reparateur")
+        if not isinstance(etat, Etat):
+            raise TypeError("L'état n'est pas de type Etat")
+        if resultat is not None and not isinstance(resultat, Resultat):
+            raise TypeError("Le résultat n'est pas de type Resultat")
+        if diagnostic is not None:
+            if not isinstance(diagnostic, str):
+                raise TypeError("Le diagnostic doit être un texte")
+            diagnostic = diagnostic.strip()
+            if not diagnostic:
+                raise ValueError("Le diagnostic de la panne est obligatoire.")
+        
+        self.__id = id
+        self.__visiteur = visiteur
+        self.__type_objet = type_objet
+        self.__description_panne = description_panne
+        self.__marque = marque
+        self.__date_arrivee = date_arrivee or datetime.now()
+        self.__reparateur = reparateur
+        self.__etat = etat
+        self.__resultat = resultat
+        self.__diagnostic = diagnostic
+        
     @property
     def id(self) -> int:
         return self.__id
@@ -82,7 +113,7 @@ class Fiche:
     def modifier_resultat(self, resultat: Resultat) -> None:
         """Modifie le resultat F-03 et passe l'état de l'intervention de cette session à terminé
         PRE : aucune.
-        POST : le registre contient un resultat qui correspond à l'un des membres.
+        POST : la fiche contient un resultat qui correspond à l'un des membres.
         L'attribut état devient Etat.TERMINE
         Les autres attributs sont inchangés.
         Ne renvoie rien.

@@ -9,7 +9,7 @@ from domaine.enums import Etat, Resultat
 
 def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet: list, liste_fiche: list, id_fiche: int):
     reparateurs_donnees = [['THIEL', 'Valentin', 'Grille-pain'], ['DEGAND', 'Louis', 'Ecran d\'ordinateur'], ['MARTIN', 'Loic', 'Ninja Creamy']]
-    type_objet_donnees = [['Grille-pain', 1.5], ['Ecran d\'ordinateur', 0.5], ['Ninja Creamy', 4]]
+    type_objet_donnees = [['Grille-pain', 1.5], ['Ecran d\'ordinateur', 0.5], ['Ninja Creamy', float(4)]]
     visiteurs_donnees = [[1, 'DERICK', 'Maxime', None, None, False], [2, 'DUBRUILLE', 'Xavier', None, None, False], [3, 'KABASELE', 'Greg', None, None, False]]
     fiches_donnees = [
         [1, 0, 0, "Ne chauffe plus d'un côté", datetime(2026, 11, 14, 14, 30), Etat.EN_ATTENTE, None, None, None],
@@ -26,15 +26,15 @@ def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet:
     for id_fiche, i_visiteur, i_type, description, date, etat, i_reparateur, diagnostic, resultat in fiches_donnees:
         reparateur = liste_reparateur[i_reparateur] if i_reparateur is not None else None
         liste_fiche.append(Fiche(
-            _Fiche__id=id_fiche,
-            _Fiche__visiteur=liste_visiteur[i_visiteur],
-            _Fiche__type_objet=liste_type_objet[i_type],
-            _Fiche__description_panne=description,
-            _Fiche__date_arrivee=date,
-            _Fiche__etat=etat,
-            _Fiche__reparateur=reparateur,
-            _Fiche__diagnostic=diagnostic,
-            _Fiche__resultat=resultat,
+            id=id_fiche,
+            visiteur=liste_visiteur[i_visiteur],
+            type_objet=liste_type_objet[i_type],
+            description_panne=description,
+            date_arrivee=date,
+            etat=etat,
+            reparateur=reparateur,
+            diagnostic=diagnostic,
+            resultat=resultat,
         ))
         id_fiche +=1
     return id_fiche
