@@ -1,1 +1,6 @@
-fiches.json
+__pycache__
+./venv
+venv/
+fiche-client-exemple.json
+history.json
+.DS_Store
