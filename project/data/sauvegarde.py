@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from domaine.fiche import Fiche
 from domaine.visiteur import Visiteur
@@ -13,30 +13,31 @@ class Sauvegarde:
     def __init__(self) -> None:
         self.date_sauvegarde: datetime = datetime.now()
         self.erreur: bool = False
-        self.dossier: str = "data/sauvegardes/" + self.date_sauvegarde.strftime("%Y-%m-%d_%H-%M")
+        self.dossier_racine: str = "data/sauvegardes"
+        self.dossier: str = self.dossier_racine + "/" + self.date_sauvegarde.strftime("%Y-%m-%d_%H-%M")
 
-    # Conversions en dictionnaire
+    # Conversions en dictionnaire - Les 4 méthodes qui renvoient un dictionnaire ont été développées a l'aide de l'ia Claude Opus 5.5 en effort Moyen. 
 
-    def _visiteur_vers_dict(self, visiteur: Visiteur) -> dict:
+    def _visiteur_vers_dict(self, visiteur: Visiteur) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
         """Convertit un visiteur en dictionnaire. Ne modifie pas le visiteur."""
         return {
             "id": visiteur.id,
             "nom_visiteur": visiteur.nom_visiteur,
             "prenom_visiteur": visiteur.prenom_visiteur,
-            "accord": visiteur.accord,
             "num_tel": visiteur.num_tel,
             "email": visiteur.email,
+            "accord": visiteur.accord,
             "derniere_visite": visiteur.derniere_visite.isoformat(),
         }
 
-    def _type_vers_dict(self, type_objet: TypeObjet) -> dict:
+    def _type_vers_dict(self, type_objet: TypeObjet) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
         """Convertit un type d'objet en dictionnaire. Ne modifie pas le type."""
         return {
             "categorie": type_objet.categorie,
             "poids_moyen": type_objet.poids_moyen,
         }
 
-    def _reparateur_vers_dict(self, reparateur: Reparateur) -> dict:
+    def _reparateur_vers_dict(self, reparateur: Reparateur) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
         """Convertit un réparateur en dictionnaire. Ne modifie pas le réparateur."""
         return {
             "nom": reparateur.nom,
@@ -59,6 +60,18 @@ class Sauvegarde:
             "diagnostic": fiche.diagnostic,
             "date_arrivee": fiche.date_arrivee.isoformat(),
         }
+
+    # Outil interne
+
+    def _supprimer_dossier(self, chemin: str) -> None:
+        """Supprime un dossier de sauvegarde et les fichiers qu'il contient.
+        PRE : chemin désigne un dossier qui ne contient que des fichiers (pas de sous-dossiers).
+        POST : le dossier et tous ses fichiers n'existent plus.
+        Exceptions : OSError si un fichier ou le dossier ne peut pas être supprimé.
+        """
+        for nom_fichier in os.listdir(chemin):
+            os.remove(os.path.join(chemin, nom_fichier))
+        os.rmdir(chemin)
 
     # Méthodes
 
@@ -170,27 +183,30 @@ class Sauvegarde:
         PRE : aucune.
         POST : il reste au maximum 10 sauvegardes dans dossier_racine, et aucune n'a
         plus de 365 jours par rapport à date_sauvegarde. Les plus anciennes ont été supprimées.
+        Les dossiers dont le nom n'est pas une date sont ignorés.
         Si une suppression échoue, self.erreur vaut True.
         """
         try:
             saves = sorted(os.listdir(self.dossier_racine))
 
+            # EF-08.7 : aucune sauvegarde de plus de 365 jours
             for nom in saves[:]:
                 try:
                     date = datetime.strptime(nom, "%Y-%m-%d_%H-%M")
                 except ValueError:
-                    saves.remove(nom)   
+                    saves.remove(nom)   # dossier qui n'est pas une sauvegarde : on l'ignore
                     continue
                 if self.date_sauvegarde - date > timedelta(days=365):
-                    shutil.rmtree(os.path.join(self.dossier_racine, nom))
+                    self._supprimer_dossier(os.path.join(self.dossier_racine, nom))
                     saves.remove(nom)
 
+            # EF-08.4 : 10 sauvegardes maximum, on supprime les plus anciennes
             while len(saves) > 10:
                 plus_ancienne = saves.pop(0)
-                shutil.rmtree(os.path.join(self.dossier_racine, plus_ancienne))
+                self._supprimer_dossier(os.path.join(self.dossier_racine, plus_ancienne))
 
         except OSError:
-            self.erreur = True 
+            self.erreur = True
 
     def restauration(self, date: datetime) -> str:
         """
@@ -206,10 +222,11 @@ class Sauvegarde:
 
 #CODE DE TEST GENERE PAR CLAUDE
 if __name__ == "__main__":
+    # ---------- Test 1 : création du dossier et copies ----------
     test = Sauvegarde()
     test.creer_dossier()
-    print(test.dossier)
-    print(test.erreur)
+    print("Dossier :", test.dossier)
+    print("Erreur :", test.erreur)
 
     fiche1 = Fiche(
         1,
@@ -232,5 +249,35 @@ if __name__ == "__main__":
     test.copie_type(fiche1.type_objet)
     test.copie_type(fiche2.type_objet)
     test.copie_reparateur(Reparateur("Lemaire", "Jules", "électroménager"))
+    print("Copies terminées, vérifie le dossier", test.dossier)
 
-    print("Copie terminée, vérifie le dossier", test.dossier)
+    # ---------- Test 2 : suppression automatique ----------
+    # On travaille dans un dossier à part pour ne pas toucher aux vraies sauvegardes.
+    test_suppr = Sauvegarde()
+    test_suppr.dossier_racine = "data/sauvegardes_test"
+
+    # On repart de zéro : on vide le dossier de test s'il existe déjà
+    if os.path.exists(test_suppr.dossier_racine):
+        for nom in os.listdir(test_suppr.dossier_racine):
+            test_suppr._supprimer_dossier(os.path.join(test_suppr.dossier_racine, nom))
+
+    # 12 sauvegardes récentes (du 1er au 12 novembre 2026)
+    for jour in range(1, 13):
+        os.makedirs(f"{test_suppr.dossier_racine}/2026-11-{jour:02d}_10-00")
+    # 1 sauvegarde de plus de 365 jours
+    os.makedirs(f"{test_suppr.dossier_racine}/2025-01-01_10-00")
+    # 1 dossier qui n'est pas une sauvegarde
+    os.makedirs(f"{test_suppr.dossier_racine}/pas_une_date")
+
+    print("\nAvant suppression :", sorted(os.listdir(test_suppr.dossier_racine)))
+    test_suppr.suppression_automatique()
+    restants = sorted(os.listdir(test_suppr.dossier_racine))
+    print("Après suppression :", restants)
+
+    # Vérifications
+    print("Plus de sauvegarde de 2025 :", "2025-01-01_10-00" not in restants)
+    print("Les 2 plus anciennes supprimées :",
+          "2026-11-01_10-00" not in restants and "2026-11-02_10-00" not in restants)
+    print("10 sauvegardes restantes :", len(restants) - 1 == 10)   # -1 pour "pas_une_date"
+    print("Dossier étranger conservé :", "pas_une_date" in restants)
+    print("Erreur :", test_suppr.erreur)
