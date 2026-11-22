@@ -23,9 +23,9 @@ class Sauvegarde:
             "id": visiteur.id,
             "nom_visiteur": visiteur.nom_visiteur,
             "prenom_visiteur": visiteur.prenom_visiteur,
+            "accord": visiteur.accord,
             "num_tel": visiteur.num_tel,
             "email": visiteur.email,
-            "accord": visiteur.accord,
             "derniere_visite": visiteur.derniere_visite.isoformat(),
         }
 
