@@ -1,5 +1,5 @@
-from domaine.fiche import Fiche
-from domaine.enums import Resultat
+from project.domaine.fiche import Fiche
+from project.domaine.enums import Resultat
 
 class RegistreFiches:
 

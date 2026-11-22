@@ -1,7 +1,7 @@
-from domaine.visiteur import Visiteur
-from domaine.type_objet import TypeObjet
-from domaine.enums import Etat, Resultat
-from domaine.reparateur import Reparateur
+from project.domaine.visiteur import Visiteur
+from project.domaine.type_objet import TypeObjet
+from project.domaine.enums import Etat, Resultat
+from project.domaine.reparateur import Reparateur
 from datetime import datetime
 
 class Fiche:
