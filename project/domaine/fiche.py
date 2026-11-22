@@ -7,7 +7,9 @@ from datetime import datetime
 class Fiche:
     def __init__(self, id: int, visiteur: Visiteur, type_objet: TypeObjet, description_panne: str, marque: str | None = None, date_arrivee: datetime | None = None, reparateur: Reparateur | None = None, etat: Etat = Etat.EN_ATTENTE, resultat: Resultat | None = None, diagnostic: str | None = None) -> None:
         if not isinstance(id, int) or isinstance(id, bool):
-            raise TypeError("id doit être un entier")
+            raise TypeError("L'id doit être un entier")
+        if id < 1:
+            raise ValueError("L'id doit être strictement positif ")
         if not isinstance(visiteur, Visiteur):
             raise TypeError("Pas le type Visiteur")
         if not isinstance(type_objet, TypeObjet):

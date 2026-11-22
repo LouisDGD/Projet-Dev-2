@@ -3,7 +3,7 @@ class Visiteur:
     def __init__(self, id : int, nom_visiteur: str, prenom_visiteur: str, num_tel : str | None = None , email : str | None = None, accord : bool = False, derniere_visite : datetime | None = None) -> None:
         if not isinstance(id, int) or isinstance(id, bool):
             raise TypeError("L'ID doit être un entier")
-        if id <= 0:
+        if id < 1:
             raise ValueError("L'ID  doit être strictement positif")
         if not isinstance(nom_visiteur, str):
             raise TypeError("Le nom doit être un str")
