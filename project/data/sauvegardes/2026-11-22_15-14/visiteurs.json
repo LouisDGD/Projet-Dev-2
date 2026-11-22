@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nom_visiteur": "Dubois",
+    "prenom_visiteur": "Marie",
+    "num_tel": null,
+    "email": null,
+    "accord": false,
+    "derniere_visite": "2026-11-22T15:14:35.162972"
+  },
+  {
+    "id": 2,
+    "nom_visiteur": "Martin",
+    "prenom_visiteur": "Paul",
+    "num_tel": "0470123456",
+    "email": "paul@mail.be",
+    "accord": true,
+    "derniere_visite": "2026-11-22T15:14:35.162972"
+  }
+]

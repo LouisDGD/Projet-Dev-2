@@ -148,7 +148,7 @@ class Fiche:
                 raise ValueError(f"Objet déjà pris en charge par {self.__reparateur.nom}.")
             raise ValueError("Cet objet n'est plus en attente.")
         self.__reparateur = reparateur
-        self.__etat = Etat.EN_COURS
+        self.__etat = Etat.EN_COURS        
 
 if __name__ == "__main__":
     test = Fiche(1, Visiteur(1, "Jean", "Dean", "", "", False), TypeObjet("cookie maker", 4.3),
