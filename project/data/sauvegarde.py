@@ -206,10 +206,11 @@ class Sauvegarde:
 
 #CODE DE TEST GENERE PAR CLAUDE
 if __name__ == "__main__":
+    # ---------- Test 1 : création du dossier et copies ----------
     test = Sauvegarde()
     test.creer_dossier()
-    print(test.dossier)
-    print(test.erreur)
+    print("Dossier :", test.dossier)
+    print("Erreur :", test.erreur)
 
     fiche1 = Fiche(
         1,
@@ -232,5 +233,31 @@ if __name__ == "__main__":
     test.copie_type(fiche1.type_objet)
     test.copie_type(fiche2.type_objet)
     test.copie_reparateur(Reparateur("Lemaire", "Jules", "électroménager"))
+    print("Copies terminées, vérifie le dossier", test.dossier)
 
-    print("Copie terminée, vérifie le dossier", test.dossier)
+    # ---------- Test 2 : suppression automatique ----------
+    # On travaille dans un dossier à part pour ne pas toucher aux vraies sauvegardes.
+    test_suppr = Sauvegarde()
+    test_suppr.dossier_racine = "data/sauvegardes_test"
+    shutil.rmtree(test_suppr.dossier_racine, ignore_errors=True)  # repart de zéro
+
+    # 12 sauvegardes récentes (du 1er au 12 novembre 2026)
+    for jour in range(1, 13):
+        os.makedirs(f"{test_suppr.dossier_racine}/2026-11-{jour:02d}_10-00")
+    # 1 sauvegarde de plus de 365 jours
+    os.makedirs(f"{test_suppr.dossier_racine}/2025-01-01_10-00")
+    # 1 dossier qui n'est pas une sauvegarde
+    os.makedirs(f"{test_suppr.dossier_racine}/pas_une_date")
+
+    print("\nAvant suppression :", sorted(os.listdir(test_suppr.dossier_racine)))
+    test_suppr.suppression_automatique()
+    restants = sorted(os.listdir(test_suppr.dossier_racine))
+    print("Après suppression :", restants)
+
+    # Vérifications
+    print("Plus de sauvegarde de 2025 :", "2025-01-01_10-00" not in restants)
+    print("Les 2 plus anciennes supprimées :",
+          "2026-11-01_10-00" not in restants and "2026-11-02_10-00" not in restants)
+    print("10 sauvegardes restantes :", len(restants) - 1 == 10)   # -1 pour "pas_une_date"
+    print("Dossier étranger conservé :", "pas_une_date" in restants)
+    print("Erreur :", test_suppr.erreur)
