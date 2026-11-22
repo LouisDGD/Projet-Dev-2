@@ -3,7 +3,7 @@ from enum import Enum
 class Etat(Enum):
     EN_ATTENTE = "en attente"
     EN_COURS = "en cours"
-    TERMINE = "terminé"
+    TERMINE = "terminée"
 
 class Resultat(Enum):
     REPARE = "réparé"

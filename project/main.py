@@ -26,15 +26,15 @@ def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet:
     for id_fiche, i_visiteur, i_type, description, date, etat, i_reparateur, diagnostic, resultat in fiches_donnees:
         reparateur = liste_reparateur[i_reparateur] if i_reparateur is not None else None
         liste_fiche.append(Fiche(
-            id=id_fiche,
-            visiteur=liste_visiteur[i_visiteur],
-            type_objet=liste_type_objet[i_type],
-            description_panne=description,
-            date_arrivee=date,
-            etat=etat,
-            reparateur=reparateur,
-            diagnostic=diagnostic,
-            resultat=resultat,
+            _Fiche__id=id_fiche,
+            _Fiche__visiteur=liste_visiteur[i_visiteur],
+            _Fiche__type_objet=liste_type_objet[i_type],
+            _Fiche__description_panne=description,
+            _Fiche__date_arrivee=date,
+            _Fiche__etat=etat,
+            _Fiche__reparateur=reparateur,
+            _Fiche__diagnostic=diagnostic,
+            _Fiche__resultat=resultat,
         ))
         id_fiche +=1
     return id_fiche
@@ -172,7 +172,7 @@ def main():
                             f.prendre_en_charge(reparateur)
                             print("Vous avez bien été assigné à cette fiche. \n")
                             identite_reparateur = f"{f.reparateur.nom} {f.reparateur.prenom}"
-                            print(f"\nFiche ID : {f.id}\n Visiteur : {f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}\n Type de l'objet : {f.type_objet.categorie}\n Marque : {f.marque}\n Réparateur : {identite_reparateur} \n Etat : {f.etat.value}\n Résultat : {f.resultat}\n Diagnostic : {f.diagnostic}\n Date d'arrivée : {f.date_arrivee} \n")
+                            print(f"\nFiche ID : {f.id}\n Visiteur : {f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}\n Type de l'objet : {f.type_objet.categorie}\n Marque : {f.marque}\n Réparateur : {identite_reparateur} \n Etat : {f.etat.value}\n Résultat : {f.resultat}\n Diagnostic : {f.diagnostic}\n Date d'arrivée : {f.date_arrivee.strftime("%d/%m/%Y, %H:%M")} \n")
                     break
                 print("\nCette fiche n'est pas disponible ou n'existe pas.\n")
 
