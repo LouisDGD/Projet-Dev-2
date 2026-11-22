@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from domaine.fiche import Fiche
 from domaine.visiteur import Visiteur
@@ -13,7 +13,8 @@ class Sauvegarde:
     def __init__(self) -> None:
         self.date_sauvegarde: datetime = datetime.now()
         self.erreur: bool = False
-        self.dossier: str = "data/sauvegardes/" + self.date_sauvegarde.strftime("%Y-%m-%d_%H-%M")
+        self.dossier_racine: str = "data/sauvegardes"
+        self.dossier: str = self.dossier_racine + "/" + self.date_sauvegarde.strftime("%Y-%m-%d_%H-%M")
 
     # Conversions en dictionnaire
 
@@ -23,9 +24,9 @@ class Sauvegarde:
             "id": visiteur.id,
             "nom_visiteur": visiteur.nom_visiteur,
             "prenom_visiteur": visiteur.prenom_visiteur,
-            "accord": visiteur.accord,
             "num_tel": visiteur.num_tel,
             "email": visiteur.email,
+            "accord": visiteur.accord,
             "derniere_visite": visiteur.derniere_visite.isoformat(),
         }
 
@@ -59,6 +60,18 @@ class Sauvegarde:
             "diagnostic": fiche.diagnostic,
             "date_arrivee": fiche.date_arrivee.isoformat(),
         }
+
+    # Outil interne
+
+    def _supprimer_dossier(self, chemin: str) -> None:
+        """Supprime un dossier de sauvegarde et les fichiers qu'il contient.
+        PRE : chemin désigne un dossier qui ne contient que des fichiers (pas de sous-dossiers).
+        POST : le dossier et tous ses fichiers n'existent plus.
+        Exceptions : OSError si un fichier ou le dossier ne peut pas être supprimé.
+        """
+        for nom_fichier in os.listdir(chemin):
+            os.remove(os.path.join(chemin, nom_fichier))
+        os.rmdir(chemin)
 
     # Méthodes
 
@@ -170,27 +183,30 @@ class Sauvegarde:
         PRE : aucune.
         POST : il reste au maximum 10 sauvegardes dans dossier_racine, et aucune n'a
         plus de 365 jours par rapport à date_sauvegarde. Les plus anciennes ont été supprimées.
+        Les dossiers dont le nom n'est pas une date sont ignorés.
         Si une suppression échoue, self.erreur vaut True.
         """
         try:
             saves = sorted(os.listdir(self.dossier_racine))
 
+            # EF-08.7 : aucune sauvegarde de plus de 365 jours
             for nom in saves[:]:
                 try:
                     date = datetime.strptime(nom, "%Y-%m-%d_%H-%M")
                 except ValueError:
-                    saves.remove(nom)   
+                    saves.remove(nom)   # dossier qui n'est pas une sauvegarde : on l'ignore
                     continue
                 if self.date_sauvegarde - date > timedelta(days=365):
-                    shutil.rmtree(os.path.join(self.dossier_racine, nom))
+                    self._supprimer_dossier(os.path.join(self.dossier_racine, nom))
                     saves.remove(nom)
 
+            # EF-08.4 : 10 sauvegardes maximum, on supprime les plus anciennes
             while len(saves) > 10:
                 plus_ancienne = saves.pop(0)
-                shutil.rmtree(os.path.join(self.dossier_racine, plus_ancienne))
+                self._supprimer_dossier(os.path.join(self.dossier_racine, plus_ancienne))
 
         except OSError:
-            self.erreur = True 
+            self.erreur = True
 
     def restauration(self, date: datetime) -> str:
         """
@@ -239,7 +255,11 @@ if __name__ == "__main__":
     # On travaille dans un dossier à part pour ne pas toucher aux vraies sauvegardes.
     test_suppr = Sauvegarde()
     test_suppr.dossier_racine = "data/sauvegardes_test"
-    shutil.rmtree(test_suppr.dossier_racine, ignore_errors=True)  # repart de zéro
+
+    # On repart de zéro : on vide le dossier de test s'il existe déjà
+    if os.path.exists(test_suppr.dossier_racine):
+        for nom in os.listdir(test_suppr.dossier_racine):
+            test_suppr._supprimer_dossier(os.path.join(test_suppr.dossier_racine, nom))
 
     # 12 sauvegardes récentes (du 1er au 12 novembre 2026)
     for jour in range(1, 13):
