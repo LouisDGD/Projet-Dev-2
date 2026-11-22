@@ -166,9 +166,31 @@ class Sauvegarde:
             json.dump(reparateurs, f, indent=2, ensure_ascii=False)
 
     def suppression_automatique(self) -> None:
+        """Supprime les sauvegardes trop anciennes ou en trop.
+        PRE : aucune.
+        POST : il reste au maximum 10 sauvegardes dans dossier_racine, et aucune n'a
+        plus de 365 jours par rapport à date_sauvegarde. Les plus anciennes ont été supprimées.
+        Si une suppression échoue, self.erreur vaut True.
         """
-        """
-        return None
+        try:
+            saves = sorted(os.listdir(self.dossier_racine))
+
+            for nom in saves[:]:
+                try:
+                    date = datetime.strptime(nom, "%Y-%m-%d_%H-%M")
+                except ValueError:
+                    saves.remove(nom)   
+                    continue
+                if self.date_sauvegarde - date > timedelta(days=365):
+                    shutil.rmtree(os.path.join(self.dossier_racine, nom))
+                    saves.remove(nom)
+
+            while len(saves) > 10:
+                plus_ancienne = saves.pop(0)
+                shutil.rmtree(os.path.join(self.dossier_racine, plus_ancienne))
+
+        except OSError:
+            self.erreur = True 
 
     def restauration(self, date: datetime) -> str:
         """
