@@ -16,9 +16,9 @@ class Sauvegarde:
         self.dossier_racine: str = "data/sauvegardes"
         self.dossier: str = self.dossier_racine + "/" + self.date_sauvegarde.strftime("%Y-%m-%d_%H-%M")
 
-    # Conversions en dictionnaire
+    # Conversions en dictionnaire - Les 4 méthodes qui renvoient un dictionnaire ont été développées a l'aide de l'ia Claude Opus 5.5 en effort Moyen. 
 
-    def _visiteur_vers_dict(self, visiteur: Visiteur) -> dict:
+    def _visiteur_vers_dict(self, visiteur: Visiteur) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
         """Convertit un visiteur en dictionnaire. Ne modifie pas le visiteur."""
         return {
             "id": visiteur.id,
@@ -30,14 +30,14 @@ class Sauvegarde:
             "derniere_visite": visiteur.derniere_visite.isoformat(),
         }
 
-    def _type_vers_dict(self, type_objet: TypeObjet) -> dict:
+    def _type_vers_dict(self, type_objet: TypeObjet) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
         """Convertit un type d'objet en dictionnaire. Ne modifie pas le type."""
         return {
             "categorie": type_objet.categorie,
             "poids_moyen": type_objet.poids_moyen,
         }
 
-    def _reparateur_vers_dict(self, reparateur: Reparateur) -> dict:
+    def _reparateur_vers_dict(self, reparateur: Reparateur) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
         """Convertit un réparateur en dictionnaire. Ne modifie pas le réparateur."""
         return {
             "nom": reparateur.nom,
