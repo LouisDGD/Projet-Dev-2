@@ -16,6 +16,7 @@ class Sauvegarde:
         self.erreur: bool = False
         self.dossier_racine: str = "data/sauvegardes"
         self.dossier: str = self.dossier_racine + "/" + self.date_sauvegarde.strftime("%Y-%m-%d_%H-%M")
+        self.__erreur_chargement = False
 
     # Conversions en dictionnaire - Les 4 méthodes qui renvoient un dictionnaire ont été développées a l'aide de l'ia Claude Opus 5.5 en effort Moyen. 
 
@@ -214,27 +215,37 @@ class Sauvegarde:
         """
         return None
 
+    def _lister_sauvegardes(self) -> list[str]:
+        """Renvoie les sauvegardes existantes de la plus récente à la plus ancienne.
+        Renvoie rien s'il y a pas de sauvegarde.
+        Ne modifie rien."""
+        try:
+            noms = os.listdir(self.dossier_racine)
+        except OSError:
+            return []
+        sauvegardes = []
+        for nom in noms:
+            if os.path.isfile(os.path.join(self.dossier_racine, nom, "fiches.json")):
+                sauvegardes.append(nom)
+        return sorted(sauvegardes, reverse=True)
+
     def _dict_fiche_vers_fiche(self, valeurs: dict) -> Fiche:
-        "transforme un dictionnaire qui a les clés correspondantes aux attributs de création d'objet Fiche en Fiche"
+        """transforme un dictionnaire qui a les clés correspondantes aux attributs de création d'objet Fiche en Fiche
+        Leve des exceptions de la classe Fiche si la création ne fonctionne pas"""
         num = valeurs["id"]
-        liste_donnees_visiteur = []
-        liste_donnees_visiteur.extend(valeurs["visiteur"].values())
-        liste_donnees_visiteur[-1] = datetime.fromisoformat(liste_donnees_visiteur[-1])
-        visiteur = Visiteur(*liste_donnees_visiteur)
+        donnees_visiteur = dict(valeurs["visiteur"])
+        donnees_visiteur["derniere_visite"] = datetime.fromisoformat(donnees_visiteur["derniere_visite"])
+        visiteur = Visiteur(**donnees_visiteur)
         type_objet = TypeObjet(**valeurs["type_objet"])
         description_panne = valeurs["description_panne"]
         marque = valeurs["marque"]
         reparateur = None
         if valeurs["reparateur"]:
             reparateur = Reparateur(**valeurs["reparateur"])
-        etat = valeurs["etat"]
-        for etat_diff in Etat:
-            if etat == etat_diff.name:
-                etat = etat_diff
-        resultat = valeurs["resultat"]
-        for resultat_diff in Resultat:
-            if resultat == resultat_diff.name:
-                resultat = resultat_diff
+        etat = Etat[valeurs["etat"]]
+        resultat = None
+        if valeurs["resultat"]:
+            resultat = Resultat[valeurs["resultat"]]
         diagnostic = valeurs["diagnostic"]
         date_arrivee = datetime.fromisoformat(valeurs["date_arrivee"])
         return Fiche(num, 
@@ -248,30 +259,34 @@ class Sauvegarde:
                      resultat,
                      diagnostic
                      )
+
+    @property
+    def erreur_chargement(self) -> bool:
+        return self.__erreur_chargement
     
     def chargement(self) -> tuple[int, list[Fiche]]:
         """charge les fiches qui ont l'attribut resultat = resultat.A_SUIVRE de la dernière sauvegarde qui n'a pas eu d'erreurs en partant des plus récentes aux plus anciennes
-        Donne l'id max trouvé dans les id des fiches situés dans la sauvegarde la plus récente qui fonctionne"""
-        if not os.path.isdir(self.dossier_racine):
-            return 0, []
-        sauvegardes = sorted(os.listdir(self.dossier_racine), reverse=True)
-        for sauvegarde in sauvegardes:
+        Donne l'id max trouvé dans les id des fiches situés dans la sauvegarde la plus récente qui fonctionne
+        Modifie l'attribut __erreur_chargement si une exception se leve pdt le chargement d'un fichier de sauvegarde"""
+        self.__erreur_chargement = False
+        for sauvegarde in self._lister_sauvegardes():
             chemin = os.path.join(self.dossier_racine, sauvegarde, "fiches.json")
             try:
-                with open(chemin, "r", encoding="utf-8") as fichier:
+                with open(chemin, encoding="utf-8") as fichier:
                     donnees = json.load(fichier)
-            except Exception:
+                    liste_fiches = []
+                    max_id = 0
+                    for donnee in donnees:
+                        if donnee["id"] > max_id:
+                            max_id = donnee["id"]
+                        if donnee["resultat"] == Resultat.A_SUIVRE.name:
+                            liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
+                    return max_id, liste_fiches
+            except Exception as e:
+                self.__erreur_chargement = True
+                #print(e)
                 continue
-            if isinstance(donnees, list):
-                liste_fiches = []
-                max_id = 0
-                for donnee in donnees:
-                    id_fiche = donnee["id"]
-                    if id_fiche > max_id:
-                        max_id = id_fiche
-                    if donnee["resultat"] == Resultat.A_SUIVRE.name:
-                        liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
-                return max_id, liste_fiches
+        return 0, []
     
 
     # À décommenter une fois la classe RapportCommune créée :
