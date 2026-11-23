@@ -214,20 +214,19 @@ class Sauvegarde:
         """
         return None
 
-    def _dict_fiche_vers_fiche(self, valeurs: list[str]) -> Fiche:
-        "transforme "
+    def _dict_fiche_vers_fiche(self, valeurs: dict) -> Fiche:
+        "transforme un dictionnaire qui a les clés correspondantes aux attributs de création d'objet Fiche en Fiche"
         num = valeurs["id"]
         liste_donnees_visiteur = []
         liste_donnees_visiteur.extend(valeurs["visiteur"].values())
         liste_donnees_visiteur[-1] = datetime.fromisoformat(liste_donnees_visiteur[-1])
-        print(liste_donnees_visiteur)
         visiteur = Visiteur(*liste_donnees_visiteur)
-        type_objet = TypeObjet(*valeurs["type_objet"].values())
+        type_objet = TypeObjet(**valeurs["type_objet"])
         description_panne = valeurs["description_panne"]
         marque = valeurs["marque"]
         reparateur = None
         if valeurs["reparateur"]:
-            reparateur = Reparateur(*valeurs["reparateur"].values())
+            reparateur = Reparateur(**valeurs["reparateur"])
         etat = valeurs["etat"]
         for etat_diff in Etat:
             if etat == etat_diff.name:
@@ -250,11 +249,11 @@ class Sauvegarde:
                      diagnostic
                      )
     
-    def chargement(self) -> list[int, list[Fiche]]:
+    def chargement(self) -> tuple[int, list[Fiche]]:
         """charge les fiches qui ont l'attribut resultat = resultat.A_SUIVRE de la dernière sauvegarde qui n'a pas eu d'erreurs en partant des plus récentes aux plus anciennes
-        Donne l'id max trouvé dans la sauvegarde"""
+        Donne l'id max trouvé dans les id des fiches situés dans la sauvegarde la plus récente qui fonctionne"""
         if not os.path.isdir(self.dossier_racine):
-            return []
+            return 0, []
         sauvegardes = sorted(os.listdir(self.dossier_racine), reverse=True)
         for sauvegarde in sauvegardes:
             chemin = os.path.join(self.dossier_racine, sauvegarde, "fiches.json")
@@ -265,14 +264,14 @@ class Sauvegarde:
                 continue
             if isinstance(donnees, list):
                 liste_fiches = []
-                max_id = 1
+                max_id = 0
                 for donnee in donnees:
                     id_fiche = donnee["id"]
                     if id_fiche > max_id:
                         max_id = id_fiche
                     if donnee["resultat"] == Resultat.A_SUIVRE.name:
                         liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
-                return [max_id, liste_fiches]
+                return max_id, liste_fiches
     
 
     # À décommenter une fois la classe RapportCommune créée :
