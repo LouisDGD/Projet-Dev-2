@@ -69,3 +69,15 @@ class Visiteur:
 
     def __str__(self) -> str:
         return f"{self.id} {self.nom_visiteur} {self.prenom_visiteur} - {self.accord} {self.email} {self.num_tel} - {self.derniere_visite}"
+
+    def effacement(self) -> None:
+        "Effacement des données RGPD"
+        self.__accord = False
+        self.__email = None
+        self.__num_tel = None
+
+if __name__ == "__main__":
+    visiteur1 = Visiteur(1, "Dubois", "Marie", "0476882211", "test@gmail.com", True)
+    print(visiteur1)
+    visiteur1.effacement()
+    print(visiteur1)

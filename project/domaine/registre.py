@@ -1,18 +1,25 @@
-from project.domaine.fiche import Fiche
-from project.domaine.enums import Resultat
+from domaine.fiche import Fiche
+from domaine.enums import Resultat
 
 class RegistreFiches:
 
     def __init__(self):
         self.__file_attente = []
 
-    def ajout_file_attente(self, fiche: Fiche):
+    def ajout_file_attente(self, fiche: Fiche) -> None:
         """Ajoute l'élement a la file d'attente
                 PRE : aucune.
                 POST : L'élément est ajouté a la file d'attente file_attente[].
         """
         self.__file_attente.append(fiche)
         return None
+
+    def retire_file_attente(self, fiche:Fiche) -> None:
+        for fiche_file_attente in self.__file_attente:
+            if fiche_file_attente.id == fiche.id:
+                self.__file_attente.remove(fiche_file_attente)
+                return
+        raise ValueError("Cette fiche n'existe pas")
 
     def prochain_id(self):
         """Retourne l'id le plus élevé de la file d'attente +1

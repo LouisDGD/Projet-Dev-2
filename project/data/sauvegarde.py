@@ -6,6 +6,7 @@ from domaine.fiche import Fiche
 from domaine.visiteur import Visiteur
 from domaine.reparateur import Reparateur
 from domaine.type_objet import TypeObjet
+from domaine.enums import Resultat, Etat
 
 
 class Sauvegarde:
@@ -213,15 +214,76 @@ class Sauvegarde:
         """
         return None
 
+    def _dict_fiche_vers_fiche(self, valeurs: list[str]) -> Fiche:
+        "transforme "
+        num = valeurs["id"]
+        liste_donnees_visiteur = []
+        liste_donnees_visiteur.extend(valeurs["visiteur"].values())
+        liste_donnees_visiteur[-1] = datetime.fromisoformat(liste_donnees_visiteur[-1])
+        print(liste_donnees_visiteur)
+        visiteur = Visiteur(*liste_donnees_visiteur)
+        type_objet = TypeObjet(*valeurs["type_objet"].values())
+        description_panne = valeurs["description_panne"]
+        marque = valeurs["marque"]
+        reparateur = None
+        if valeurs["reparateur"]:
+            reparateur = Reparateur(*valeurs["reparateur"].values())
+        etat = valeurs["etat"]
+        for etat_diff in Etat:
+            if etat == etat_diff.name:
+                etat = etat_diff
+        resultat = valeurs["resultat"]
+        for resultat_diff in Resultat:
+            if resultat == resultat_diff.name:
+                resultat = resultat_diff
+        diagnostic = valeurs["diagnostic"]
+        date_arrivee = datetime.fromisoformat(valeurs["date_arrivee"])
+        return Fiche(num, 
+                     visiteur, 
+                     type_objet,
+                     description_panne,
+                     marque,
+                     date_arrivee,
+                     reparateur,
+                     etat,
+                     resultat,
+                     diagnostic
+                     )
+    
+    def chargement(self) -> list[int, list[Fiche]]:
+        """charge les fiches qui ont l'attribut resultat = resultat.A_SUIVRE de la dernière sauvegarde qui n'a pas eu d'erreurs en partant des plus récentes aux plus anciennes
+        Donne l'id max trouvé dans la sauvegarde"""
+        if not os.path.isdir(self.dossier_racine):
+            return []
+        sauvegardes = sorted(os.listdir(self.dossier_racine), reverse=True)
+        for sauvegarde in sauvegardes:
+            chemin = os.path.join(self.dossier_racine, sauvegarde, "fiches.json")
+            try:
+                with open(chemin, "r", encoding="utf-8") as fichier:
+                    donnees = json.load(fichier)
+            except Exception:
+                continue
+            if isinstance(donnees, list):
+                liste_fiches = []
+                max_id = 1
+                for donnee in donnees:
+                    id_fiche = donnee["id"]
+                    if id_fiche > max_id:
+                        max_id = id_fiche
+                    if donnee["resultat"] == Resultat.A_SUIVRE.name:
+                        liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
+                return [max_id, liste_fiches]
+    
+
     # À décommenter une fois la classe RapportCommune créée :
     # def copie_rapport(self, rapport: RapportCommune) -> None:
     #     """
     #     """
     #     return None
 
-
 #CODE DE TEST GENERE PAR CLAUDE
 if __name__ == "__main__":
+    """
     # ---------- Test 1 : création du dossier et copies ----------
     test = Sauvegarde()
     test.creer_dossier()
@@ -254,6 +316,7 @@ if __name__ == "__main__":
     # ---------- Test 2 : suppression automatique ----------
     # On travaille dans un dossier à part pour ne pas toucher aux vraies sauvegardes.
     test_suppr = Sauvegarde()
+    test.chargement()
     test_suppr.dossier_racine = "data/sauvegardes_test"
 
     # On repart de zéro : on vide le dossier de test s'il existe déjà
@@ -281,3 +344,9 @@ if __name__ == "__main__":
     print("10 sauvegardes restantes :", len(restants) - 1 == 10)   # -1 pour "pas_une_date"
     print("Dossier étranger conservé :", "pas_une_date" in restants)
     print("Erreur :", test_suppr.erreur)
+    """
+    test = Sauvegarde()
+    resultat = test.chargement()
+    print(resultat)
+    for fiche in resultat[1]:
+        print(fiche)
