@@ -248,6 +248,16 @@ class Sauvegarde:
     #     return None
 
     def chargement(self) -> tuple[int, list[Fiche]]:
+         """Charge les fiches à reprendre et prépare la sauvegarde du jour.
+        PRE : aucune.
+        POST : le dossier racine et le dossier de sauvegarde du jour existent, et __save_en_cours contient le chemin de ce dernier.
+        Si le dossier du jour contenait déjà une sauvegarde lisible, les fiches sont chargées depuis celle-ci.
+        Sinon, elles sont chargées depuis la sauvegarde lisible la plus récente, dont tous les fichiers sont recopiés dans le dossier du jour.
+        S'il n'existe aucune sauvegarde lisible, le dossier du jour reçoit un fiches.json vide.
+        Renvoie (id max, liste des fiches non terminées ou à suivre), ou (0, []) si aucune sauvegarde n'est lisible.
+        __erreur_chargement vaut True si au moins une sauvegarde n'a pas pu être lue.
+        Si un dossier ou un fichier ne peut pas être créé, self.erreur vaut True et __save_en_cours vaut None.
+        """ 
         self.__erreur_chargement = False
         self.__save_en_cours = None
 
