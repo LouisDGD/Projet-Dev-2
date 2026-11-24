@@ -248,7 +248,7 @@ class Sauvegarde:
     #     return None
 
     def chargement(self) -> tuple[int, list[Fiche]]:
-         """Charge les fiches à reprendre et prépare la sauvegarde du jour.
+        """Charge les fiches à reprendre et prépare la sauvegarde du jour.
         PRE : aucune.
         POST : le dossier racine et le dossier de sauvegarde du jour existent, et __save_en_cours contient le chemin de ce dernier.
         Si le dossier du jour contenait déjà une sauvegarde lisible, les fiches sont chargées depuis celle-ci.

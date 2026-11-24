@@ -39,6 +39,8 @@ def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet:
         ))
         id_fiche +=1
     return id_fiche
+test = Sauvegarde()
+test.chargement()
 
 def main():
     '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''

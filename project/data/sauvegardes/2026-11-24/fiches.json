@@ -8,19 +8,16 @@
       "num_tel": null,
       "email": null,
       "accord": false,
-      "derniere_visite": "2026-11-22T16:32:43.601119"
+      "derniere_visite": "2026-11-07T09:42:00"
     },
-    "type_objet": {
-      "categorie": "Grille-pain",
-      "poids_moyen": 1.5
-    },
+    "type_objet": {"categorie": "grille-pain", "poids_moyen": 1.5},
     "description_panne": "Ne chauffe plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": "A_SUIVRE",
-    "diagnostic": null,
-    "date_arrivee": "2026-11-22T16:32:43.601119"
+    "marque": "Philips",
+    "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
+    "etat": "TERMINE",
+    "resultat": "REPARE",
+    "diagnostic": "Résistance dessoudée, ressoudée",
+    "date_arrivee": "2026-11-07T09:42:00"
   },
   {
     "id": 2,
@@ -29,90 +26,78 @@
       "nom_visiteur": "Martin",
       "prenom_visiteur": "Paul",
       "num_tel": "0470123456",
-      "email": "paul@mail.be",
+      "email": "paul.martin@mail.be",
       "accord": true,
-      "derniere_visite": "2026-11-22T16:32:43.601119"
+      "derniere_visite": "2026-11-07T10:05:00"
     },
-    "type_objet": {
-      "categorie": "Lampe",
-      "poids_moyen": 2.0
-    },
+    "type_objet": {"categorie": "lampe", "poids_moyen": 2.0},
     "description_panne": "Ne s'allume plus",
     "marque": "Ikea",
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": "A_SUIVRE",
-    "diagnostic": null,
-    "date_arrivee": "2026-11-22T16:32:43.601119"
+    "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
+    "etat": "TERMINE",
+    "resultat": "NON_REPARE",
+    "diagnostic": "Transformateur HS, pièce introuvable",
+    "date_arrivee": "2026-11-07T10:05:00"
   },
   {
     "id": 3,
     "visiteur": {
       "id": 3,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
+      "nom_visiteur": "Janssens",
+      "prenom_visiteur": "Sophie",
+      "num_tel": "0498765432",
       "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:35:34.344005"
+      "accord": true,
+      "derniere_visite": "2026-11-07T10:30:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:35:34.344005"
+    "type_objet": {"categorie": "aspirateur", "poids_moyen": 5.0},
+    "description_panne": "Aspire très faiblement",
+    "marque": "Dyson",
+    "reparateur": {"nom": "Renard", "prenom": "Claire", "specialite": "électroménager"},
+    "etat": "TERMINE",
+    "resultat": "A_SUIVRE",
+    "diagnostic": "Moteur fatigué, pièce commandée",
+    "date_arrivee": "2026-11-07T10:30:00"
   },
   {
     "id": 4,
     "visiteur": {
       "id": 4,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
+      "nom_visiteur": "Peeters",
+      "prenom_visiteur": "Luc",
       "num_tel": null,
-      "email": null,
+      "email": "luc.peeters@mail.be",
       "accord": false,
-      "derniere_visite": "2026-11-24T19:35:57.516400"
+      "derniere_visite": "2026-11-07T11:15:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:35:57.516400"
+    "type_objet": {"categorie": "vélo", "poids_moyen": 14.0},
+    "description_panne": "Freins qui frottent et chaîne qui saute",
+    "marque": "Btwin",
+    "reparateur": {"nom": "Lambert", "prenom": "Hugo", "specialite": "vélo"},
+    "etat": "TERMINE",
+    "resultat": "REPARE",
+    "diagnostic": "Patins changés, dérailleur réglé",
+    "date_arrivee": "2026-11-07T11:15:00"
   },
   {
     "id": 5,
     "visiteur": {
       "id": 5,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:35:59.968900"
+      "nom_visiteur": "Leclercq",
+      "prenom_visiteur": "Anne",
+      "num_tel": "0485112233",
+      "email": "anne.leclercq@mail.be",
+      "accord": true,
+      "derniere_visite": "2026-11-21T09:20:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
+    "type_objet": {"categorie": "radio", "poids_moyen": 1.2},
+    "description_panne": "Grésille sur toutes les stations",
+    "marque": "Grundig",
+    "reparateur": {"nom": "Renard", "prenom": "Claire", "specialite": "électronique"},
+    "etat": "EN_COURS",
     "resultat": null,
     "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:35:59.968900"
+    "date_arrivee": "2026-11-21T09:20:00"
   },
   {
     "id": 6,
@@ -123,294 +108,95 @@
       "num_tel": null,
       "email": null,
       "accord": false,
-      "derniere_visite": "2026-11-24T19:36:00.348813"
+      "derniere_visite": "2026-11-21T09:45:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
+    "type_objet": {"categorie": "bouilloire", "poids_moyen": 1.0},
     "description_panne": "Ne s'arrête plus",
     "marque": null,
     "reparateur": null,
     "etat": "EN_ATTENTE",
     "resultat": null,
     "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:00.348813"
+    "date_arrivee": "2026-11-21T09:45:00"
   },
   {
     "id": 7,
     "visiteur": {
       "id": 7,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:00.701563"
+      "nom_visiteur": "Maes",
+      "prenom_visiteur": "Thomas",
+      "num_tel": "0477889900",
+      "email": "thomas.maes@mail.be",
+      "accord": true,
+      "derniere_visite": "2026-11-21T10:10:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:00.701563"
+    "type_objet": {"categorie": "pantalon", "poids_moyen": 0.5},
+    "description_panne": "Fermeture éclair cassée",
+    "marque": "Levi's",
+    "reparateur": {"nom": "Wouters", "prenom": "Nadia", "specialite": "couture"},
+    "etat": "TERMINE",
+    "resultat": "REPARE",
+    "diagnostic": "Curseur remplacé",
+    "date_arrivee": "2026-11-21T10:10:00"
   },
   {
     "id": 8,
     "visiteur": {
       "id": 8,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
+      "nom_visiteur": "Simon",
+      "prenom_visiteur": "Julie",
       "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:01.037428"
+      "email": "julie.simon@mail.be",
+      "accord": true,
+      "derniere_visite": "2026-11-21T10:40:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
+    "type_objet": {"categorie": "ordinateur portable", "poids_moyen": 2.2},
+    "description_panne": "Ne démarre plus, voyant orange",
+    "marque": "Lenovo",
+    "reparateur": {"nom": "Renard", "prenom": "Claire", "specialite": "électronique"},
+    "etat": "EN_COURS",
     "resultat": null,
     "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:01.037428"
+    "date_arrivee": "2026-11-21T10:40:00"
   },
   {
     "id": 9,
     "visiteur": {
       "id": 9,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
+      "nom_visiteur": "Claes",
+      "prenom_visiteur": "Marc",
+      "num_tel": "0466554433",
       "email": null,
       "accord": false,
-      "derniere_visite": "2026-11-24T19:36:01.339422"
+      "derniere_visite": "2026-11-21T11:05:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
+    "type_objet": {"categorie": "chaise", "poids_moyen": 4.0},
+    "description_panne": "Pied qui branle",
     "marque": null,
     "reparateur": null,
     "etat": "EN_ATTENTE",
     "resultat": null,
     "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:01.339422"
+    "date_arrivee": "2026-11-21T11:05:00"
   },
   {
     "id": 10,
     "visiteur": {
-      "id": 10,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
+      "id": 3,
+      "nom_visiteur": "Janssens",
+      "prenom_visiteur": "Sophie",
+      "num_tel": "0498765432",
       "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:01.626435"
+      "accord": true,
+      "derniere_visite": "2026-11-21T11:30:00"
     },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:01.626435"
-  },
-  {
-    "id": 11,
-    "visiteur": {
-      "id": 11,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:01.911743"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:01.911743"
-  },
-  {
-    "id": 12,
-    "visiteur": {
-      "id": 12,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:02.163291"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:02.163291"
-  },
-  {
-    "id": 13,
-    "visiteur": {
-      "id": 13,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:02.405306"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:02.405306"
-  },
-  {
-    "id": 14,
-    "visiteur": {
-      "id": 14,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:02.617940"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:02.617940"
-  },
-  {
-    "id": 15,
-    "visiteur": {
-      "id": 15,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:02.780878"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:02.780878"
-  },
-  {
-    "id": 16,
-    "visiteur": {
-      "id": 16,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:02.971298"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:02.971298"
-  },
-  {
-    "id": 17,
-    "visiteur": {
-      "id": 17,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:03.145749"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:03.146807"
-  },
-  {
-    "id": 18,
-    "visiteur": {
-      "id": 18,
-      "nom_visiteur": "Dupont",
-      "prenom_visiteur": "Léa",
-      "num_tel": null,
-      "email": null,
-      "accord": false,
-      "derniere_visite": "2026-11-24T19:36:04.428898"
-    },
-    "type_objet": {
-      "categorie": "Bouilloire",
-      "poids_moyen": 1.0
-    },
-    "description_panne": "Ne s'arrête plus",
-    "marque": null,
-    "reparateur": null,
-    "etat": "EN_ATTENTE",
-    "resultat": null,
-    "diagnostic": null,
-    "date_arrivee": "2026-11-24T19:36:04.428898"
+    "type_objet": {"categorie": "sèche-cheveux", "poids_moyen": 0.8},
+    "description_panne": "Souffle froid uniquement",
+    "marque": "Babyliss",
+    "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
+    "etat": "TERMINE",
+    "resultat": "NON_REPARE",
+    "diagnostic": "Thermostat grillé, réparation trop coûteuse",
+    "date_arrivee": "2026-11-21T11:30:00"
   }
 ]
