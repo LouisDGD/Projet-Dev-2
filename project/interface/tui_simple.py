@@ -8,6 +8,8 @@ from data.sauvegarde import Sauvegarde
 from datetime import datetime
 
 FORMAT_HORODATAGE = "%d/%m/%Y %H:%M:%S"
+LONGUEUR_FENETRE = 90
+
 def demander_texte(message_input: str) -> str:
     """Valide si l'input n'est pas vide ou composé uniquement d'espace. Affiche 'Choix Invalide : votre choix est vide ou composé uniquement d'espaces.'
     Exception si message_input est vide ou composé uniquement d'espace"""
@@ -23,7 +25,6 @@ def demander_texte(message_input: str) -> str:
 
 def afficher_tableau_listes(fiches: list[Fiche]) -> None:
     """affiche un tableau affichant les listes une à une"""
-    LONGUEUR_FENETRE = 90
     print(f"{'N°':^6} | {'Heure':^5} | {'Visiteur':^17} | {'Objet':^20} | {'Statut':^12} | {'Réparateur':^17}")
     print("-" * LONGUEUR_FENETRE)
     for f in fiches:
@@ -38,14 +39,22 @@ def get_infos_visiteur(visiteur: Visiteur) -> str:
     """return le visiteur donné en paramètre"""
     return f"{visiteur.nom_visiteur} {visiteur.prenom_visiteur}"
 
+def afficher_tableau_visiteurs(visiteurs: list[Visiteur]) -> None:
+    """Affiche l'en-tête une seule fois, puis une ligne par visiteur."""
+    print(f"{'N°':^6} | {'Nom':^20} | {'Prénom':^20}")
+    print("-" * LONGUEUR_FENETRE)
+    for v in visiteurs:
+        afficher_infos_visiteur(v)
+
 def afficher_infos_visiteur(visiteur: Visiteur) -> None:
     "Affiche les informations du visiteurs"
-    print(f"{'N°':^6} | {'Nom':^20} | {'Prenom':^20}")
-    print(f"{visiteur.id:>6} {visiteur.nom_visiteur:<20.20} {visiteur.prenom_visiteur:<20.20}")
+    print(f"{visiteur.id:>6} | {visiteur.nom_visiteur:<20.20} | {visiteur.prenom_visiteur:<20.20}")
+
 
 def get_infos_typeobjet(typeobjet: TypeObjet) -> str:
     """print le TypeObjet donné en paramètre"""
     return f"{typeobjet.categorie} - {typeobjet.poids_moyen}"
+
 
 def get_infos_reparateur(reparateur: Reparateur) -> str:
     """return le reparateur donné en paramètre"""
@@ -67,6 +76,86 @@ def choisir_fonctionnalites() -> str:
 def lancer() -> None:
     print("Bienvenue dans")
     print("REPAIR CAFÉ MANAGER : La Clé à Molette à Forest")
+
+def choisir_fiche(registre: RegistreFiches, message: str) -> Fiche:
+    afficher_tableau_listes(registre.fiches_par_ordre_arrivee())
+    while True:
+        choix = demander_texte(message)
+        try:
+            fiche = registre.trouver_par_id(int(choix))
+        except ValueError:
+            fiche = None
+        if fiche:
+            return fiche
+        print("Cette fiche n'existe pas. Veuillez réessayer.")
+
+def choisir_resultat() -> Resultat:
+    while True:
+        print("1) Réparé\n2) Non réparable\n3) A suivre")
+        choix = demander_texte("Entrez le numéro du résultat.\n >> ")
+        if choix == "1":
+            return Resultat.REPARE
+        if choix == "2":
+            return Resultat.NON_REPARABLE
+        if choix == "3":
+            return Resultat.A_SUIVRE
+        print("Ce choix ne correspond à aucun résultat. Veuillez réessayer.")
+
+def choisir_visiteur(visiteurs: list[Visiteur]) -> Visiteur:
+    """Affiche les visiteurs et demande d'en choisir un par son id.
+    Redemande tant que l'id ne correspond à aucun visiteur.
+    """
+    print("Voici la liste des visiteurs enregistrés :\n")
+    afficher_tableau_visiteurs(visiteurs)
+    while True:
+        choix = demander_texte("\nQui est le propriétaire de l'objet ? Entrez son id.\n >> ")
+        for v in visiteurs:
+            if str(v.id) == choix:
+                print(f"Vous avez choisi : {get_infos_visiteur(v)}\n")
+                return v
+        print("Aucun visiteur ne correspond a cet ID. Veuillez réessayer.")
+
+def choisir_type_objet(types_objet: list[TypeObjet]) -> TypeObjet:
+    """Affiche les types d'objet et demande d'en choisir un par son nom.
+    Redemande tant que le nom ne correspond à aucun type.
+    """
+    while True:
+        print("Types d'objet disponibles :")
+        for t in types_objet:
+            print(f"{t.categorie}")
+        choix = demander_texte("Quel est le type de l'objet ? Entrez un des types affichés.\n >> ")
+        for t in types_objet:
+            if t.categorie == choix:
+                print("Le type de l'objet a été ajouté.\n")
+                return t
+        print("Ce type n'existe pas. Veuillez réessayer.\n")
+
+def demander_panne() -> str:
+    """Demande la description de la panne, puis une confirmation.
+    Redemande tant que le bénévole n'a pas validé sa description.
+    """
+    while True:
+        panne = demander_texte("Veuillez décrire la panne.\n >> ")
+        reponse = input(f"Vous avez écrit :\n {panne}\n Entrez [Y] si vous êtes d'accord avec votre entrée.\n Entrez [N] si vous voulez recommencer\n >> ")
+        if reponse.strip().lower() == "n":
+            continue
+        print("La description de la panne a été ajoutée.\n")
+        return panne
+
+def demander_marque() -> str | None:
+    """Demande la marque de l'objet, puis une confirmation.
+    """
+    while True:
+        marque = input("Veuillez décrire la marque. Si vous ne la connaissez pas, n'entrez rien\n >> ").strip()
+        reponse = input(f"Vous avez écrit :\n {marque}\n Entrez [Y] si vous êtes d'accord avec votre entrée.\n Entrez [N] si vous voulez recommencer\n >> ")
+        if reponse.strip().lower() == "n":
+            continue
+        print("La marque a été ajoutée.\n")
+        return marque or None
+def afficher_fiche_ajoutee(fiche: Fiche) -> None:
+    """Message de confirmation d'ajou d'une fiche a la liste"""
+    print(f"Ajout de la fiche n°{fiche.id}. Merci de votre coopération.\n")
+    afficher_infos_fiche(fiche)
 
 if __name__ == "__main__":
     #choisir_fonctionnalites()

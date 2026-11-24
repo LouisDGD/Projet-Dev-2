@@ -1,6 +1,7 @@
 from domaine.fiche import Fiche
 from domaine.enums import Resultat
 
+
 class RegistreFiches:
 
     def __init__(self):
@@ -12,6 +13,7 @@ class RegistreFiches:
                 POST : L'élément est ajouté a la file d'attente file_attente[].
         """
         self.__file_attente.append(fiche)
+        
         return None
 
     def retire_file_attente(self, fiche:Fiche) -> None:
@@ -81,3 +83,9 @@ class RegistreFiches:
                 if fiche.visiteur.prenom_visiteur == prenom:
                     fiches_trouvees.append(fiche)
         return sorted(fiches_trouvees, key=lambda fiche: fiche.date_arrivee)
+    
+    def trouver_par_id(self, id_fiche: int) -> Fiche | None:
+        for fiche in self.file_attente:
+            if fiche.id == id_fiche:
+                return fiche
+        return None

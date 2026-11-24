@@ -128,6 +128,8 @@ class Fiche:
             raise TypeError("Pas le type Resultat")
         if self.__resultat == Resultat.REPARE:
             raise ValueError("L'objet a déjà été réparé")
+        if resultat == self.__resultat:
+            raise ValueError(f"Le résultat est déjà « {resultat.value} ».")
         self.__resultat = resultat
         self.__etat = Etat.TERMINE
 
