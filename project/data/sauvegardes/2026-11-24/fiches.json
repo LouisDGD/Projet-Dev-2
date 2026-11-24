@@ -1,0 +1,416 @@
+[
+  {
+    "id": 1,
+    "visiteur": {
+      "id": 1,
+      "nom_visiteur": "Dubois",
+      "prenom_visiteur": "Marie",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-22T16:32:43.601119"
+    },
+    "type_objet": {
+      "categorie": "Grille-pain",
+      "poids_moyen": 1.5
+    },
+    "description_panne": "Ne chauffe plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": "A_SUIVRE",
+    "diagnostic": null,
+    "date_arrivee": "2026-11-22T16:32:43.601119"
+  },
+  {
+    "id": 2,
+    "visiteur": {
+      "id": 2,
+      "nom_visiteur": "Martin",
+      "prenom_visiteur": "Paul",
+      "num_tel": "0470123456",
+      "email": "paul@mail.be",
+      "accord": true,
+      "derniere_visite": "2026-11-22T16:32:43.601119"
+    },
+    "type_objet": {
+      "categorie": "Lampe",
+      "poids_moyen": 2.0
+    },
+    "description_panne": "Ne s'allume plus",
+    "marque": "Ikea",
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": "A_SUIVRE",
+    "diagnostic": null,
+    "date_arrivee": "2026-11-22T16:32:43.601119"
+  },
+  {
+    "id": 3,
+    "visiteur": {
+      "id": 3,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:35:34.344005"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:35:34.344005"
+  },
+  {
+    "id": 4,
+    "visiteur": {
+      "id": 4,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:35:57.516400"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:35:57.516400"
+  },
+  {
+    "id": 5,
+    "visiteur": {
+      "id": 5,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:35:59.968900"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:35:59.968900"
+  },
+  {
+    "id": 6,
+    "visiteur": {
+      "id": 6,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:00.348813"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:00.348813"
+  },
+  {
+    "id": 7,
+    "visiteur": {
+      "id": 7,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:00.701563"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:00.701563"
+  },
+  {
+    "id": 8,
+    "visiteur": {
+      "id": 8,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:01.037428"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:01.037428"
+  },
+  {
+    "id": 9,
+    "visiteur": {
+      "id": 9,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:01.339422"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:01.339422"
+  },
+  {
+    "id": 10,
+    "visiteur": {
+      "id": 10,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:01.626435"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:01.626435"
+  },
+  {
+    "id": 11,
+    "visiteur": {
+      "id": 11,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:01.911743"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:01.911743"
+  },
+  {
+    "id": 12,
+    "visiteur": {
+      "id": 12,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:02.163291"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:02.163291"
+  },
+  {
+    "id": 13,
+    "visiteur": {
+      "id": 13,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:02.405306"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:02.405306"
+  },
+  {
+    "id": 14,
+    "visiteur": {
+      "id": 14,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:02.617940"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:02.617940"
+  },
+  {
+    "id": 15,
+    "visiteur": {
+      "id": 15,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:02.780878"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:02.780878"
+  },
+  {
+    "id": 16,
+    "visiteur": {
+      "id": 16,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:02.971298"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:02.971298"
+  },
+  {
+    "id": 17,
+    "visiteur": {
+      "id": 17,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:03.145749"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:03.146807"
+  },
+  {
+    "id": 18,
+    "visiteur": {
+      "id": 18,
+      "nom_visiteur": "Dupont",
+      "prenom_visiteur": "Léa",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-24T19:36:04.428898"
+    },
+    "type_objet": {
+      "categorie": "Bouilloire",
+      "poids_moyen": 1.0
+    },
+    "description_panne": "Ne s'arrête plus",
+    "marque": null,
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-24T19:36:04.428898"
+  }
+]
