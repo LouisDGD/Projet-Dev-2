@@ -4,8 +4,8 @@ from domaine.enums import Resultat
 
 class RegistreFiches:
 
-    def __init__(self):
-        self.__file_attente = []
+    def __init__(self, fiches_existantes: list[Fiche] = None):
+        self.__file_attente = fiches_existantes if fiches_existantes else None
 
     def ajout_file_attente(self, fiche: Fiche) -> None:
         """Ajoute l'élement a la file d'attente

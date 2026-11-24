@@ -12,13 +12,33 @@ from domaine.enums import Resultat, Etat
 class Sauvegarde:
 
     def __init__(self) -> None:
-        self.date_sauvegarde: datetime = datetime.now()
-        self.erreur: bool = False
-        self.dossier_racine: str = "data/sauvegardes"
-        self.format_date: str = "%Y-%m-%d"
-        self.dossier: str = self.dossier_racine + "/" + self.date_sauvegarde.strftime(self.format_date)
+        self.__date_sauvegarde: datetime = datetime.now()
+        self.__erreur: bool = False
+        self.__dossier_racine: str = "data/sauvegardes"
+        self.__format_date: str = "%Y-%m-%d"
+        self.__dossier: str = self.__dossier_racine + "/" + self.__date_sauvegarde.strftime(self.__format_date)
         self.__erreur_chargement: bool = False
         self.__save_en_cours: str | None = None
+
+    @property
+    def date_sauvegarde(self) -> datetime:
+        return self.__date_sauvegarde
+
+    @property
+    def erreur(self) -> bool:
+        return self.__erreur
+
+    @property
+    def dossier_racine(self) -> str:
+        return self.__dossier_racine
+
+    @property
+    def format_date(self) -> str:
+        return self.__format_date
+
+    @property
+    def dossier(self) -> str:
+        return self.__dossier
 
     @property
     def erreur_chargement(self) -> bool:
@@ -31,7 +51,6 @@ class Sauvegarde:
     # Les 4 méthodes qui renvoient un dictionnaire ont été développées a l'aide de l'ia Claude Opus 5.5 en effort Moyen.
 
     def _visiteur_vers_dict(self, visiteur: Visiteur) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
-        """Convertit un visiteur en dictionnaire. Ne modifie pas le visiteur."""
         return {
             "id": visiteur.id,
             "nom_visiteur": visiteur.nom_visiteur,
@@ -43,14 +62,12 @@ class Sauvegarde:
         }
 
     def _type_vers_dict(self, type_objet: TypeObjet) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
-        """Convertit un type d'objet en dictionnaire. Ne modifie pas le type."""
         return {
             "categorie": type_objet.categorie,
             "poids_moyen": type_objet.poids_moyen,
         }
 
     def _reparateur_vers_dict(self, reparateur: Reparateur) -> dict: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
-        """Convertit un réparateur en dictionnaire. Ne modifie pas le réparateur."""
         return {
             "nom": reparateur.nom,
             "prenom": reparateur.prenom,
@@ -58,7 +75,6 @@ class Sauvegarde:
         }
 
     def _fiche_vers_dict(self, fiche: Fiche) -> dict:  # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
-        """Convertit une fiche (et ce qu'elle contient) en dictionnaire. Ne modifie pas la fiche."""
         return {
             "id": fiche.id,
             "visiteur": self._visiteur_vers_dict(fiche.visiteur),
@@ -74,9 +90,6 @@ class Sauvegarde:
         }
 
     def _dict_fiche_vers_fiche(self, valeurs: dict) -> Fiche:
-        """Transforme un dictionnaire dont les clés correspondent aux attributs de création d'une Fiche en Fiche.
-        Lève les exceptions de la classe Fiche si la création ne fonctionne pas.
-        """
         num = valeurs["id"]
 
         donnees_visiteur = dict(valeurs["visiteur"])
@@ -113,51 +126,32 @@ class Sauvegarde:
                      )
 
     def _lister_sauvegardes(self) -> list[str]:
-        """Renvoie les sauvegardes existantes de la plus récente à la plus ancienne.
-        Renvoie une liste vide s'il n'y a pas de sauvegarde.
-        Ne modifie rien.
-        """
         try:
-            noms = os.listdir(self.dossier_racine)
+            noms = os.listdir(self.__dossier_racine)
         except OSError:
             return []
         sauvegardes = []
         for nom in noms:
-            if os.path.isfile(os.path.join(self.dossier_racine, nom, "fiches.json")):
+            if os.path.isfile(os.path.join(self.__dossier_racine, nom, "fiches.json")):
                 sauvegardes.append(nom)
         return sorted(sauvegardes, reverse=True)
 
     def _supprimer_dossier(self, chemin: str) -> None:
-        """Supprime un dossier de sauvegarde et les fichiers qu'il contient.
-        PRE : chemin désigne un dossier qui ne contient que des fichiers (pas de sous-dossiers).
-        POST : le dossier et tous ses fichiers n'existent plus.
-        Exceptions : OSError si un fichier ou le dossier ne peut pas être supprimé.
-        """
         for nom_fichier in os.listdir(chemin):
             os.remove(os.path.join(chemin, nom_fichier))
         os.rmdir(chemin)
 
     def creer_dossier(self) -> None:
-        """Crée le dossier de la sauvegarde du jour.
-        PRE : aucune.
-        POST : le dossier self.dossier et le dossier sauvegardes qui le contient existent.
-        Rien ne change s'ils existaient déjà. Si la création échoue, self.erreur vaut True.
-        """
         try:
-            os.makedirs(self.dossier, exist_ok=True)
+            os.makedirs(self.__dossier, exist_ok=True)
         except OSError:
-            self.erreur = True
+            self.__erreur = True
 
     def copie(self, fiche: Fiche) -> None:
-        """Ajoute une copie de la fiche dans le fichier fiches.json de la sauvegarde en cours.
-        PRE : creer_dossier a été appelée et le dossier de sauvegarde a été créé.
-        POST : la fiche est ajoutée sous forme de dictionnaire à la liste de fiches.json, la fiche n'est pas modifiée.
-        Exceptions : TypeError si fiche n'est pas de type Fiche.
-        """
         if not isinstance(fiche, Fiche):
             raise TypeError("Le paramètre fiche n'est pas de Type Fiche")
 
-        chemin = self.dossier + "/fiches.json"
+        chemin = self.__dossier + "/fiches.json"
 
         try:
             with open(chemin, "r", encoding="utf-8") as f:
@@ -170,15 +164,7 @@ class Sauvegarde:
         with open(chemin, "w", encoding="utf-8") as f:
             json.dump(fiches, f, indent=2, ensure_ascii=False)
 
-    def sauver_fiche(self, fiche: Fiche) -> None: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
-        """Enregistre la fiche dans le fichier fiches.json de la sauvegarde en cours.
-        PRE : chargement a été appelée et a préparé la sauvegarde du jour.
-        POST : fiches.json contient la fiche une seule fois, dans sa version la plus récente :
-        elle remplace la fiche de même id si elle existait, sinon elle est ajoutée à la fin.
-        La fiche n'est pas modifiée. Si l'écriture échoue, self.erreur vaut True.
-        Exceptions : TypeError si fiche n'est pas de type Fiche.
-        RuntimeError s'il n'y a pas de sauvegarde en cours.
-        """
+    def sauver_fiche(self, fiche: Fiche) -> None:
         if not isinstance(fiche, Fiche):
             raise TypeError("Le paramètre fiche n'est pas de Type Fiche")
         if self.__save_en_cours is None:
@@ -204,18 +190,13 @@ class Sauvegarde:
             with open(chemin, "w", encoding="utf-8") as f:
                 json.dump(fiches, f, indent=2, ensure_ascii=False)
         except OSError:
-            self.erreur = True
+            self.__erreur = True
 
     def copie_visiteurs(self, visiteur: Visiteur) -> None:
-        """Ajoute une copie du visiteur dans le fichier visiteurs.json de la sauvegarde en cours.
-        PRE : creer_dossier a été appelée et le dossier de sauvegarde a été créé.
-        POST : le visiteur est ajouté sous forme de dictionnaire à la liste de visiteurs.json, le visiteur n'est pas modifié.
-        Exceptions : TypeError si visiteur n'est pas de type Visiteur.
-        """
         if not isinstance(visiteur, Visiteur):
             raise TypeError("Le paramètre visiteur n'est pas de Type Visiteur")
 
-        chemin = self.dossier + "/visiteurs.json"
+        chemin = self.__dossier + "/visiteurs.json"
 
         try:
             with open(chemin, "r", encoding="utf-8") as f:
@@ -229,15 +210,10 @@ class Sauvegarde:
             json.dump(visiteurs, f, indent=2, ensure_ascii=False)
 
     def copie_type(self, type_objet: TypeObjet) -> None:
-        """Ajoute une copie du type d'objet dans le fichier types.json de la sauvegarde en cours.
-        PRE : creer_dossier a été appelée et le dossier de sauvegarde a été créé.
-        POST : le type est ajouté sous forme de dictionnaire à la liste de types.json, le type n'est pas modifié.
-        Exceptions : TypeError si type_objet n'est pas de type TypeObjet.
-        """
         if not isinstance(type_objet, TypeObjet):
             raise TypeError("Le paramètre type_objet n'est pas de Type TypeObjet")
 
-        chemin = self.dossier + "/types.json"
+        chemin = self.__dossier + "/types.json"
 
         try:
             with open(chemin, "r", encoding="utf-8") as f:
@@ -251,15 +227,10 @@ class Sauvegarde:
             json.dump(types, f, indent=2, ensure_ascii=False)
 
     def copie_reparateur(self, reparateur: Reparateur) -> None:
-        """Ajoute une copie du réparateur dans le fichier reparateurs.json de la sauvegarde en cours.
-        PRE : creer_dossier a été appelée et le dossier de sauvegarde a été créé.
-        POST : le réparateur est ajouté sous forme de dictionnaire à la liste de reparateurs.json, le réparateur n'est pas modifié.
-        Exceptions : TypeError si reparateur n'est pas de type Reparateur.
-        """
         if not isinstance(reparateur, Reparateur):
             raise TypeError("Le paramètre reparateur n'est pas de Type Reparateur")
 
-        chemin = self.dossier + "/reparateurs.json"
+        chemin = self.__dossier + "/reparateurs.json"
 
         try:
             with open(chemin, "r", encoding="utf-8") as f:
@@ -274,11 +245,9 @@ class Sauvegarde:
 
     # À décommenter une fois la classe RapportCommune créée :
     # def copie_rapport(self, rapport: RapportCommune) -> None:
-    #     """
-    #     """
     #     return None
 
-    def chargement(self) -> tuple[int, list[Fiche]]: # Pour la méthode suivante, aide de la part de claude opus 5.5 en effort moyen. (Auteur : Louis Degand)
+    def chargement(self) -> tuple[int, list[Fiche]]:
         """Charge les fiches à reprendre et prépare la sauvegarde du jour.
         PRE : aucune.
         POST : le dossier racine et le dossier de sauvegarde du jour existent, et __save_en_cours contient le chemin de ce dernier.
@@ -288,16 +257,16 @@ class Sauvegarde:
         Renvoie (id max, liste des fiches non terminées ou à suivre), ou (0, []) si aucune sauvegarde n'est lisible.
         __erreur_chargement vaut True si au moins une sauvegarde n'a pas pu être lue.
         Si un dossier ou un fichier ne peut pas être créé, self.erreur vaut True et __save_en_cours vaut None.
-        """
+        """ 
         self.__erreur_chargement = False
         self.__save_en_cours = None
 
         self.creer_dossier()
-        if self.erreur:
+        if self.__erreur:
             return 0, []
 
         for sauvegarde in self._lister_sauvegardes():
-            dossier = os.path.join(self.dossier_racine, sauvegarde)
+            dossier = os.path.join(self.__dossier_racine, sauvegarde)
             chemin = os.path.join(dossier, "fiches.json")
             try:
                 with open(chemin, encoding="utf-8") as fichier:
@@ -315,65 +284,56 @@ class Sauvegarde:
                 continue
 
             # Première ouverture du jour : le dossier du jour doit être complet dès sa création
-            if os.path.normpath(dossier) != os.path.normpath(self.dossier):
+            if os.path.normpath(dossier) != os.path.normpath(self.__dossier):
                 try:
                     for nom_fichier in os.listdir(dossier):
                         if nom_fichier.endswith(".json"):
                             with open(os.path.join(dossier, nom_fichier), encoding="utf-8") as source:
                                 contenu = source.read()
-                            with open(os.path.join(self.dossier, nom_fichier), "w", encoding="utf-8") as copie:
+                            with open(os.path.join(self.__dossier, nom_fichier), "w", encoding="utf-8") as copie:
                                 copie.write(contenu)
                 except OSError:
-                    self.erreur = True
+                    self.__erreur = True
                     return max_id, liste_fiches
 
-            self.__save_en_cours = self.dossier
+            self.__save_en_cours = self.__dossier
             return max_id, liste_fiches
 
         try:
-            with open(os.path.join(self.dossier, "fiches.json"), "w", encoding="utf-8") as f:
+            with open(os.path.join(self.__dossier, "fiches.json"), "w", encoding="utf-8") as f:
                 json.dump([], f)
         except OSError:
-            self.erreur = True
+            self.__erreur = True
             return 0, []
 
-        self.__save_en_cours = self.dossier
+        self.__save_en_cours = self.__dossier
         return 0, []
 
     def restauration(self, date: datetime) -> str:
-        """
-        """
         return None
 
     def suppression_automatique(self) -> None:
-        """Supprime les sauvegardes trop anciennes ou en trop.
-        PRE : aucune.
-        POST : il reste au maximum 10 sauvegardes (une par jour) dans dossier_racine, et aucune n'a
-        plus de 365 jours par rapport à date_sauvegarde. Les plus anciennes ont été supprimées.
-        Les dossiers dont le nom n'est pas une date sont ignorés.
-        Si une suppression échoue, self.erreur vaut True.
-        """
         try:
-            saves = sorted(os.listdir(self.dossier_racine))
+            saves = sorted(os.listdir(self.__dossier_racine))
 
             # EF-08.7 : aucune sauvegarde de plus de 365 jours
             for nom in saves[:]:
                 try:
-                    date = datetime.strptime(nom, self.format_date)
+                    date = datetime.strptime(nom, self.__format_date)
                 except ValueError:
                     saves.remove(nom)   # dossier qui n'est pas une sauvegarde : on l'ignore
                     continue
-                if self.date_sauvegarde - date > timedelta(days=365):
-                    self._supprimer_dossier(os.path.join(self.dossier_racine, nom))
+                if self.__date_sauvegarde - date > timedelta(days=365):
+                    self._supprimer_dossier(os.path.join(self.__dossier_racine, nom))
                     saves.remove(nom)
 
             # EF-08.4 : 10 sauvegardes maximum, on supprime les plus anciennes
             while len(saves) > 10:
                 plus_ancienne = saves.pop(0)
-                self._supprimer_dossier(os.path.join(self.dossier_racine, plus_ancienne))
+                self._supprimer_dossier(os.path.join(self.__dossier_racine, plus_ancienne))
 
         except OSError:
-            self.erreur = True
+            self.__erreur = True
 
 
 #CODE DE TEST GENERE PAR CLAUDE
@@ -412,7 +372,7 @@ if __name__ == "__main__":
     # On travaille dans un dossier à part pour ne pas toucher aux vraies sauvegardes.
     test_suppr = Sauvegarde()
     test.chargement()
-    test_suppr.dossier_racine = "data/sauvegardes_test"
+    test_suppr._Sauvegarde__dossier_racine = "data/sauvegardes_test"   # attribut privé : accès forcé pour le test
 
     # On repart de zéro : on vide le dossier de test s'il existe déjà
     if os.path.exists(test_suppr.dossier_racine):
