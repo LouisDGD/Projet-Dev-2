@@ -13,9 +13,9 @@ def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet:
     type_objet_donnees = [['Grille-pain', 1.5], ['Ecran d\'ordinateur', 0.5], ['Ninja Creamy', float(4)]]
     visiteurs_donnees = [[1, 'DERICK', 'Maxime', None, None, False], [2, 'DUBRUILLE', 'Xavier', None, None, False], [3, 'KABASELE', 'Greg', None, None, False]]
     fiches_donnees = [
-        [1, 0, 0, "Ne chauffe plus d'un côté", datetime(2026, 11, 14, 14, 30), Etat.EN_ATTENTE, None, None, None],
-        [2, 1, 1, "Écran noir au démarrage", datetime(2026, 11, 14, 14, 5), Etat.EN_COURS, 1, None, None],
-        [3, 2, 2, "Le moteur ne tourne plus", datetime(2026, 11, 14, 14, 15), Etat.TERMINE, 2, "Courroie remplacée", Resultat.REPARE],
+        [20, 0, 0, "Ne chauffe plus d'un côté", datetime(2026, 11, 14, 14, 30), Etat.EN_ATTENTE, None, None, None],
+        [30, 1, 1, "Écran noir au démarrage", datetime(2026, 11, 14, 14, 5), Etat.EN_COURS, 1, None, None],
+        [40, 2, 2, "Le moteur ne tourne plus", datetime(2026, 11, 14, 14, 15), Etat.TERMINE, 2, "Courroie remplacée", Resultat.REPARE],
     ]
 
     for nom, prenom, specialite in reparateurs_donnees:
@@ -39,18 +39,20 @@ def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet:
         ))
         id_fiche +=1
     return id_fiche
-test = Sauvegarde()
-test.chargement()
-
+demarrage = Sauvegarde()
+etat_initial = demarrage.chargement()
+id_max = etat_initial[0]
 def main():
     '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''
-    registre = RegistreFiches()
+    demarrage = Sauvegarde()
+    etat_initial = demarrage.chargement()
+    id_max = etat_initial[0] + 1
+    registre = RegistreFiches(etat_initial[1])
     liste_reparateur = []
     liste_visiteur = []
     liste_type_objet = []
     liste_fiche = []
-    id_fiche = 1
-    id_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_fiche)
+    id_max = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max)
     for fiche in liste_fiche:
         registre.ajout_file_attente(fiche)
     #TODO creer deux trois fiches
@@ -69,7 +71,7 @@ def main():
 
         #F-01
         if entree == 1:
-            fiche = [id_fiche]
+            fiche = [id_max]
 
             #demande visiteur
             while True:
@@ -175,8 +177,18 @@ def main():
                             f.prendre_en_charge(reparateur)
                             print("Vous avez bien été assigné à cette fiche. \n")
                             identite_reparateur = f"{f.reparateur.nom} {f.reparateur.prenom}"
-                            print(f"\nFiche ID : {f.id}\n Visiteur : {f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}\n Type de l'objet : {f.type_objet.categorie}\n Marque : {f.marque}\n Réparateur : {identite_reparateur} \n Etat : {f.etat.value}\n Résultat : {f.resultat}\n Diagnostic : {f.diagnostic}\n Date d'arrivée : {f.date_arrivee.strftime("%d/%m/%Y, %H:%M")} \n")
-                    break
+                            print(
+                                f"\nFiche ID : {f.id}\n"
+                                f"Visiteur : {f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}\n"
+                                f"Type de l'objet : {f.type_objet.categorie}\n"
+                                f"Marque : {f.marque}\n"
+                                f"Réparateur : {identite_reparateur}\n"
+                                f"État : {f.etat.value}\n"
+                                f"Résultat : {f.resultat}\n"
+                                f"Diagnostic : {f.diagnostic}\n"
+                                f"Date d'arrivée : {f.date_arrivee.strftime('%d/%m/%Y, %H:%M')}\n"
+                            )
+
                 print("\nCette fiche n'est pas disponible ou n'existe pas.\n")
 
 
