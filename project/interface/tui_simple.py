@@ -38,9 +38,14 @@ def get_infos_visiteur(visiteur: Visiteur) -> str:
     """return le visiteur donné en paramètre"""
     return f"{visiteur.nom_visiteur} {visiteur.prenom_visiteur}"
 
-def afficher_infos_typeobjet(typeobjet: TypeObjet) -> None:
+def afficher_infos_visiteur(visiteur: Visiteur) -> None:
+    "Affiche les informations du visiteurs"
+    print(f"{'N°':^6} | {'Nom':^20} | {'Prenom':^20}")
+    print(f"{visiteur.id:>6} {visiteur.nom_visiteur:<20.20} {visiteur.prenom_visiteur:<20.20}")
+
+def get_infos_typeobjet(typeobjet: TypeObjet) -> str:
     """print le TypeObjet donné en paramètre"""
-    pass
+    return f"{typeobjet.categorie} - {typeobjet.poids_moyen}"
 
 def get_infos_reparateur(reparateur: Reparateur) -> str:
     """return le reparateur donné en paramètre"""
@@ -49,11 +54,12 @@ def get_infos_reparateur(reparateur: Reparateur) -> str:
 
 #TODO
 def choisir_fonctionnalites() -> str:
+    CHOIX_AUTORISES = ("0", "1", "2", "3", "4")
     print("Voici la liste des fonctionnalités qui sont disponibles")
     while True:
         print("\n  1) Enregistrer un objet\n  2) Prendre en charge\n  3) Compléter une fiche\n  4) Afficher les fiches de cette session\n  0) Quitter\n")
-        choix = input('Veuillez entrer le chiffre de la fonctionnalité.\n  Exemple : Si vous voulez compléter une fiche, entrez uniquement 3 ').strip()
-        if choix in ("0", "1", "2", "3", "4"):
+        choix = demander_texte('Veuillez entrer le chiffre de la fonctionnalité.\n  Exemple : Si vous voulez compléter une fiche, entrez uniquement 3\n').strip()
+        if choix in CHOIX_AUTORISES:
             return choix
         print("Votre réponse ne correspond à aucune fonctionnalité.")
 
@@ -103,3 +109,4 @@ if __name__ == "__main__":
         return id_fiche
     id_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_fiche)
     afficher_tableau_listes(liste_fiche)
+    choisir_fonctionnalites()
