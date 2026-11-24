@@ -230,23 +230,5 @@ def main():
                     else:
                         print(f"Le résultat ne peut pas être modifié car l'entrée saisie est incorrecte ou il était déjà défini sur {resultat_actuel.value}.\n")
 
-
-
-
-            
-                
-            
-
-
-
-
-
-        
-
-
-
-        
-
-
 if __name__ == "__main__":
     main()
