@@ -5,7 +5,7 @@ from domaine.type_objet import TypeObjet
 from domaine.visiteur import Visiteur
 from datetime import datetime
 from domaine.enums import Etat, Resultat
-
+import interface.tui_simple as tui_simple
 
 def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet: list, liste_fiche: list, id_fiche: int):
     reparateurs_donnees = [['THIEL', 'Valentin', 'Grille-pain'], ['DEGAND', 'Louis', 'Ecran d\'ordinateur'], ['MARTIN', 'Loic', 'Ninja Creamy']]
