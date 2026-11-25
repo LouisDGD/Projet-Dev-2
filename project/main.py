@@ -69,6 +69,8 @@ def main():
         #F-01
             case "1": #F-01 A remplacer plus tard dans le domaine par une unique methode qui contient toutes les méthodes suivantes
                 visiteur = tui_simple.choisir_visiteur(liste_visiteur)
+                if not visiteur:
+                    visiteur = Visiteur(**tui_simple.demander_infos_creation_visiteur()) #TODO manque l'id donc systeme pour chopper id ou l'enlever completement
                 type_objet = tui_simple.choisir_type_objet(liste_type_objet)
                 panne = tui_simple.demander_panne()
                 marque = tui_simple.demander_marque()

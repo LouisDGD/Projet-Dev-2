@@ -85,7 +85,7 @@ class RegistreFiches:
         return sorted(fiches_trouvees, key=lambda fiche: fiche.date_arrivee)
     
     def trouver_par_id(self, id_fiche: int) -> Fiche | None:
-        for fiche in self.file_attente:
+        for fiche in self.__file_attente:
             if fiche.id == id_fiche:
                 return fiche
         return None

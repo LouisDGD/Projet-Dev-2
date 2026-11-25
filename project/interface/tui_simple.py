@@ -18,10 +18,34 @@ def demander_texte(message_input: str) -> str:
     if not message_input.strip():
         raise ValueError("Param est vide ou composé uniquement d'espace")
     while True:
-        reponse = input(message_input).strip()
+        reponse = input(message_input + "\n >>").strip()
         if reponse:
             return reponse
-        print("Choix Invalide : votre choix est vide ou composé uniquement d'espaces.")
+        print("Entrée Invalide : votre choix est vide ou composé uniquement d'espaces.")
+
+def demander_accord() -> bool:
+    print("Le visiteur est-il d'accord de nous donner son adresse mail et/ou son numéro de téléphone s'il faut le recontacter en rapport avec sa réparation ?")
+    while True:
+        print("E")
+        choix = demander_texte("Veuillez entrer \"Oui\" s'il est d'accord et \"Non\" s'il ne l'est pas.").strip().capitalize()
+        if choix == "Oui":
+            return True
+        elif choix == "Non":
+            return False
+        print("Votre réponse ne correspond ni à Oui, ni à Non")
+
+def demander_infos_creation_visiteur() -> dict:
+    infos = {
+        "nom_visiteur": demander_texte("Quel est le nom du visiteur ?"),
+        "prenom_visiteur": demander_texte("Quel est le prénom du visiteur ?"),
+        "accord": demander_accord(),
+        "num_tel": None,
+        "email": None,
+    }
+    if infos["accord"]:
+        infos["email"] = input("Adresse e-mail (laisser vide si aucune) :\n >> ").strip() or None
+        infos["num_tel"] = input("Numéro de téléphone (laisser vide si aucun) :\n >> ").strip() or None
+    return infos
 
 def afficher_tableau_listes(fiches: list[Fiche]) -> None:
     """affiche un tableau affichant les listes une à une"""
@@ -101,18 +125,22 @@ def choisir_resultat() -> Resultat:
             return Resultat.A_SUIVRE
         print("Ce choix ne correspond à aucun résultat. Veuillez réessayer.")
 
-def choisir_visiteur(visiteurs: list[Visiteur]) -> Visiteur:
+def choisir_visiteur(visiteurs: list[Visiteur]) -> Visiteur | None:
     """Affiche les visiteurs et demande d'en choisir un par son id.
     Redemande tant que l'id ne correspond à aucun visiteur.
     """
     print("Voici la liste des visiteurs enregistrés :\n")
     afficher_tableau_visiteurs(visiteurs)
     while True:
-        choix = demander_texte("\nQui est le propriétaire de l'objet ? Entrez son id.\n >> ")
+        choix = demander_texte("\nQui est le propriétaire de l'objet ? Entrez son id.\nEntrez 0 si le visiteur n'est pas déjà connu.")
         for v in visiteurs:
             if str(v.id) == choix:
                 print(f"Vous avez choisi : {get_infos_visiteur(v)}\n")
                 return v
+            elif choix == '0':
+                print("Le visiteur n'existe pas encore.")
+                return None
+                
         print("Aucun visiteur ne correspond a cet ID. Veuillez réessayer.")
 
 def choisir_type_objet(types_objet: list[TypeObjet]) -> TypeObjet:
