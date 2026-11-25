@@ -14,17 +14,8 @@
       "categorie": "grille-pain",
       "poids_moyen": 1.5
     },
-    "type_objet": {
-      "categorie": "grille-pain",
-      "poids_moyen": 1.5
-    },
     "description_panne": "Ne chauffe plus",
     "marque": "Philips",
-    "reparateur": {
-      "nom": "Lemaire",
-      "prenom": "Jules",
-      "specialite": "électroménager"
-    },
     "reparateur": {
       "nom": "Lemaire",
       "prenom": "Jules",
@@ -338,5 +329,28 @@
     "resultat": null,
     "diagnostic": null,
     "date_arrivee": "2026-11-25T13:37:47.838861"
+  },
+  {
+    "id": 41,
+    "visiteur": {
+      "id": 13,
+      "nom_visiteur": "Degand",
+      "prenom_visiteur": "Louis",
+      "num_tel": "000111222",
+      "email": "louis@test.com",
+      "accord": true,
+      "derniere_visite": "2026-11-25T13:56:59.393343"
+    },
+    "type_objet": {
+      "categorie": "Ecran d'ordinateur",
+      "poids_moyen": 0.5
+    },
+    "description_panne": "Pas f'inspi",
+    "marque": "Aplung",
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-25T13:57:25.757975"
   }
 ]

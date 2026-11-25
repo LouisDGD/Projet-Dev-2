@@ -65,6 +65,7 @@ def main():
         #menu principal des fonctionnalités
         match entree:
             case "0":
+                print("Merci et au revoir !")
                 #quitter la boucle
                 break
         #F-01
