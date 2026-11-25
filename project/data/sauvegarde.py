@@ -313,15 +313,19 @@ class Sauvegarde:
         return 0, 0, []
     def get_fiches_sauvegarde_actuelle(self) -> list[Fiche]:
         """Charge toutes les fiches de la sauvegarde actuelle."""
-        sauvegarde = self.__save_en_cours
+        if self.__save_en_cours is None:
+            raise RuntimeError("Aucune sauvegarde en cours : appeler chargement d'abord")
+
+        chemin = os.path.join(self.__save_en_cours, "fiches.json")
         liste_fiches = []
         try:
-            with open(sauvegarde, "r", encoding="utf-8") as fichier:
+            with open(chemin, "r", encoding="utf-8") as fichier:
                 donnees = json.load(fichier)
             for donnee in donnees:
                 liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
-        except Exception as e:
-            print(e)
+        except Exception:
+            self.__erreur_chargement = True
+            return []
         return liste_fiches
 
     def restauration(self, nom: str) -> tuple[int, int, list[Fiche]]:
