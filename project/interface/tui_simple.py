@@ -64,7 +64,7 @@ def get_infos_visiteur(visiteur: Visiteur) -> str:
 
 def afficher_tableau_visiteurs(visiteurs: list[Visiteur]) -> None:
     deja_print = []
-    """Affiche l'en-tête une seule fois, puis une ligne par visiteur."""
+    """Affi(éche l'en-tête une seule fois, puis une ligne par visiteur."""
     print(f"{'N°':^6} | {'Nom':^20} | {'Prénom':^20}")
     print("-" * LONGUEUR_FENETRE)
     for v in visiteurs:
