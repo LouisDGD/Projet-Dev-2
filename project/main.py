@@ -143,9 +143,20 @@ def main():
                             print(f"\n{erreur}\n")
 
             case "4": #afficher les fiches de la session
-                print("Fonctionnalité à venir.")
+                tui_simple.afficher_tableau_listes(registre.fiches_par_ordre_arrivee())
 
             case "5": #Restaurer une sauvegarde
-                print("En cours")
+                nom = tui_simple.choisir_sauvegarde(demarrage._lister_sauvegardes())
+                if nom is None:
+                    continue
+                try:
+                    etat = demarrage.restauration(nom)
+                    registre = RegistreFiches(etat[2])
+                    id_max_fiche = etat[0] + 1
+                    id_max_visiteur = etat[1] + 1
+                    print(f"\nVous travaillez maintenant sur la sauvegarde du {nom}.\n")
+                except ValueError as erreur:
+                    print(f"\n{erreur}\n")
+
 if __name__ == "__main__":
     main()

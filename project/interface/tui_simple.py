@@ -89,10 +89,10 @@ def get_infos_reparateur(reparateur: Reparateur) -> str:
 
 #TODO
 def choisir_fonctionnalites() -> str:
-    CHOIX_AUTORISES = ("0", "1", "2", "3", "4")
+    CHOIX_AUTORISES = ("0", "1", "2", "3", "4", "5")
     print("Voici la liste des fonctionnalités qui sont disponibles")
     while True:
-        print("\n  1) Enregistrer un objet\n  2) Prendre en charge\n  3) Compléter une fiche\n  4) Afficher les fiches de cette session\n  0) Quitter\n")
+        print("\n  1) Enregistrer un objet\n  2) Prendre en charge\n  3) Compléter une fiche\n  4) Afficher les fiches de cette session\n  5) Restaurer une sauvegarde\n  0) Quitter\n")
         choix = demander_texte('Veuillez entrer le chiffre de la fonctionnalité.\n  Exemple : Si vous voulez compléter une fiche, entrez uniquement 3\n').strip()
         if choix in CHOIX_AUTORISES:
             return choix
@@ -186,6 +186,19 @@ def afficher_fiche_ajoutee(fiche: Fiche) -> None:
     """Message de confirmation d'ajou d'une fiche a la liste"""
     print(f"Ajout de la fiche n°{fiche.id}. Merci de votre coopération.\n")
     afficher_infos_fiche(fiche)
+
+def choisir_sauvegarde(sauvegardes: list[str]) -> str | None:
+    print('Sauvegardes disponibles :')
+    for numero, nom in enumerate(sauvegardes, 1):
+        print(f"{numero}, {nom}")
+    while True:
+        choix= demander_texte('Entrez le numéro de la sauvegarde')
+        if choix == "0":
+            return None
+        if choix.isdigit() and 1 <= int(choix) <= len(sauvegardes):
+            return sauvegardes[int(choix) -1]
+        print("Ce numérone correspond a aucune save")
+
 
 if __name__ == "__main__":
     #choisir_fonctionnalites()

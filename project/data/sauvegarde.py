@@ -247,7 +247,7 @@ class Sauvegarde:
     # def copie_rapport(self, rapport: RapportCommune) -> None:
     #     return None
 
-    def chargement(self) -> tuple[int, list[Fiche]]:
+    def chargement(self) -> tuple[int, int, list[Fiche]]:
         """Charge les fiches à reprendre et prépare la sauvegarde du jour.
         PRE : aucune.
         POST : le dossier racine et le dossier de sauvegarde du jour existent, et __save_en_cours contient le chemin de ce dernier.
@@ -263,7 +263,7 @@ class Sauvegarde:
 
         self.creer_dossier()
         if self.__erreur:
-            return 0, []
+            return 0, 0, []
 
         for sauvegarde in self._lister_sauvegardes():
             dossier = os.path.join(self.__dossier_racine, sauvegarde)
@@ -273,9 +273,12 @@ class Sauvegarde:
                     donnees = json.load(fichier)
                 liste_fiches = []
                 max_id = 0
+                max_id_visiteur = 0
                 for donnee in donnees:
                     if donnee["id"] > max_id:
                         max_id = donnee["id"]
+                    if donnee["visiteur"]["id"] > max_id_visiteur:
+                        max_id_visiteur = donnee["visiteur"]["id"]
                     if (donnee["etat"] != Etat.TERMINE.name
                             or donnee["resultat"] == Resultat.A_SUIVRE.name):
                         liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
@@ -294,20 +297,20 @@ class Sauvegarde:
                                 copie.write(contenu)
                 except OSError:
                     self.__erreur = True
-                    return max_id, liste_fiches
+                    return max_id, max_id_visiteur, liste_fiches
 
             self.__save_en_cours = self.__dossier
-            return max_id, liste_fiches
+            return max_id, max_id_visiteur, liste_fiches
 
         try:
             with open(os.path.join(self.__dossier, "fiches.json"), "w", encoding="utf-8") as f:
                 json.dump([], f)
         except OSError:
             self.__erreur = True
-            return 0, []
+            return 0, 0,[]
 
         self.__save_en_cours = self.__dossier
-        return 0, []
+        return 0, 0, []
 
     def restauration(self, nom: str) -> tuple[int, int, list[Fiche]]:
         """Bascule sur une sauvegarde existante et charge ses fiches.
@@ -436,14 +439,13 @@ if __name__ == "__main__":
 
     # ---------- Test 3 : chargement et sauver_fiche ----------
     test = Sauvegarde()
-    max_id, fiches = test.chargement()
+    max_id, max_id_visiteur, fiches = test.chargement()
     print("Sauvegarde en cours :", test.save_en_cours)
-    print("Id max :", max_id, "- fiches chargées :", len(fiches))
+    print("Id max :", max_id, "Id visiteur max :", max_id_visiteur, "- fiches chargées :", len(fiches))
 
     nouvelle = Fiche(
         max_id + 1,
-        Visiteur(max_id + 1, "Dupont", "Léa", None, None, False),
-        TypeObjet("bouilloire", 1.0),
+        Visiteur(max_id_visiteur + 1, "Dupont", "Léa", None, None, False),        TypeObjet("bouilloire", 1.0),
         "Ne s'arrête plus",
     )
     test.sauver_fiche(nouvelle)
