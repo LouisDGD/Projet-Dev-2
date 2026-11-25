@@ -14,17 +14,8 @@
       "categorie": "grille-pain",
       "poids_moyen": 1.5
     },
-    "type_objet": {
-      "categorie": "grille-pain",
-      "poids_moyen": 1.5
-    },
     "description_panne": "Ne chauffe plus",
     "marque": "Philips",
-    "reparateur": {
-      "nom": "Lemaire",
-      "prenom": "Jules",
-      "specialite": "électroménager"
-    },
     "reparateur": {
       "nom": "Lemaire",
       "prenom": "Jules",
@@ -338,5 +329,28 @@
     "resultat": null,
     "diagnostic": null,
     "date_arrivee": "2026-11-25T13:37:47.838861"
+  },
+  {
+    "id": 41,
+    "visiteur": {
+      "id": 3,
+      "nom_visiteur": "Janssens",
+      "prenom_visiteur": "Sophie",
+      "num_tel": "0498765432",
+      "email": null,
+      "accord": true,
+      "derniere_visite": "2026-11-07T10:30:00"
+    },
+    "type_objet": {
+      "categorie": "Ecran d'ordinateur",
+      "poids_moyen": 0.5
+    },
+    "description_panne": "ojh",
+    "marque": "Y",
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-25T13:56:19.170049"
   }
 ]
