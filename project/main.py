@@ -154,7 +154,7 @@ def main():
                     registre = RegistreFiches(etat[2])
                     id_max_fiche = etat[0] + 1
                     id_max_visiteur = etat[1] + 1
-                    print(f"\nVous travaillez maintenant sur la sauvegarde du {nom}.\n")
+                    print(f"\nLa sauvegarde du {nom} a été restaurée.\n")
                 except ValueError as erreur:
                     print(f"\n{erreur}\n")
 

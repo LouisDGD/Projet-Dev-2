@@ -188,16 +188,25 @@ def afficher_fiche_ajoutee(fiche: Fiche) -> None:
     afficher_infos_fiche(fiche)
 
 def choisir_sauvegarde(sauvegardes: list[str]) -> str | None:
-    print('Sauvegardes disponibles :')
+    """Affiche les sauvegardes numérotées, demande d'en choisir une puis de confirmer l'écrasement.
+    Renvoie le nom de la sauvegarde choisie, ou None si l'utilisateur annule.
+    """
+    print("Sauvegardes disponibles :")
     for numero, nom in enumerate(sauvegardes, 1):
-        print(f"{numero}, {nom}")
+        print(f"{numero}) {nom}")
+    print("0) Annuler")
     while True:
-        choix= demander_texte('Entrez le numéro de la sauvegarde')
+        choix = demander_texte("Entrez le numéro de la sauvegarde.")
         if choix == "0":
             return None
         if choix.isdigit() and 1 <= int(choix) <= len(sauvegardes):
-            return sauvegardes[int(choix) -1]
-        print("Ce numérone correspond a aucune save")
+            nom = sauvegardes[int(choix) - 1]
+            print(f"\nATTENTION : les données d'aujourd'hui vont être remplacées par celles du {nom}.")
+            confirmation = demander_texte("Entrez \"Oui\" pour confirmer, ou autre chose pour annuler.").capitalize()
+            if confirmation == "Oui":
+                return nom
+            return None
+        print("Ce numéro ne correspond à aucune sauvegarde.")
 
 
 if __name__ == "__main__":

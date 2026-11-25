@@ -313,40 +313,30 @@ class Sauvegarde:
         return 0, 0, []
 
     def restauration(self, nom: str) -> tuple[int, int, list[Fiche]]:
-        """Bascule sur une sauvegarde existante et charge ses fiches.
-        les modifications suivantes (sauver_fiche) sont écrites dans ce dossier.
-        Au prochain démarrage, chargement reprend la sauvegarde la plus récente.
-        Renvoie (id max fiche, id max visiteur, liste des fiches non terminées ou à suivre).
+        """Écrase le fiches.json du jour avec celui de la sauvegarde choisie, puis le charge.
+        PRE : aucune.
+        POST : le fiches.json du jour contient celui de la sauvegarde choisie.
+        Renvoie la même chose que chargement.
+        Exceptions : TypeError si nom n'est pas un str,
+        ValueError si la sauvegarde n'existe pas, si c'est celle du jour ou si la copie échoue.
         """
         if not isinstance(nom, str):
             raise TypeError("Le nom de la sauvegarde doit être un str")
         if nom not in self._lister_sauvegardes():
             raise ValueError("Cette sauvegarde n'existe pas")
-
-        dossier = os.path.join(self.__dossier_racine, nom)
-        chemin = os.path.join(dossier, "fiches.json")
+        if nom == self.__date_sauvegarde.strftime(self.__format_date):
+            raise ValueError("C'est déjà la sauvegarde du jour")
 
         try:
-            with open(chemin, encoding="utf-8") as fichier:
-                donnees = json.load(fichier)
-            liste_fiches = []
-            max_id_fiche = 0
-            max_id_visiteur = 0
+            with open(os.path.join(self.__dossier_racine, nom, "fiches.json"), encoding="utf-8") as f:
+                contenu = f.read()
+            with open(os.path.join(self.__dossier, "fiches.json"), "w", encoding="utf-8") as f:
+                f.write(contenu)
+        except OSError:
+            self.__erreur = True
+            raise ValueError("La restauration a échoué")
 
-            for donnee in donnees:
-                if donnee["id"] > max_id_fiche:
-                    max_id_fiche = donnee["id"]
-                if donnee["visiteur"]["id"] > max_id_visiteur:
-                    max_id_visiteur = donnee["visiteur"]["id"]
-                if (donnee["etat"] != Etat.TERMINE.name
-                        or donnee["resultat"] == Resultat.A_SUIVRE.name):
-                    liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
-        except Exception:
-            self.__erreur_chargement = True
-            raise ValueError("Sauvegarde illisible")
-
-        self.__save_en_cours = dossier
-        return max_id_fiche, max_id_visiteur, liste_fiches
+        return self.chargement()
 
     def suppression_automatique(self) -> None:
         try:
