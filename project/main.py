@@ -79,14 +79,14 @@ def main():
                 type_objet = tui_simple.choisir_type_objet(liste_type_objet)
                 panne = tui_simple.demander_panne()
                 marque = tui_simple.demander_marque()
-
                 fiche = Fiche(
-                    id=registre.prochain_id(), #a modifier absolument!!!!!!
+                    id=id_max,
                     visiteur=visiteur,
                     type_objet=type_objet,
                     description_panne=panne,
                     marque=marque,
                 )
+                id_max += 1
                 registre.ajout_file_attente(fiche)
                 demarrage.sauver_fiche(fiche)
                 tui_simple.afficher_fiche_ajoutee(fiche)

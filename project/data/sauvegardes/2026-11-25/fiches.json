@@ -333,24 +333,24 @@
   {
     "id": 41,
     "visiteur": {
-      "id": 3,
-      "nom_visiteur": "Janssens",
-      "prenom_visiteur": "Sophie",
-      "num_tel": "0498765432",
+      "id": 2,
+      "nom_visiteur": "Dubruille",
+      "prenom_visiteur": "Xavier",
+      "num_tel": null,
       "email": null,
-      "accord": true,
-      "derniere_visite": "2026-11-07T10:30:00"
+      "accord": false,
+      "derniere_visite": "2026-11-25T14:05:54.699005"
     },
     "type_objet": {
       "categorie": "Ecran d'ordinateur",
       "poids_moyen": 0.5
     },
-    "description_panne": "ojh",
-    "marque": "Y",
+    "description_panne": "^mpkojih",
+    "marque": "ojihu",
     "reparateur": null,
     "etat": "EN_ATTENTE",
     "resultat": null,
     "diagnostic": null,
-    "date_arrivee": "2026-11-25T13:56:19.170049"
+    "date_arrivee": "2026-11-25T14:06:09.112032"
   }
 ]
