@@ -35,7 +35,7 @@
     "marque": "Ikea",
     "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
     "etat": "TERMINE",
-    "resultat": "NON_REPARE",
+    "resultat": "NON_REPARABLE",
     "diagnostic": "Transformateur HS, pièce introuvable",
     "date_arrivee": "2026-11-07T10:05:00"
   },
@@ -195,7 +195,7 @@
     "marque": "Babyliss",
     "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
     "etat": "TERMINE",
-    "resultat": "NON_REPARE",
+    "resultat": "NON_REPARABLE",
     "diagnostic": "Thermostat grillé, réparation trop coûteuse",
     "date_arrivee": "2026-11-21T11:30:00"
   }

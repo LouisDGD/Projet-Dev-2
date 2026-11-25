@@ -44,6 +44,7 @@ def main():
     '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''
     demarrage = Sauvegarde()
     etat_initial = demarrage.chargement()
+    #liste_fiches = demarrage.get_fiches_sauvegarde_actuelle()
     id_max_fiche = etat_initial[0] + 1
     id_max_visiteur = etat_initial[1] + 1
     registre = RegistreFiches(etat_initial[2])
@@ -145,7 +146,12 @@ def main():
             case "4": #afficher les fiches de la session
                 tui_simple.afficher_tableau_listes(registre.fiches_par_ordre_arrivee())
 
-            case "5": #Restaurer une sauvegarde
+            case "5": #F-04 Rechercher une fiche
+                liste_toutes_fiches = demarrage.get_fiches_sauvegarde_actuelle()
+                tui_simple.demander_une_fiche(liste_toutes_fiches)
+
+
+            case "6": #Restaurer une sauvegarde
                 nom = tui_simple.choisir_sauvegarde(demarrage._lister_sauvegardes())
                 if nom is None:
                     continue

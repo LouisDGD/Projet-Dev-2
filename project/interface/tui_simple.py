@@ -23,6 +23,40 @@ def demander_texte(message_input: str) -> str:
             return reponse
         print("Entrée Invalide : votre choix est vide ou composé uniquement d'espaces.")
 
+def demander_une_fiche(liste_fiches: list[Fiche]) -> None:
+    while True:
+        filtre = demander_texte("\nRechercher vous les objets uniquement avec le statut à suivre ?\n Entrer \"Oui\" ou \"Non\".\n Entrer 0 si vous voulez revenir au menu précédent.\n").strip().lower()
+        if filtre == "0":
+            return
+        trouvees = []
+        if filtre == "oui":
+            trouvees = recherche_fiche(True, liste_fiches)
+            if not trouvees:
+                print("\nAucune fiche ne correspond à ce nom.")
+                continue
+            afficher_tableau_listes(trouvees)
+        elif filtre == "non":
+            trouvees = recherche_fiche(False, liste_fiches)
+            if not trouvees:
+                print("\nAucune fiche ne correspond à ce nom.")
+                continue
+            afficher_tableau_listes(trouvees)
+        if trouvees:
+            return trouvees
+
+def recherche_fiche(filtre: bool, liste_fiches: list[Fiche]) -> list[Fiche]:
+    choix = demander_texte("\nEntrer le nom et le prénom de la personne.\nExemple : Dubois Anne\n Entrer 0 si vous voulez revenir au menu précédent.\n").strip()
+    correspondantes = []
+    if filtre:
+        for f in liste_fiches:
+            if f"{f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}" == choix and f.resultat == Resultat.A_SUIVRE:
+                correspondantes.append(f)
+    else:
+        for f in liste_fiches:
+            if f"{f.visiteur.nom_visiteur} {f.visiteur.prenom_visiteur}" == choix:
+                correspondantes.append(f)
+    return correspondantes
+            
 def demander_accord() -> bool:
     print("Le visiteur est-il d'accord de nous donner son adresse mail et/ou son numéro de téléphone s'il faut le recontacter en rapport avec sa réparation ?")
     while True:
@@ -48,10 +82,12 @@ def demander_infos_creation_visiteur() -> dict:
 
 def afficher_tableau_listes(fiches: list[Fiche]) -> None:
     """affiche un tableau affichant les listes une à une"""
+    print("\n")
     print(f"{'N°':^6} | {'Heure':^5} | {'Visiteur':^17} | {'Objet':^20} | {'Statut':^12} | {'Réparateur':^17}")
     print("-" * LONGUEUR_FENETRE)
     for f in fiches:
         afficher_infos_fiche(f)
+    print("\n")
 
 def afficher_infos_fiche(fiche: Fiche) -> None:
     """print la fiche donné en paramètre"""
@@ -89,10 +125,10 @@ def get_infos_reparateur(reparateur: Reparateur) -> str:
 
 #TODO
 def choisir_fonctionnalites() -> str:
-    CHOIX_AUTORISES = ("0", "1", "2", "3", "4", "5")
-    print("Voici la liste des fonctionnalités qui sont disponibles")
+    CHOIX_AUTORISES = ("0", "1", "2", "3", "4", "5", "6")
+    print("\nVoici la liste des fonctionnalités qui sont disponibles")
     while True:
-        print("\n  1) Enregistrer un objet\n  2) Prendre en charge\n  3) Compléter une fiche\n  4) Afficher les fiches de cette session\n  5) Restaurer une sauvegarde\n  0) Quitter\n")
+        print("\n  1) Enregistrer un objet\n  2) Prendre en charge\n  3) Compléter une fiche\n  4) Afficher les fiches de cette session\n  5) Rechercher la fiche d'un visiteur\n  6) Restaurer une sauvegarde\n  0) Quitter\n")
         choix = demander_texte('Veuillez entrer le chiffre de la fonctionnalité.\n  Exemple : Si vous voulez compléter une fiche, entrez uniquement 3\n').strip()
         if choix in CHOIX_AUTORISES:
             return choix

@@ -311,6 +311,7 @@ class Sauvegarde:
 
         self.__save_en_cours = self.__dossier
         return 0, 0, []
+    
     def get_fiches_sauvegarde_actuelle(self) -> list[Fiche]:
         """Charge toutes les fiches de la sauvegarde actuelle."""
         if self.__save_en_cours is None:
