@@ -311,6 +311,18 @@ class Sauvegarde:
 
         self.__save_en_cours = self.__dossier
         return 0, 0, []
+    def get_fiches_sauvegarde_actuelle(self) -> list[Fiche]:
+        """Charge toutes les fiches de la sauvegarde actuelle."""
+        sauvegarde = self.__save_en_cours
+        liste_fiches = []
+        try:
+            with open(sauvegarde, "r", encoding="utf-8") as fichier:
+                donnees = json.load(fichier)
+            for donnee in donnees:
+                liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
+        except Exception as e:
+            print(e)
+        return liste_fiches
 
     def restauration(self, nom: str) -> tuple[int, int, list[Fiche]]:
         """Écrase le fiches.json du jour avec celui de la sauvegarde choisie, puis le charge.
@@ -445,3 +457,4 @@ if __name__ == "__main__":
         ids = [d["id"] for d in json.load(f)]
     print("La fiche n'apparaît qu'une fois :", ids.count(nouvelle.id) == 1)
     print("Erreur :", test.erreur, "- erreur de chargement :", test.erreur_chargement)
+    print(test.get_fiches_sauvegarde_actuelle())
