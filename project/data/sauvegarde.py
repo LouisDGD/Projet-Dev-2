@@ -247,7 +247,7 @@ class Sauvegarde:
     # def copie_rapport(self, rapport: RapportCommune) -> None:
     #     return None
 
-    def chargement(self) -> tuple[int, int, list[Fiche]]:
+    def chargement(self) -> tuple[int, list[Fiche]]:
         """Charge les fiches à reprendre et prépare la sauvegarde du jour.
         PRE : aucune.
         POST : le dossier racine et le dossier de sauvegarde du jour existent, et __save_en_cours contient le chemin de ce dernier.
@@ -263,7 +263,7 @@ class Sauvegarde:
 
         self.creer_dossier()
         if self.__erreur:
-            return 0, 0, []
+            return 0, []
 
         for sauvegarde in self._lister_sauvegardes():
             dossier = os.path.join(self.__dossier_racine, sauvegarde)
@@ -272,13 +272,10 @@ class Sauvegarde:
                 with open(chemin, encoding="utf-8") as fichier:
                     donnees = json.load(fichier)
                 liste_fiches = []
-                max_id_fiche = 0
-                max_id_visiteur = 0
-
+                max_id = 0
                 for donnee in donnees:
-                    if donnee["id"] > max_id_fiche:
-                        max_id_fiche = donnee["id"]
-                    max_id_visiteur = donnee["visiteur"]["id"] if donnee["visiteur"]["id"] > max_id_visiteur else max_id_visiteur
+                    if donnee["id"] > max_id:
+                        max_id = donnee["id"]
                     if (donnee["etat"] != Etat.TERMINE.name
                             or donnee["resultat"] == Resultat.A_SUIVRE.name):
                         liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
@@ -297,23 +294,56 @@ class Sauvegarde:
                                 copie.write(contenu)
                 except OSError:
                     self.__erreur = True
-                    return max_id_fiche, max_id_visiteur, liste_fiches
+                    return max_id, liste_fiches
 
             self.__save_en_cours = self.__dossier
-            return max_id_fiche, max_id_visiteur, liste_fiches
+            return max_id, liste_fiches
 
         try:
             with open(os.path.join(self.__dossier, "fiches.json"), "w", encoding="utf-8") as f:
                 json.dump([], f)
         except OSError:
             self.__erreur = True
-            return 0, 0, []
+            return 0, []
 
         self.__save_en_cours = self.__dossier
-        return 0, 0, []
+        return 0, []
 
-    def restauration(self, date: datetime) -> str:
-        return None
+    def restauration(self, nom: str) -> tuple[int, int, list[Fiche]]:
+        """Bascule sur une sauvegarde existante et charge ses fiches.
+        les modifications suivantes (sauver_fiche) sont écrites dans ce dossier.
+        Au prochain démarrage, chargement reprend la sauvegarde la plus récente.
+        Renvoie (id max fiche, id max visiteur, liste des fiches non terminées ou à suivre).
+        """
+        if not isinstance(nom, str):
+            raise TypeError("Le nom de la sauvegarde doit être un str")
+        if nom not in self._lister_sauvegardes():
+            raise ValueError("Cette sauvegarde n'existe pas")
+
+        dossier = os.path.join(self.__dossier_racine, nom)
+        chemin = os.path.join(dossier, "fiches.json")
+
+        try:
+            with open(chemin, encoding="utf-8") as fichier:
+                donnees = json.load(fichier)
+            liste_fiches = []
+            max_id_fiche = 0
+            max_id_visiteur = 0
+
+            for donnee in donnees:
+                if donnee["id"] > max_id_fiche:
+                    max_id_fiche = donnee["id"]
+                if donnee["visiteur"]["id"] > max_id_visiteur:
+                    max_id_visiteur = donnee["visiteur"]["id"]
+                if (donnee["etat"] != Etat.TERMINE.name
+                        or donnee["resultat"] == Resultat.A_SUIVRE.name):
+                    liste_fiches.append(self._dict_fiche_vers_fiche(donnee))
+        except Exception:
+            self.__erreur_chargement = True
+            raise ValueError("Sauvegarde illisible")
+
+        self.__save_en_cours = dossier
+        return max_id_fiche, max_id_visiteur, liste_fiches
 
     def suppression_automatique(self) -> None:
         try:
@@ -406,13 +436,13 @@ if __name__ == "__main__":
 
     # ---------- Test 3 : chargement et sauver_fiche ----------
     test = Sauvegarde()
-    max_id_fiche, max_id_visiteur, fiches = test.chargement()
+    max_id, fiches = test.chargement()
     print("Sauvegarde en cours :", test.save_en_cours)
-    print("Id max :", max_id_fiche, "Id visiteur max :", max_id_visiteur, "- fiches chargées :", len(fiches))
+    print("Id max :", max_id, "- fiches chargées :", len(fiches))
 
     nouvelle = Fiche(
-        max_id_fiche + 1,
-        Visiteur(max_id_visiteur + 1, "Dupont", "Léa", None, None, False),
+        max_id + 1,
+        Visiteur(max_id + 1, "Dupont", "Léa", None, None, False),
         TypeObjet("bouilloire", 1.0),
         "Ne s'arrête plus",
     )

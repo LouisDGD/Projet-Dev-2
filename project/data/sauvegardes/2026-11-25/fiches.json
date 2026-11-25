@@ -352,5 +352,28 @@
     "resultat": null,
     "diagnostic": null,
     "date_arrivee": "2026-11-25T13:56:19.170049"
+  },
+  {
+    "id": 42,
+    "visiteur": {
+      "id": 1,
+      "nom_visiteur": "Derick",
+      "prenom_visiteur": "Maxime",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-25T14:06:23.056404"
+    },
+    "type_objet": {
+      "categorie": "Ninja creamy",
+      "poids_moyen": 4.0
+    },
+    "description_panne": "Fonctionne pu",
+    "marque": "Aplung",
+    "reparateur": null,
+    "etat": "EN_ATTENTE",
+    "resultat": null,
+    "diagnostic": null,
+    "date_arrivee": "2026-11-25T14:07:39.984537"
   }
 ]

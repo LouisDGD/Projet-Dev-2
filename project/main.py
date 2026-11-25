@@ -145,5 +145,7 @@ def main():
             case "4": #afficher les fiches de la session
                 print("Fonctionnalité à venir.")
 
+            case "5": #Restaurer une sauvegarde
+                print("En cours")
 if __name__ == "__main__":
     main()
