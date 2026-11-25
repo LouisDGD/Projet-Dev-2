@@ -91,9 +91,23 @@ class RegistreFiches:
                 return fiche
         return None
 
-    def suppression_infos_personnelles(self, date: datetime | None = None):
+    @staticmethod
+    def suppression_infos_personnelles(fiches: list[Fiche], date: datetime | None = None) -> list[Fiche]:
+        """Efface les coordonnées des visiteurs dont la dernière visite date d'un an ou plus (RGPD).
+        Renvoie la liste des fiches modifiées (à sauvegarder).
+        """
         if date is None:
             date = datetime.now()
-        for f in self.fiches_par_ordre_arrivee():
-            if (date.date() - f.date_arrivee.date()) >= timedelta(days=365):
+
+        derniere_visite = {}
+        for f in fiches:
+            id_visiteur = f.visiteur.id
+            if id_visiteur not in derniere_visite or f.date_arrivee > derniere_visite[id_visiteur]:
+                derniere_visite[id_visiteur] = f.date_arrivee
+
+        fiches_modifiees = []
+        for f in fiches:
+            if f.visiteur.accord and date - derniere_visite[f.visiteur.id] >= timedelta(days=365):
                 f.visiteur.effacement()
+                fiches_modifiees.append(f)
+        return fiches_modifiees
