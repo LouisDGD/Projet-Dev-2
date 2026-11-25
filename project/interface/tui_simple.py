@@ -26,7 +26,6 @@ def demander_texte(message_input: str) -> str:
 def demander_accord() -> bool:
     print("Le visiteur est-il d'accord de nous donner son adresse mail et/ou son numéro de téléphone s'il faut le recontacter en rapport avec sa réparation ?")
     while True:
-        print("E")
         choix = demander_texte("Veuillez entrer \"Oui\" s'il est d'accord et \"Non\" s'il ne l'est pas.").strip().capitalize()
         if choix == "Oui":
             return True

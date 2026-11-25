@@ -14,8 +14,17 @@
       "categorie": "grille-pain",
       "poids_moyen": 1.5
     },
+    "type_objet": {
+      "categorie": "grille-pain",
+      "poids_moyen": 1.5
+    },
     "description_panne": "Ne chauffe plus",
     "marque": "Philips",
+    "reparateur": {
+      "nom": "Lemaire",
+      "prenom": "Jules",
+      "specialite": "électroménager"
+    },
     "reparateur": {
       "nom": "Lemaire",
       "prenom": "Jules",
