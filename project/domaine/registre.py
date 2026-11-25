@@ -1,5 +1,6 @@
 from domaine.fiche import Fiche
 from domaine.enums import Resultat
+from datetime import datetime, timedelta
 
 
 class RegistreFiches:
@@ -89,3 +90,10 @@ class RegistreFiches:
             if fiche.id == id_fiche:
                 return fiche
         return None
+
+    def suppression_infos_personnelles(self, date: datetime | None = None):
+        if date is None:
+            date = datetime.now()
+        for f in self.fiches_par_ordre_arrivee():
+            if (date.date() - f.date_arrivee.date()) >= timedelta(days=365):
+                f.visiteur.effacement()

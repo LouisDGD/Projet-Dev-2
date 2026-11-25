@@ -150,7 +150,6 @@ def main():
                 liste_toutes_fiches = demarrage.get_fiches_sauvegarde_actuelle()
                 tui_simple.demander_une_fiche(liste_toutes_fiches)
 
-
             case "6": #Restaurer une sauvegarde
                 nom = tui_simple.choisir_sauvegarde(demarrage._lister_sauvegardes())
                 if nom is None:
