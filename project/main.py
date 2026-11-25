@@ -45,7 +45,8 @@ def main():
     demarrage = Sauvegarde()
     etat_initial = demarrage.chargement()
     id_max = etat_initial[0] + 1
-    registre = RegistreFiches(etat_initial[1])
+    id_max_visiteur = etat_initial[1] + 1
+    registre = RegistreFiches(etat_initial[2])
     liste_reparateur = []
     liste_visiteur = []
     liste_type_objet = []
@@ -68,9 +69,13 @@ def main():
                 break
         #F-01
             case "1": #F-01 A remplacer plus tard dans le domaine par une unique methode qui contient toutes les méthodes suivantes
+                liste_visiteur = []
+                for f in registre.fiches_par_ordre_arrivee():
+                    liste_visiteur.append(f.visiteur)
                 visiteur = tui_simple.choisir_visiteur(liste_visiteur)
                 if not visiteur:
-                    visiteur = Visiteur(**tui_simple.demander_infos_creation_visiteur()) #TODO manque l'id donc systeme pour chopper id ou l'enlever completement
+                    visiteur = Visiteur(id=id_max_visiteur, **tui_simple.demander_infos_creation_visiteur())
+                    id_max_visiteur += 1
                 type_objet = tui_simple.choisir_type_objet(liste_type_objet)
                 panne = tui_simple.demander_panne()
                 marque = tui_simple.demander_marque()

@@ -18,7 +18,7 @@ def demander_texte(message_input: str) -> str:
     if not message_input.strip():
         raise ValueError("Param est vide ou composé uniquement d'espace")
     while True:
-        reponse = input(message_input + "\n >>").strip()
+        reponse = input(message_input + "\n >> ").strip()
         if reponse:
             return reponse
         print("Entrée Invalide : votre choix est vide ou composé uniquement d'espaces.")
@@ -151,7 +151,7 @@ def choisir_type_objet(types_objet: list[TypeObjet]) -> TypeObjet:
         print("Types d'objet disponibles :")
         for t in types_objet:
             print(f"{t.categorie}")
-        choix = demander_texte("Quel est le type de l'objet ? Entrez un des types affichés.\n >> ")
+        choix = demander_texte("Quel est le type de l'objet ? Entrez un des types affichés.")
         for t in types_objet:
             if t.categorie == choix:
                 print("Le type de l'objet a été ajouté.\n")
@@ -163,7 +163,7 @@ def demander_panne() -> str:
     Redemande tant que le bénévole n'a pas validé sa description.
     """
     while True:
-        panne = demander_texte("Veuillez décrire la panne.\n >> ")
+        panne = demander_texte("Veuillez décrire la panne.")
         reponse = input(f"Vous avez écrit :\n {panne}\n Entrez [Y] si vous êtes d'accord avec votre entrée.\n Entrez [N] si vous voulez recommencer\n >> ")
         if reponse.strip().lower() == "n":
             continue
