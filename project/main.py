@@ -44,6 +44,11 @@ def main():
     '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''
     demarrage = Sauvegarde()
     etat_initial = demarrage.chargement()
+
+    for fiche in RegistreFiches.suppression_infos_personnelles(demarrage.get_fiches_sauvegarde_actuelle()):
+        demarrage.sauver_fiche(fiche)
+    etat_initial = demarrage.chargement()
+
     #liste_fiches = demarrage.get_fiches_sauvegarde_actuelle()
     id_max_fiche = etat_initial[0] + 1
     id_max_visiteur = etat_initial[1] + 1
