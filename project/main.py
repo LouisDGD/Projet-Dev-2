@@ -51,7 +51,7 @@ def main():
     liste_visiteur = []
     liste_type_objet = []
     liste_fiche = []
-    id_max_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max)
+    id_max_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max_fiche)
     for fiche in liste_fiche:
         registre.ajout_file_attente(fiche)
     #TODO creer deux trois fiches
