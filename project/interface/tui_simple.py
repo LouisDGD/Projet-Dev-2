@@ -163,6 +163,31 @@ def choisir_resultat() -> Resultat:
             return Resultat.A_SUIVRE
         print("Ce choix ne correspond à aucun résultat. Veuillez réessayer.")
 
+def demander_reparateur(registre: RegistreFiches) -> Reparateur | None:
+    """Demande au réparateur son nom, son prénom et sa spécialité.
+    Renvoie None s'il a déjà une fiche en cours.
+    """
+    nom = demander_texte("Entrez votre nom.")
+    prenom = demander_texte("Entrez votre prénom.")
+    specialite = demander_texte("Entrez votre spécialité.")
+    reparateur = Reparateur(nom, prenom, specialite)
+    print(f"\nVous êtes : {get_infos_reparateur(reparateur)}\n")
+    for f in registre.fiches_par_ordre_arrivee():
+        if f.etat == Etat.EN_COURS and f.reparateur is not None:
+            if f.reparateur.nom.lower() == nom.lower() and f.reparateur.prenom.lower() == prenom.lower():
+                print(f"Vous avez déjà la fiche n°{f.id} en cours. Terminez-la avant d'en prendre une autre.\n")
+                return None
+    return reparateur
+
+def afficher_prise_en_charge(fiche: Fiche) -> None:
+    """Confirme la prise en charge et affiche la fiche."""
+    print("\nVous avez bien été assigné à cette fiche.\n")
+    afficher_infos_fiche(fiche)
+
+def afficher_erreur(erreur: Exception) -> None:
+    """Affiche le message d'une erreur."""
+    print(f"\n{erreur}\n")
+
 def choisir_visiteur(visiteurs: list[Visiteur]) -> Visiteur | None:
     """Affiche les visiteurs et demande d'en choisir un par son id.
     Redemande tant que l'id ne correspond à aucun visiteur.
@@ -171,13 +196,13 @@ def choisir_visiteur(visiteurs: list[Visiteur]) -> Visiteur | None:
     afficher_tableau_visiteurs(visiteurs)
     while True:
         choix = demander_texte("\nQui est le propriétaire de l'objet ? Entrez son id.\nEntrez 0 si le visiteur n'est pas déjà connu.")
+        if choix == "0":
+            print("Le visiteur n'existe pas encore.")
+            return None
         for v in visiteurs:
             if str(v.id) == choix:
                 print(f"Vous avez choisi : {get_infos_visiteur(v)}\n")
                 return v
-            elif choix == '0':
-                print("Le visiteur n'existe pas encore.")
-                return None
                 
         print("Aucun visiteur ne correspond a cet ID. Veuillez réessayer.")
 

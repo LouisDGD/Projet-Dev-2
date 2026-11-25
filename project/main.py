@@ -50,12 +50,21 @@ def main():
     registre = RegistreFiches(etat_initial[2])
     liste_reparateur = []
     liste_visiteur = []
-    liste_type_objet = []
+    liste_type_objet = [ # TODO : remplacer par le tableau de Mme Moreau (Q-09)
+        TypeObjet("Grille-pain", 1.5),
+        TypeObjet("Aspirateur", 6.0),
+        TypeObjet("Lampe", 2.0),
+        TypeObjet("Micro-ondes", 12.0),
+        TypeObjet("Téléviseur", 10.0),
+        TypeObjet("Ordinateur", 2.5),
+        TypeObjet("Ecran d'ordinateur", 0.5),
+        TypeObjet("Ninja Creamy", 4.0),
+        TypeObjet("Autre", 1.0),
+    ]
     liste_fiche = []
-    id_max_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max_fiche)
-    for fiche in liste_fiche:
-        registre.ajout_file_attente(fiche)
-    #TODO creer deux trois fiches
+    #id_max_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max_fiche)
+    #for fiche in liste_fiche:
+        #registre.ajout_file_attente(fiche)
     
     tui_simple.lancer()
     '''boucle principale'''
@@ -94,32 +103,16 @@ def main():
                 tui_simple.afficher_fiche_ajoutee(fiche)
 
             case "2": #F-02
-                if not len(liste_reparateur):
-                    print("Aucun réparateur existe, contactez la coordinatrice.")
+                reparateur = tui_simple.demander_reparateur(registre)
+                if reparateur is None:
                     continue
-                print("Voici la liste des réparateurs : \n")
-                ordre = 1
-                reparateur = None
-                for r in liste_reparateur:
-                    print(f"ID : {ordre}\n {r.nom} {r.prenom}\n")
-                    ordre += 1
-                while True:
-                    reparateur_input = input("Entrez votre ID\n >>")
-                    if reparateur_input.strip() in ("1", "2", "3"):
-                            reparateur = liste_reparateur[int(reparateur_input) - 1]
-                            break
-                
-                print(f"\nVous avez choisi : {reparateur.nom} {reparateur.prenom} \n")
-
-                print("\nVoici la liste des fiches triée par ordre chronologique\n")
-                fiche = tui_simple.choisir_fiche(registre, "Entrez l'ID de la fiche que vous voulez prendre en charge\n >> ")
+                fiche = tui_simple.choisir_fiche(registre, "Entrez l'ID de la fiche que vous voulez prendre en charge.")
                 try:
                     fiche.prendre_en_charge(reparateur)
                     demarrage.sauver_fiche(fiche)
-                    print("\nVous avez bien été assigné à cette fiche.\n")
-                    tui_simple.afficher_infos_fiche(fiche)
+                    tui_simple.afficher_prise_en_charge(fiche)
                 except ValueError as erreur:
-                    print(f"\n{erreur}\n")
+                    tui_simple.afficher_erreur(erreur)
         
             case "3": #F-03
                 print("Voici la liste des fiches disponibles : \n")
