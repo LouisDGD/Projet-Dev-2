@@ -44,14 +44,14 @@ def main():
     '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''
     demarrage = Sauvegarde()
     etat_initial = demarrage.chargement()
-    id_max = etat_initial[0] + 1
+    id_max_fiche = etat_initial[0] + 1
     id_max_visiteur = etat_initial[1] + 1
     registre = RegistreFiches(etat_initial[2])
     liste_reparateur = []
     liste_visiteur = []
     liste_type_objet = []
     liste_fiche = []
-    id_max = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max)
+    id_max_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max)
     for fiche in liste_fiche:
         registre.ajout_file_attente(fiche)
     #TODO creer deux trois fiches
@@ -81,13 +81,13 @@ def main():
                 panne = tui_simple.demander_panne()
                 marque = tui_simple.demander_marque()
                 fiche = Fiche(
-                    id=id_max,
+                    id=id_max_fiche,
                     visiteur=visiteur,
                     type_objet=type_objet,
                     description_panne=panne,
                     marque=marque,
                 )
-                id_max += 1
+                id_max_fiche += 1
                 registre.ajout_file_attente(fiche)
                 demarrage.sauver_fiche(fiche)
                 tui_simple.afficher_fiche_ajoutee(fiche)
