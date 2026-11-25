@@ -83,6 +83,7 @@ def main():
                     marque=marque,
                 )
                 registre.ajout_file_attente(fiche)
+                demarrage.sauver_fiche(fiche)
                 tui_simple.afficher_fiche_ajoutee(fiche)
 
             case "2": #F-02
@@ -107,6 +108,7 @@ def main():
                 fiche = tui_simple.choisir_fiche(registre, "Entrez l'ID de la fiche que vous voulez prendre en charge\n >> ")
                 try:
                     fiche.prendre_en_charge(reparateur)
+                    demarrage.sauver_fiche(fiche)
                     print("\nVous avez bien été assigné à cette fiche.\n")
                     tui_simple.afficher_infos_fiche(fiche)
                 except ValueError as erreur:
@@ -122,6 +124,7 @@ def main():
                     if choix_action == "1":
                         diagnostic = tui_simple.demander_texte("Entrez le nouveau diagnostic.\n >> ")
                         choix_fiche.modifier_diagnostic(diagnostic)
+                        demarrage.sauver_fiche(choix_fiche)
                         print(f"Le diagnostic a bien été modifié.\nLe nouveau diagnostic est : {diagnostic}\n")
                     #modification du resultat
                     elif choix_action == "2":
@@ -129,6 +132,7 @@ def main():
                         try:
                             choix_fiche.modifier_resultat(nouveau_resultat)
                             print(f"Le résultat a bien été modifié. Le nouveau résultat est {nouveau_resultat.value}.\n")
+                            demarrage.sauver_fiche(choix_fiche)
                         except ValueError as erreur:
                             print(f"\n{erreur}\n")
 

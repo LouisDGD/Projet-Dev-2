@@ -10,10 +10,17 @@
       "accord": false,
       "derniere_visite": "2026-11-07T09:42:00"
     },
-    "type_objet": {"categorie": "grille-pain", "poids_moyen": 1.5},
+    "type_objet": {
+      "categorie": "grille-pain",
+      "poids_moyen": 1.5
+    },
     "description_panne": "Ne chauffe plus",
     "marque": "Philips",
-    "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
+    "reparateur": {
+      "nom": "Lemaire",
+      "prenom": "Jules",
+      "specialite": "électroménager"
+    },
     "etat": "TERMINE",
     "resultat": "REPARE",
     "diagnostic": "Résistance dessoudée, ressoudée",
@@ -30,10 +37,17 @@
       "accord": true,
       "derniere_visite": "2026-11-07T10:05:00"
     },
-    "type_objet": {"categorie": "lampe", "poids_moyen": 2.0},
+    "type_objet": {
+      "categorie": "lampe",
+      "poids_moyen": 2.0
+    },
     "description_panne": "Ne s'allume plus",
     "marque": "Ikea",
-    "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
+    "reparateur": {
+      "nom": "Lemaire",
+      "prenom": "Jules",
+      "specialite": "électroménager"
+    },
     "etat": "TERMINE",
     "resultat": "NON_REPARE",
     "diagnostic": "Transformateur HS, pièce introuvable",
@@ -50,10 +64,17 @@
       "accord": true,
       "derniere_visite": "2026-11-07T10:30:00"
     },
-    "type_objet": {"categorie": "aspirateur", "poids_moyen": 5.0},
+    "type_objet": {
+      "categorie": "aspirateur",
+      "poids_moyen": 5.0
+    },
     "description_panne": "Aspire très faiblement",
     "marque": "Dyson",
-    "reparateur": {"nom": "Renard", "prenom": "Claire", "specialite": "électroménager"},
+    "reparateur": {
+      "nom": "Renard",
+      "prenom": "Claire",
+      "specialite": "électroménager"
+    },
     "etat": "TERMINE",
     "resultat": "A_SUIVRE",
     "diagnostic": "Moteur fatigué, pièce commandée",
@@ -70,10 +91,17 @@
       "accord": false,
       "derniere_visite": "2026-11-07T11:15:00"
     },
-    "type_objet": {"categorie": "vélo", "poids_moyen": 14.0},
+    "type_objet": {
+      "categorie": "vélo",
+      "poids_moyen": 14.0
+    },
     "description_panne": "Freins qui frottent et chaîne qui saute",
     "marque": "Btwin",
-    "reparateur": {"nom": "Lambert", "prenom": "Hugo", "specialite": "vélo"},
+    "reparateur": {
+      "nom": "Lambert",
+      "prenom": "Hugo",
+      "specialite": "vélo"
+    },
     "etat": "TERMINE",
     "resultat": "REPARE",
     "diagnostic": "Patins changés, dérailleur réglé",
@@ -90,10 +118,17 @@
       "accord": true,
       "derniere_visite": "2026-11-21T09:20:00"
     },
-    "type_objet": {"categorie": "radio", "poids_moyen": 1.2},
+    "type_objet": {
+      "categorie": "radio",
+      "poids_moyen": 1.2
+    },
     "description_panne": "Grésille sur toutes les stations",
     "marque": "Grundig",
-    "reparateur": {"nom": "Renard", "prenom": "Claire", "specialite": "électronique"},
+    "reparateur": {
+      "nom": "Renard",
+      "prenom": "Claire",
+      "specialite": "électronique"
+    },
     "etat": "EN_COURS",
     "resultat": null,
     "diagnostic": null,
@@ -110,7 +145,10 @@
       "accord": false,
       "derniere_visite": "2026-11-21T09:45:00"
     },
-    "type_objet": {"categorie": "bouilloire", "poids_moyen": 1.0},
+    "type_objet": {
+      "categorie": "bouilloire",
+      "poids_moyen": 1.0
+    },
     "description_panne": "Ne s'arrête plus",
     "marque": null,
     "reparateur": null,
@@ -130,10 +168,17 @@
       "accord": true,
       "derniere_visite": "2026-11-21T10:10:00"
     },
-    "type_objet": {"categorie": "pantalon", "poids_moyen": 0.5},
+    "type_objet": {
+      "categorie": "pantalon",
+      "poids_moyen": 0.5
+    },
     "description_panne": "Fermeture éclair cassée",
     "marque": "Levi's",
-    "reparateur": {"nom": "Wouters", "prenom": "Nadia", "specialite": "couture"},
+    "reparateur": {
+      "nom": "Wouters",
+      "prenom": "Nadia",
+      "specialite": "couture"
+    },
     "etat": "TERMINE",
     "resultat": "REPARE",
     "diagnostic": "Curseur remplacé",
@@ -150,10 +195,17 @@
       "accord": true,
       "derniere_visite": "2026-11-21T10:40:00"
     },
-    "type_objet": {"categorie": "ordinateur portable", "poids_moyen": 2.2},
+    "type_objet": {
+      "categorie": "ordinateur portable",
+      "poids_moyen": 2.2
+    },
     "description_panne": "Ne démarre plus, voyant orange",
     "marque": "Lenovo",
-    "reparateur": {"nom": "Renard", "prenom": "Claire", "specialite": "électronique"},
+    "reparateur": {
+      "nom": "Renard",
+      "prenom": "Claire",
+      "specialite": "électronique"
+    },
     "etat": "EN_COURS",
     "resultat": null,
     "diagnostic": null,
@@ -170,7 +222,10 @@
       "accord": false,
       "derniere_visite": "2026-11-21T11:05:00"
     },
-    "type_objet": {"categorie": "chaise", "poids_moyen": 4.0},
+    "type_objet": {
+      "categorie": "chaise",
+      "poids_moyen": 4.0
+    },
     "description_panne": "Pied qui branle",
     "marque": null,
     "reparateur": null,
@@ -190,13 +245,43 @@
       "accord": true,
       "derniere_visite": "2026-11-21T11:30:00"
     },
-    "type_objet": {"categorie": "sèche-cheveux", "poids_moyen": 0.8},
+    "type_objet": {
+      "categorie": "sèche-cheveux",
+      "poids_moyen": 0.8
+    },
     "description_panne": "Souffle froid uniquement",
     "marque": "Babyliss",
-    "reparateur": {"nom": "Lemaire", "prenom": "Jules", "specialite": "électroménager"},
+    "reparateur": {
+      "nom": "Lemaire",
+      "prenom": "Jules",
+      "specialite": "électroménager"
+    },
     "etat": "TERMINE",
     "resultat": "NON_REPARE",
     "diagnostic": "Thermostat grillé, réparation trop coûteuse",
     "date_arrivee": "2026-11-21T11:30:00"
+  },
+  {
+    "id": 20,
+    "visiteur": {
+      "id": 1,
+      "nom_visiteur": "Derick",
+      "prenom_visiteur": "Maxime",
+      "num_tel": null,
+      "email": null,
+      "accord": false,
+      "derniere_visite": "2026-11-25T13:47:08.939779"
+    },
+    "type_objet": {
+      "categorie": "Grille-pain",
+      "poids_moyen": 1.5
+    },
+    "description_panne": "Ne chauffe plus d'un côté",
+    "marque": null,
+    "reparateur": null,
+    "etat": "TERMINE",
+    "resultat": "REPARE",
+    "diagnostic": null,
+    "date_arrivee": "2026-11-14T14:30:00"
   }
 ]
