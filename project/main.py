@@ -121,7 +121,7 @@ def main():
         
             case "3": #F-03
                 print("Voici la liste des fiches disponibles : \n")
-                choix_fiche = tui_simple.choisir_fiche(registre, "Entrez l'ID de la fiche que vous voulez compléter\n >> ")
+                choix_fiche = tui_simple.choisir_fiche_reparateur(registre, "Entrez l'ID de la fiche que vous voulez compléter\n >> ")
 
                 choix_action = input("Quelle action voulez-vous effectuer sur cette fiche ?\n1)Modifier le diagnostic\n2)Modifier le resultat\n>> ")   
                 if choix_action.strip() in ("1", "2"):

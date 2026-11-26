@@ -80,6 +80,38 @@ def demander_infos_creation_visiteur() -> dict:
         infos["num_tel"] = input("Numéro de téléphone (laisser vide si aucun) :\n >> ").strip() or None
     return infos
 
+def afficher_infos_fiche_reparateur(fiche: Fiche) -> None:
+    """print la fiche donné en paramètre"""
+    resultat = " - "
+    if fiche.resultat:
+        resultat = fiche.resultat.value
+    diagnostic = " - "
+    if fiche.diagnostic:
+            diagnostic = fiche.diagnostic
+    print(f"{fiche.id:>6} | {fiche.date_arrivee:%H:%M} | {get_infos_visiteur(fiche.visiteur):<17.17} | "
+        f"{fiche.type_objet.categorie:<12.12} | {fiche.description_panne:<15.15} | {diagnostic:<15.15} | {fiche.etat.value:<8.8} | {resultat:<8.8} | {get_infos_reparateur(fiche.reparateur):<17.17}")
+
+def afficher_tableau_listes_reparateur(fiches: list[Fiche]) -> None:
+    """Affiche la fiche avec le diag et le résultat"""
+    print("\n")
+    print(f"{'N°':^6} | {'Heure':^5} | {'Visiteur':^17} | {'Objet':^12} | {'Panne':^15} | {'diagnostic':^15} | {'Statut':^8} | {'État':^8} | {'Réparateur':^17}")
+    print("-" * 130)
+    for f in fiches:
+        afficher_infos_fiche_reparateur(f)
+    print("\n")
+
+def choisir_fiche_reparateur(registre: RegistreFiches, message: str) -> Fiche:
+    afficher_tableau_listes_reparateur(registre.fiches_par_ordre_arrivee())
+    while True:
+        choix = demander_texte(message)
+        try:
+            fiche = registre.trouver_par_id(int(choix))
+        except ValueError:
+            fiche = None
+        if fiche:
+            return fiche
+        print("Cette fiche n'existe pas. Veuillez réessayer.")
+
 def afficher_tableau_listes(fiches: list[Fiche]) -> None:
     """affiche un tableau affichant les listes une à une"""
     print("\n")
