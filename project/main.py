@@ -1,48 +1,165 @@
+from domaine.registre import RegistreFiches
+from domaine.reparateur import Reparateur
+from domaine.fiche import Fiche
+from domaine.type_objet import TypeObjet
+from domaine.visiteur import Visiteur
 from datetime import datetime
+from domaine.enums import Etat, Resultat
+from data.sauvegarde import Sauvegarde
+import interface.tui_simple as tui_simple
 
-from choix_types import choix_type
-from get_id import get_id
-from save import save
+def initialister(liste_reparateur: list, liste_visiteur: list, liste_type_objet: list, liste_fiche: list, id_fiche: int):
+    reparateurs_donnees = [['THIEL', 'Valentin', 'Grille-pain'], ['DEGAND', 'Louis', 'Ecran d\'ordinateur'], ['MARTIN', 'Loic', 'Ninja Creamy']]
+    type_objet_donnees = [['Grille-pain', 1.5], ['Ecran d\'ordinateur', 0.5], ['Ninja Creamy', float(4)]]
+    visiteurs_donnees = [[1, 'DERICK', 'Maxime', None, None, False], [2, 'DUBRUILLE', 'Xavier', None, None, False], [3, 'KABASELE', 'Greg', None, None, False]]
+    fiches_donnees = [
+        [20, 0, 0, "Ne chauffe plus d'un côté", datetime(2026, 11, 14, 14, 30), Etat.EN_ATTENTE, None, None, None],
+        [30, 1, 1, "Écran noir au démarrage", datetime(2026, 11, 14, 14, 5), Etat.EN_COURS, 1, None, None],
+        [40, 2, 2, "Le moteur ne tourne plus", datetime(2026, 11, 14, 14, 15), Etat.TERMINE, 2, "Courroie remplacée", Resultat.REPARE],
+    ]
 
-TYPES = ["Grille-pain", "Lampe", "Aspirateur", "Téléviseur", "Micro-ondes", "Ordinateur", "Autre"]
+    for nom, prenom, specialite in reparateurs_donnees:
+        liste_reparateur.append(Reparateur(nom, prenom, specialite))
+    for id, nom, prenom, num, email, accord in visiteurs_donnees:
+            liste_visiteur.append(Visiteur(id, nom, prenom, num, email, accord))
+    for categorie, poids in type_objet_donnees:
+        liste_type_objet.append(TypeObjet(categorie, poids))
+    for id_fiche, i_visiteur, i_type, description, date, etat, i_reparateur, diagnostic, resultat in fiches_donnees:
+        reparateur = liste_reparateur[i_reparateur] if i_reparateur is not None else None
+        liste_fiche.append(Fiche(
+            id=id_fiche,
+            visiteur=liste_visiteur[i_visiteur],
+            type_objet=liste_type_objet[i_type],
+            description_panne=description,
+            date_arrivee=date,
+            etat=etat,
+            reparateur=reparateur,
+            diagnostic=diagnostic,
+            resultat=resultat,
+        ))
+        id_fiche +=1
+    return id_fiche
+    
+def main():
+    '''Creation de l'environnement nécessaire pour le MVP : le registre, les réparateurs et visiteurs et les types d'objets hardcodes (fonctionnalites ulterieure)'''
+    demarrage = Sauvegarde()
+    etat_initial = demarrage.chargement()
 
+    for fiche in RegistreFiches.suppression_infos_personnelles(demarrage.get_fiches_sauvegarde_actuelle()):
+        demarrage.sauver_fiche(fiche)
+    etat_initial = demarrage.chargement()
 
-def demander_non_vide(question):
-    #Redemande tant que la réponse est vide.
-    reponse = input(question).strip()
-    while not reponse:
-        print("Ce champ est obligatoire.")
-        reponse = input(question).strip()
-    return reponse
+    #liste_fiches = demarrage.get_fiches_sauvegarde_actuelle()
+    id_max_fiche = etat_initial[0] + 1
+    id_max_visiteur = etat_initial[1] + 1
+    registre = RegistreFiches(etat_initial[2])
+    liste_reparateur = []
+    liste_visiteur = []
+    liste_type_objet = [ # TODO : remplacer par le tableau de Mme Moreau (Q-09)
+        TypeObjet("Grille-pain", 1.5),
+        TypeObjet("Aspirateur", 6.0),
+        TypeObjet("Lampe", 2.0),
+        TypeObjet("Micro-ondes", 12.0),
+        TypeObjet("Téléviseur", 10.0),
+        TypeObjet("Ordinateur", 2.5),
+        TypeObjet("Ecran d'ordinateur", 0.5),
+        TypeObjet("Ninja Creamy", 4.0),
+        TypeObjet("Autre", 1.0),
+    ]
+    liste_fiche = []
+    #id_max_fiche = initialister(liste_reparateur, liste_visiteur, liste_type_objet, liste_fiche, id_max_fiche)
+    #for fiche in liste_fiche:
+        #registre.ajout_file_attente(fiche)
+    
+    tui_simple.lancer()
+    '''boucle principale'''
+    while True:
 
-def nouvelle_fiche(nom_visiteur, type_objet, marque, description):
+        entree = tui_simple.choisir_fonctionnalites()
 
-    return {
-        "id": get_id(),
-        "nom_visiteur": nom_visiteur,
-        "type_objet": type_objet,
-        "marque": marque or None,  # facultative
-        "description": description,
-        "date_arrivee": datetime.now().isoformat(timespec="seconds"),
-        "etat": "en attente",
-        "reparateur": None,
-        "diagnostic": None,
-        "resultat": None,
-        "piece_attendue": None,
-    }
+        #menu principal des fonctionnalités
+        match entree:
+            case "0":
+                print("Merci et au revoir !")
+                #quitter la boucle
+                break
+        #F-01
+            case "1": #F-01 A remplacer plus tard dans le domaine par une unique methode qui contient toutes les méthodes suivantes
+                liste_visiteur = []
+                for f in registre.fiches_par_ordre_arrivee():
+                    liste_visiteur.append(f.visiteur)
+                visiteur = tui_simple.choisir_visiteur(liste_visiteur)
+                if not visiteur:
+                    visiteur = Visiteur(id=id_max_visiteur, **tui_simple.demander_infos_creation_visiteur())
+                    id_max_visiteur += 1
+                type_objet = tui_simple.choisir_type_objet(liste_type_objet)
+                panne = tui_simple.demander_panne()
+                marque = tui_simple.demander_marque()
+                fiche = Fiche(
+                    id=id_max_fiche,
+                    visiteur=visiteur,
+                    type_objet=type_objet,
+                    description_panne=panne,
+                    marque=marque,
+                )
+                id_max_fiche += 1
+                registre.ajout_file_attente(fiche)
+                demarrage.sauver_fiche(fiche)
+                tui_simple.afficher_fiche_ajoutee(fiche)
 
-def creer_fiche():
-    #F-01 : saisie à l'accueil puis enregistrement.
-    fiche = nouvelle_fiche(
-        nom_visiteur=demander_non_vide("Nom du visiteur : "),
-        type_objet=choix_type(TYPES),
-        marque=input("Marque (facultatif) : ").strip(),
-        description=demander_non_vide("Description du problème : "),
-    )
-    save(fiche)
-    print(f"\nFiche n°{fiche['id']} enregistrée pour {fiche['nom_visiteur']}.")
-    return fiche
+            case "2": #F-02
+                reparateur = tui_simple.demander_reparateur(registre)
+                if reparateur is None:
+                    continue
+                fiche = tui_simple.choisir_fiche(registre, "Entrez l'ID de la fiche que vous voulez prendre en charge.")
+                try:
+                    fiche.prendre_en_charge(reparateur)
+                    demarrage.sauver_fiche(fiche)
+                    tui_simple.afficher_prise_en_charge(fiche)
+                except ValueError as erreur:
+                    tui_simple.afficher_erreur(erreur)
+        
+            case "3": #F-03
+                print("Voici la liste des fiches disponibles : \n")
+                choix_fiche = tui_simple.choisir_fiche_reparateur(registre, "Entrez l'ID de la fiche que vous voulez compléter\n >> ")
 
+                choix_action = input("Quelle action voulez-vous effectuer sur cette fiche ?\n1)Modifier le diagnostic\n2)Modifier le resultat\n>> ")   
+                if choix_action.strip() in ("1", "2"):
+                    #modification du diagnostic
+                    if choix_action == "1":
+                        diagnostic = tui_simple.demander_texte("Entrez le nouveau diagnostic.\n >> ")
+                        choix_fiche.modifier_diagnostic(diagnostic)
+                        demarrage.sauver_fiche(choix_fiche)
+                        print(f"Le diagnostic a bien été modifié.\nLe nouveau diagnostic est : {diagnostic}\n")
+                    #modification du resultat
+                    elif choix_action == "2":
+                        nouveau_resultat = tui_simple.choisir_resultat()
+                        try:
+                            choix_fiche.modifier_resultat(nouveau_resultat)
+                            print(f"Le résultat a bien été modifié. Le nouveau résultat est {nouveau_resultat.value}.\n")
+                            demarrage.sauver_fiche(choix_fiche)
+                        except ValueError as erreur:
+                            print(f"\n{erreur}\n")
+
+            case "4": #afficher les fiches de la session
+                tui_simple.afficher_tableau_listes(registre.fiches_par_ordre_arrivee())
+
+            case "5": #F-04 Rechercher une fiche
+                liste_toutes_fiches = demarrage.get_fiches_sauvegarde_actuelle()
+                tui_simple.demander_une_fiche(liste_toutes_fiches)
+
+            case "6": #Restaurer une sauvegarde
+                nom = tui_simple.choisir_sauvegarde(demarrage._lister_sauvegardes())
+                if nom is None:
+                    continue
+                try:
+                    etat = demarrage.restauration(nom)
+                    registre = RegistreFiches(etat[2])
+                    id_max_fiche = etat[0] + 1
+                    id_max_visiteur = etat[1] + 1
+                    print(f"\nLa sauvegarde du {nom} a été restaurée.\n")
+                except ValueError as erreur:
+                    print(f"\n{erreur}\n")
 
 if __name__ == "__main__":
-    creer_fiche()
+    main()
